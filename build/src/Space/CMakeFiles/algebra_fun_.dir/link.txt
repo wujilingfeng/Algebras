@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../temp_libs/libalgebra_fun_.a  CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.o
+/usr/bin/ranlib ../../../temp_libs/libalgebra_fun_.a

@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Space/Algebra_Fun_.h
+stdio.h
+-
+stdlib.h
+-
+tools_rbtree.h
+../include/Space/tools_rbtree.h
+
+../include/Vectors/Al_Vectors.h
+Space/Algebra_Fun_.h
+-
+
+../thirdpart/cstructures/include/tools_rbtree.h
+cstddef
+-
+stdlib.h
+-
+string.h
+-
+stddef.h
+-
+
+/home/libo/Documents/c++/tensor/src/Vectors/Al_Vectors.c
+Vectors/Al_Vectors.h
+-
+
