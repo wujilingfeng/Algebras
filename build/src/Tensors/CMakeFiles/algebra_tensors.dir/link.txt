@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../temp_libs/libalgebra_tensors.a  CMakeFiles/algebra_tensors.dir/Al_Tensors.c.o
+/usr/bin/ranlib ../../../temp_libs/libalgebra_tensors.a

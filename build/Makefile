@@ -183,17 +183,17 @@ algebra_fun_/fast:
 .PHONY : algebra_fun_/fast
 
 #=============================================================================
-# Target rules for targets named algebra_vectors
+# Target rules for targets named algebra_tensors
 
 # Build rule for target.
-algebra_vectors: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 algebra_vectors
-.PHONY : algebra_vectors
+algebra_tensors: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 algebra_tensors
+.PHONY : algebra_tensors
 
 # fast build rule for target.
-algebra_vectors/fast:
-	$(MAKE) -f src/Vectors/CMakeFiles/algebra_vectors.dir/build.make src/Vectors/CMakeFiles/algebra_vectors.dir/build
-.PHONY : algebra_vectors/fast
+algebra_tensors/fast:
+	$(MAKE) -f src/Tensors/CMakeFiles/algebra_tensors.dir/build.make src/Tensors/CMakeFiles/algebra_tensors.dir/build
+.PHONY : algebra_tensors/fast
 
 Demo/main.o: Demo/main.cpp.o
 
@@ -236,7 +236,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... algebra_fun_"
-	@echo "... algebra_vectors"
+	@echo "... algebra_tensors"
 	@echo "... Demo/main.o"
 	@echo "... Demo/main.i"
 	@echo "... Demo/main.s"

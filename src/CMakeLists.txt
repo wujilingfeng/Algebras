@@ -1,6 +1,6 @@
 add_subdirectory(./Space)
 #add_subdirectory(./Quaternions)
-add_subdirectory(./Vectors)
+add_subdirectory(./Tensors)
 
 #aux_source_directory(. MYSRC)
 

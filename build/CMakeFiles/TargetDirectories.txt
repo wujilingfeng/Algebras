@@ -18,10 +18,10 @@
 /home/libo/Documents/c++/tensor/build/src/Space/CMakeFiles/rebuild_cache.dir
 /home/libo/Documents/c++/tensor/build/src/Space/CMakeFiles/install.dir
 /home/libo/Documents/c++/tensor/build/src/Space/CMakeFiles/list_install_components.dir
-/home/libo/Documents/c++/tensor/build/src/Vectors/CMakeFiles/edit_cache.dir
-/home/libo/Documents/c++/tensor/build/src/Vectors/CMakeFiles/install/strip.dir
-/home/libo/Documents/c++/tensor/build/src/Vectors/CMakeFiles/install/local.dir
-/home/libo/Documents/c++/tensor/build/src/Vectors/CMakeFiles/algebra_vectors.dir
-/home/libo/Documents/c++/tensor/build/src/Vectors/CMakeFiles/rebuild_cache.dir
-/home/libo/Documents/c++/tensor/build/src/Vectors/CMakeFiles/list_install_components.dir
-/home/libo/Documents/c++/tensor/build/src/Vectors/CMakeFiles/install.dir
+/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/install/strip.dir
+/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/install/local.dir
+/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/edit_cache.dir
+/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/rebuild_cache.dir
+/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/algebra_tensors.dir
+/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/list_install_components.dir
+/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/install.dir

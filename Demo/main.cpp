@@ -5,16 +5,34 @@
 //#include "tools_rbtree.h"
 #include<Space/Algebra_Fun_.h>
 #include "test_h/vector_test.h"
+void test_void(void*p1)
+{
+    __mpz_struct* q=(__mpz_struct*)p1;
+    
+    //mpz_t *q=(mpz_t*) p1;
+    gmp_printf("q=%Zd\n",q);
+
+}
 //#include<Quaternions/Al_Quaternions.h>
 void test_gmp()
 {
     mpf_set_default_prec(64);
-mpz_t a,b,c;
-    mpz_inits(a,b,c,NULL);
+    mpz_t a,b,c,d;
+    mpz_inits(a,b,c,d,NULL);
     mpz_set_d(a,2.1);
-    mpz_set_str(b,"2.03",10);
-   // gmp_scanf("%Zd%Zd",a,b);
-    mpz_add(c,a,b);
+    test_void((void*)a);
+    //printf("a=%Zd\n",a);
+    //mpz_set_ui()
+
+    int tem_i=9;
+    mpz_set_ui(b,tem_i);
+    
+  //  mpz_set_str(b,"9",10);
+   
+    gmp_printf("b=%Zd\n",b);
+    // gmp_scanf("%Zd%Zd\n",a,b);
+    mpz_pow_ui(c,b,0);
+    //mpz_add(c,a,b);
     gmp_printf("c=%Zd\n",c);
     mpq_t p;
     mpq_inits(p,NULL);
@@ -32,7 +50,8 @@ mpz_t a,b,c;
     mpf_cmp(f,f1);
     //
     //对double比较
-    mpf_cmp_d(f,0);
+   int re=mpf_cmp_d(f,1);
+   printf("lre:%d\n",re);
     //转化为double类型
     //mpf_get_d()
 }
@@ -60,7 +79,33 @@ static int t_cmp(const void* p1,const void* p2)
    }
    return 0;
 }
+void test_rb1()
+{
+    RB_Tree* tree=(RB_Tree*)malloc(sizeof(RB_Tree));
+    RB_Tree_init_mpz(tree);
+    RB_mpz rbm;
+    RB_init_mpz(&rbm);
+    mpz_set_ui(rbm.key,3);
+    tree->insert(tree,&rbm);
+    mpz_set_ui(rbm.key,6);
+    tree->insert(tree,&rbm);
+    mpz_set_ui(rbm.key,0);
+    tree->insert(tree,&rbm);
+    mpz_set_str(rbm.key,"234234789798",10);
 
+    tree->insert(tree,&rbm);
+
+    RB_Trav* it=tree->begin(tree);
+    for(;it->it!=NULL;it->next(it))
+    {
+        gmp_printf("test_rb1:%Zd\n",(__mpz_struct*)(it->first(it)));
+    }
+    free(it);
+
+    mpz_clear(rbm.key);
+
+
+}
 void test_rb()
 {
     RB_Tree* tree=(RB_Tree*)malloc(sizeof(RB_Tree));
@@ -121,9 +166,10 @@ void test_rb()
 int main(int argc,char **argv)
 {
     char s='0';
-    printf("s:%c",s+3);
-
-    test_gmp();
+    printf("s:%c\n",s+3);
+  //  test_rb1();
+  //  test_gmp();
+    //int re[4];
     test_vector();
     //test_rb();
         //mpf_out

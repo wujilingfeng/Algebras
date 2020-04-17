@@ -70,17 +70,32 @@ src/Space/CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.s"
 	cd /home/libo/Documents/c++/tensor/build/src/Space && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/libo/Documents/c++/tensor/src/Space/Algebra_Fun_.c -o CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.s
 
+src/Space/CMakeFiles/algebra_fun_.dir/structures.c.o: src/Space/CMakeFiles/algebra_fun_.dir/flags.make
+src/Space/CMakeFiles/algebra_fun_.dir/structures.c.o: ../src/Space/structures.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/libo/Documents/c++/tensor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/Space/CMakeFiles/algebra_fun_.dir/structures.c.o"
+	cd /home/libo/Documents/c++/tensor/build/src/Space && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/algebra_fun_.dir/structures.c.o   -c /home/libo/Documents/c++/tensor/src/Space/structures.c
+
+src/Space/CMakeFiles/algebra_fun_.dir/structures.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/algebra_fun_.dir/structures.c.i"
+	cd /home/libo/Documents/c++/tensor/build/src/Space && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/libo/Documents/c++/tensor/src/Space/structures.c > CMakeFiles/algebra_fun_.dir/structures.c.i
+
+src/Space/CMakeFiles/algebra_fun_.dir/structures.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/algebra_fun_.dir/structures.c.s"
+	cd /home/libo/Documents/c++/tensor/build/src/Space && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/libo/Documents/c++/tensor/src/Space/structures.c -o CMakeFiles/algebra_fun_.dir/structures.c.s
+
 # Object files for target algebra_fun_
 algebra_fun__OBJECTS = \
-"CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.o"
+"CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.o" \
+"CMakeFiles/algebra_fun_.dir/structures.c.o"
 
 # External object files for target algebra_fun_
 algebra_fun__EXTERNAL_OBJECTS =
 
 ../temp_libs/libalgebra_fun_.a: src/Space/CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.o
+../temp_libs/libalgebra_fun_.a: src/Space/CMakeFiles/algebra_fun_.dir/structures.c.o
 ../temp_libs/libalgebra_fun_.a: src/Space/CMakeFiles/algebra_fun_.dir/build.make
 ../temp_libs/libalgebra_fun_.a: src/Space/CMakeFiles/algebra_fun_.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/libo/Documents/c++/tensor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library ../../../temp_libs/libalgebra_fun_.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/libo/Documents/c++/tensor/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library ../../../temp_libs/libalgebra_fun_.a"
 	cd /home/libo/Documents/c++/tensor/build/src/Space && $(CMAKE_COMMAND) -P CMakeFiles/algebra_fun_.dir/cmake_clean_target.cmake
 	cd /home/libo/Documents/c++/tensor/build/src/Space && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/algebra_fun_.dir/link.txt --verbose=$(VERBOSE)
 

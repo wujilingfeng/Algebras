@@ -13,7 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.13.4/CMakeSystem.cmake"
   "../src/CMakeLists.txt"
   "../src/Space/CMakeLists.txt"
-  "../src/Vectors/CMakeLists.txt"
+  "../src/Tensors/CMakeLists.txt"
   "/usr/share/cmake-3.13/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.13/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.13/Modules/CMakeCommonLanguageInclude.cmake"
@@ -44,12 +44,12 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/Space/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/Vectors/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/Tensors/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main.dir/DependInfo.cmake"
   "src/Space/CMakeFiles/algebra_fun_.dir/DependInfo.cmake"
-  "src/Vectors/CMakeFiles/algebra_vectors.dir/DependInfo.cmake"
+  "src/Tensors/CMakeFiles/algebra_tensors.dir/DependInfo.cmake"
   )

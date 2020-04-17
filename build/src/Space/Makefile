@@ -198,6 +198,33 @@ Algebra_Fun_.c.s:
 	cd /home/libo/Documents/c++/tensor/build && $(MAKE) -f src/Space/CMakeFiles/algebra_fun_.dir/build.make src/Space/CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.s
 .PHONY : Algebra_Fun_.c.s
 
+structures.o: structures.c.o
+
+.PHONY : structures.o
+
+# target to build an object file
+structures.c.o:
+	cd /home/libo/Documents/c++/tensor/build && $(MAKE) -f src/Space/CMakeFiles/algebra_fun_.dir/build.make src/Space/CMakeFiles/algebra_fun_.dir/structures.c.o
+.PHONY : structures.c.o
+
+structures.i: structures.c.i
+
+.PHONY : structures.i
+
+# target to preprocess a source file
+structures.c.i:
+	cd /home/libo/Documents/c++/tensor/build && $(MAKE) -f src/Space/CMakeFiles/algebra_fun_.dir/build.make src/Space/CMakeFiles/algebra_fun_.dir/structures.c.i
+.PHONY : structures.c.i
+
+structures.s: structures.c.s
+
+.PHONY : structures.s
+
+# target to generate assembly for a file
+structures.c.s:
+	cd /home/libo/Documents/c++/tensor/build && $(MAKE) -f src/Space/CMakeFiles/algebra_fun_.dir/build.make src/Space/CMakeFiles/algebra_fun_.dir/structures.c.s
+.PHONY : structures.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -214,6 +241,9 @@ help:
 	@echo "... Algebra_Fun_.o"
 	@echo "... Algebra_Fun_.i"
 	@echo "... Algebra_Fun_.s"
+	@echo "... structures.o"
+	@echo "... structures.i"
+	@echo "... structures.s"
 .PHONY : help
 
 

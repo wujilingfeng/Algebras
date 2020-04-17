@@ -1,6 +1,7 @@
+./src/Tensors/Al_Tensors.c
 ./src/Quaternions/Al_Quaternions.c
+./src/Space/structures.c
 ./src/Space/Algebra_Fun_.c
-./src/Vectors/Al_Vectors.c
 ./thirdpart/cstructures/src/iterator/cstruct_iterator.cpp
 ./thirdpart/cstructures/src/tools_rbtree.c
 ./thirdpart/cstructures/src/tools_node.c
@@ -1018,9 +1019,10 @@
 ./Demo/test_h/quater_double.h
 ./Demo/test_h/vector_test.h
 ./Demo/main.cpp
+./include/Tensors/Al_Tensors.h
 ./include/Quaternions/Al_Quaternions.h
 ./include/Space/Ring.h
 ./include/Space/Algebra_Fun_.h
+./include/Space/structures.h
 ./include/Space/SpaceManager.h
 ./include/Space/Tensor_Math.h
-./include/Vectors/Al_Vectors.h

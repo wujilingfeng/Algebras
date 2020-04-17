@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/libo/Documents/c++/tensor/src/Space/Algebra_Fun_.c" "/home/libo/Documents/c++/tensor/build/src/Space/CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.o"
+  "/home/libo/Documents/c++/tensor/src/Space/structures.c" "/home/libo/Documents/c++/tensor/build/src/Space/CMakeFiles/algebra_fun_.dir/structures.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

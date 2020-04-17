@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../temp_libs/libalgebra_quaternions.a  CMakeFiles/algebra_quaternions.dir/Al_Quaternions.c.o
-/usr/bin/ranlib ../../../temp_libs/libalgebra_quaternions.a
