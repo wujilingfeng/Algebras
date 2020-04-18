@@ -1,6 +1,6 @@
 #include<Space/Algebra_Fun_.h>
-#ifndef ALGEBRA_VECTORS_H
-#define ALGEBRA_VECTORS_H
+#ifndef ALGEBRA_TENSORS_H
+#define ALGEBRA_TENSORS_H
 #define Tensor Plus_Struct_Ele
 #ifdef __cplusplus
 extern "C"{
@@ -56,6 +56,7 @@ Tensor* W_Tensor_Product(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 
 //张量的缩并运算
 //Tensor*Tensor_Contraction
+//缩并运算效率不高，带度量的内积运算效率比较高
 
 /*
 typedef struct Vectors_Algebra_System

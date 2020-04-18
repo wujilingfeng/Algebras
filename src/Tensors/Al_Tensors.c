@@ -205,6 +205,31 @@ void plus_plus_struct(Tensors_Algebra_System*tal,Plus_Struct_Ele*pse,Plus_Struct
 Tensor* W_Tensor_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 {
 	Tensor*re=tas->T_create();
+	RB_Trav *it1=t1->value->begin(t1->value);
+	Field_Mult_Struct_Ele* fmse=NULL,*fmse1=NULL;
+	Field_Mult_Struct_Ele *mse=NULL;
+	for(;it1->it!=NULL;it1->next(it1))
+	{
+		fmse=(Field_Mult_Struct_Ele*)(it1->second(it1));
+		RB_Trav* it2=t2->value->begin(t2->value);
+		for(;it2->it!=NULL;it2->next(it2))
+		{
+			void* value=tas->copy(fmse->value);
+			fmse1=(Field_Mult_Struct_Ele*)(it2->second(it2));
+			tas->mult(value,fmse1->value);
+			mse=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
+    			Field_Mult_Struct_Ele_init(mse);
+			Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+			Tensor_Product_Struct_init(tps);
+			mse->value=value;mse->base=tps;
+			tps->els=node_splicing(fmse->base->els,fmse1->base->els);
+			Tensor_Product_Struct_getid(tas->as,tps);
+			plus_mult_struct(tas,re,&mse,1);		
+		}  
+		free(it2);
+	}
+	free(it1);
+
 	return re;
 }
 /*
