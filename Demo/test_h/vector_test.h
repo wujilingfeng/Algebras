@@ -40,7 +40,14 @@ void* Tensor_mpf_copy(void*p)
     mpf_set(re,q);
     return (void*)(re);
 }
-void tensor_print_self(Tensor*t)
+void* Tensor_double2_mpf(double d)
+{    
+    __mpf_struct*re=(__mpf_struct*)malloc(sizeof(__mpf_struct));
+    mpf_inits(re,NULL);
+    mpf_set_d(re,d);
+    return (void*)re;
+}
+void tensor_double_print_self(Tensor*t)
 {
     RB_Trav *it=t->value->begin(t->value);
     printf("kaishi\n");
@@ -48,6 +55,7 @@ void tensor_print_self(Tensor*t)
     {
         gmp_printf("id:%Zd \n",(__mpz_struct*)it->first(it));
         Field_Mult_Struct_Ele* fmse=(Field_Mult_Struct_Ele*)it->second(it);
+        printf("value:%lf\n",*((double*)(fmse->value)));
         for(Node* it1=fmse->base->els;it1!=NULL;it1=(Node*)it1->Next)
         {
         
@@ -55,6 +63,25 @@ void tensor_print_self(Tensor*t)
         }
         printf("\n");
     }
+}
+void tensor_mpf_print_self(Tensor* t)
+{
+    RB_Trav *it=t->value->begin(t->value);
+    printf("kaishi\n");
+    for(;it->it!=NULL;it->next(it))
+    {
+        gmp_printf("id:%Zd \n",(__mpz_struct*)it->first(it));
+        Field_Mult_Struct_Ele* fmse=(Field_Mult_Struct_Ele*)it->second(it);
+        gmp_printf("value:%.Ff\n",(__mpf_struct*)(fmse->value));
+        for(Node* it1=fmse->base->els;it1!=NULL;it1=(Node*)it1->Next)
+        {
+        
+            printf("%d  ",((Algebra_Basic_Element*)(it1->value))->id);
+        }
+        printf("\n");
+    }
+
+
 }
 void test_vector()
 {
@@ -64,20 +91,39 @@ void test_vector()
     tas->plus=Tensor_mpf_plus;
     tas->copy=Tensor_mpf_copy;
 
-    Tensor* t=(Tensor*)malloc(sizeof(Tensor));
     int ids[]={0,5,4};
     double d=10.4;
-    Plus_Struct_Ele_init(t);
-    t->insert(tas->as,t,ids,3,double_copy(&d));
-    tensor_print_self(t);    
-
+    mpf_t f1;
+    mpf_inits(f1,NULL);
+    mpf_set_str(f1,"43.2",10);
+    __mpf_struct*f2=(__mpf_struct*)Tensor_mpf_copy(f1);
+    gmp_printf("%.Ff\n",f2);
+    Tensor* t=tas->T_create();
+    t->insert(tas->as,t,ids,3,Tensor_mpf_copy(f1));
+    //t->insert(tas->as,t,ids,3,double_copy(&d));
+    //tensor_double_print_self(t);  
+    tensor_mpf_print_self(t);
     ids[0]=3;
-    t->insert(tas->as,t,ids,3,double_copy(&d));
-    t->zero(t);
-    tensor_print_self(t);    
+    d=-0.3;
 
+    mpf_set_d(f1,d);
+    //t->insert(tas->as,t,ids,3,double_copy(&d));
+    t->insert(tas->as,t,ids,3,Tensor_mpf_copy(f1));
+    //tensor_double_print_self(t);    
+    tensor_mpf_print_self(t);
+    Tensor* t1=tas->T_create();
+    int ids1[]={0,2,1};
+    d=5.001;
+    mpf_set_d(f1,-10.0003);
+    t1->insert(tas->as,t1,ids1,3,Tensor_mpf_copy(f1));
+    tensor_mpf_print_self(t1);
+    tas->T_plus(tas,t,t1);
+    tensor_mpf_print_self(t);
 
-    //t->insert()
+    //tensor_double_print_self(t1);
+    //tas->T
+
+        //t->insert()
     //Vector *v=vas->create_v(vas->as,0,qua_copy(&d));
 
     //Vectors_Algebra_System_init(vas,10);

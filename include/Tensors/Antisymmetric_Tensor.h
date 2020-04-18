@@ -4,7 +4,7 @@
 #ifdef __cplusplus
 extern "C"{
 #endif
-
+Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 
 
 

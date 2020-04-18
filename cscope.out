@@ -1,4 +1,4 @@
-cscope 15 $HOME/Documents/c++/tensor -q 0000011778 0003723286
+cscope 15 $HOME/Documents/c++/tensor -q 0000011791 0003728413
 	@Demo/main.cpp
 
 1 
@@ -1177,15 +1177,53 @@ q
 	}
 }
 
-43 
-	$ãns‹_¥öt_£lf
+43 * 
+	$Tís‹_doubÀ2_mpf
+(
+d
+)
+
+45 
+__mpf_°ru˘
+*
+ª
+=(__mpf_°ru˘*)
+	`mÆloc
+((__mpf_struct));
+
+46 
+	`mpf_öôs
+(
+ª
+,
+NULL
+);
+
+47 
+	`mpf_£t_d
+(
+ª
+,
+d
+);
+
+48  (*)
+ª
+;
+
+49 
+	}
+}
+
+50 
+	$ãns‹_doubÀ_¥öt_£lf
 (
 Tís‹
 *
 t
 )
 
-45 
+52 
 RB_Tøv
  *
 ô
@@ -1197,11 +1235,11 @@ vÆue
 	`begö
 (t->value);
 
-46 
+53 
 	`¥ötf
 ("kaishi\n");
 
-47 ;
+54 ;
 ô
 ->ô!=
 NULL
@@ -1209,7 +1247,7 @@ NULL
 	`√xt
 (it))
 
-49 
+56 
 	`gmp_¥ötf
 ("id:%Zd \n",(
 __mpz_°ru˘
@@ -1219,7 +1257,7 @@ __mpz_°ru˘
 	`fú°
 (it));
 
-50 
+57 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -1229,7 +1267,15 @@ fm£
 	`£c⁄d
 (it);
 
-51 
+58 
+	`¥ötf
+("vÆue:%lf\n",*((*)(
+fm£
+->
+vÆue
+)));
+
+59 
 Node
 * 
 ô1
@@ -1245,7 +1291,7 @@ NULL
 Next
 )
 
-54 
+62 
 	`¥ötf
 ("%d ",((
 Algebø_Basic_EÀmít
@@ -1257,19 +1303,117 @@ vÆue
 id
 );
 
-56 
+64 
 	`¥ötf
 ("\n");
 
-58 
+66 
 	}
 }
 
-59 
+67 
+	$ãns‹_mpf_¥öt_£lf
+(
+Tís‹
+* 
+t
+)
+
+69 
+RB_Tøv
+ *
+ô
+=
+t
+->
+vÆue
+->
+	`begö
+(t->value);
+
+70 
+	`¥ötf
+("kaishi\n");
+
+71 ;
+ô
+->ô!=
+NULL
+;ô->
+	`√xt
+(it))
+
+73 
+	`gmp_¥ötf
+("id:%Zd \n",(
+__mpz_°ru˘
+*)
+ô
+->
+	`fú°
+(it));
+
+74 
+Fõld_Mu…_Såu˘_EÀ
+* 
+fm£
+=(Fõld_Mu…_Såu˘_EÀ*)
+ô
+->
+	`£c⁄d
+(it);
+
+75 
+	`gmp_¥ötf
+("vÆue:%.Ff\n",(
+__mpf_°ru˘
+*)(
+fm£
+->
+vÆue
+));
+
+76 
+Node
+* 
+ô1
+=
+fm£
+->
+ba£
+->
+ñs
+;ô1!=
+NULL
+;ô1=(Node*)ô1->
+Next
+)
+
+79 
+	`¥ötf
+("%d ",((
+Algebø_Basic_EÀmít
+*)(
+ô1
+->
+vÆue
+))->
+id
+);
+
+81 
+	`¥ötf
+("\n");
+
+85 
+	}
+}
+
+86 
 	$ã°_ve˘‹
 ()
 
-61 
+88 
 Tís‹s_Algebø_Sy°em
 * 
 ès
@@ -1277,13 +1421,13 @@ Tís‹s_Algebø_Sy°em
 	`mÆloc
 ((Tensors_Algebra_System));
 
-62 
+89 
 	`Tís‹s_Algebø_Sy°em_öô
 (
 ès
 ,7);
 
-63 
+90 
 ès
 ->
 mu…
@@ -1291,7 +1435,7 @@ mu…
 Tís‹_mpf_mu…
 ;
 
-64 
+91 
 ès
 ->
 ∂us
@@ -1299,7 +1443,7 @@ Tís‹_mpf_mu…
 Tís‹_mpf_∂us
 ;
 
-65 
+92 
 ès
 ->
 c›y
@@ -1307,29 +1451,61 @@ c›y
 Tís‹_mpf_c›y
 ;
 
-67 
-Tís‹
-* 
-t
-=(Tís‹*)
-	`mÆloc
-((Tensor));
-
-68 
+94 
 ids
 []={0,5,4};
 
-69 
+95 
 d
 =10.4;
 
-70 
-	`Plus_Såu˘_EÀ_öô
+96 
+mpf_t
+ 
+f1
+;
+
+97 
+	`mpf_öôs
 (
-t
+f1
+,
+NULL
 );
 
-71 
+98 
+	`mpf_£t_°r
+(
+f1
+,"43.2",10);
+
+99 
+__mpf_°ru˘
+*
+f2
+=(__mpf_°ru˘*)
+	`Tís‹_mpf_c›y
+(
+f1
+);
+
+100 
+	`gmp_¥ötf
+("%.Ff\n",
+f2
+);
+
+101 
+Tís‹
+* 
+t
+=
+ès
+->
+	`T_¸óã
+();
+
+102 
 t
 ->
 	`ö£π
@@ -1340,22 +1516,34 @@ as
 ,t,
 ids
 ,3,
-	`doubÀ_c›y
-(&
-d
+	`Tís‹_mpf_c›y
+(
+f1
 ));
 
-72 
-	`ãns‹_¥öt_£lf
+105 
+	`ãns‹_mpf_¥öt_£lf
 (
 t
 );
 
-74 
+106 
 ids
 [0]=3;
 
-75 
+107 
+d
+=-0.3;
+
+109 
+	`mpf_£t_d
+(
+f1
+,
+d
+);
+
+111 
 t
 ->
 	`ö£π
@@ -1366,24 +1554,80 @@ as
 ,t,
 ids
 ,3,
-	`doubÀ_c›y
-(&
-d
+	`Tís‹_mpf_c›y
+(
+f1
 ));
 
-76 
-t
-->
-	`zîo
-(t);
-
-77 
-	`ãns‹_¥öt_£lf
+113 
+	`ãns‹_mpf_¥öt_£lf
 (
 t
 );
 
-84 
+114 
+Tís‹
+* 
+t1
+=
+ès
+->
+	`T_¸óã
+();
+
+115 
+ids1
+[]={0,2,1};
+
+116 
+d
+=5.001;
+
+117 
+	`mpf_£t_d
+(
+f1
+,-10.0003);
+
+118 
+t1
+->
+	`ö£π
+(
+ès
+->
+as
+,t1,
+ids1
+,3,
+	`Tís‹_mpf_c›y
+(
+f1
+));
+
+119 
+	`ãns‹_mpf_¥öt_£lf
+(
+t1
+);
+
+120 
+ès
+->
+	`T_∂us
+—as,
+t
+,
+t1
+);
+
+121 
+	`ãns‹_mpf_¥öt_£lf
+(
+t
+);
+
+130 
 	}
 }
 
@@ -7332,11 +7576,11 @@ __˝lu•lus
 >
 
 2 #i‚de‡
-ALGEBRA_VECTORS_H
+ALGEBRA_TENSORS_H
 
 
 3 
-	#ALGEBRA_VECTORS_H
+	#ALGEBRA_TENSORS_H
 
 
 	)
@@ -7563,7 +7807,39 @@ W_Tís‹_Produ˘
 Tís‹s_Algebø_Sy°em
 *,Tensor*,Tensor*);
 
-86 #ifde‡
+87 #ifde‡
+__˝lu•lus
+
+
+	@include/Tensors/Antisymmetric_Tensor.h
+
+1 
+	~<Tís‹s/Al_Tís‹s.h
+>
+
+2 #i‚de‡
+ALGEBRA_ANTISYMMETRIC_TENSOR_H
+
+
+3 
+	#ALGEBRA_ANTISYMMETRIC_TENSOR_H
+
+
+	)
+
+4 #ifde‡
+__˝lu•lus
+
+
+7 
+Tís‹
+* 
+Tís‹_Wedge_
+(
+Tís‹s_Algebø_Sy°em
+*,Tensor*,Tensor*);
+
+11 #ifde‡
 __˝lu•lus
 
 
@@ -10707,11 +10983,727 @@ Tís‹
 	`T_¸óã
 ();
 
-208  
+208 
+RB_Tøv
+ *
+ô1
+=
+t1
+->
+vÆue
+->
+	`begö
+(t1->value);
+
+209 
+Fõld_Mu…_Såu˘_EÀ
+* 
+fm£
+=
+NULL
+,*
+fm£1
+=NULL;
+
+210 
+Fõld_Mu…_Såu˘_EÀ
+ *
+m£
+=
+NULL
+;
+
+211 ;
+ô1
+->
+ô
+!=
+NULL
+;ô1->
+	`√xt
+(it1))
+
+213 
+fm£
+=(
+Fõld_Mu…_Såu˘_EÀ
+*)(
+ô1
+->
+	`£c⁄d
+(it1));
+
+214 
+RB_Tøv
+* 
+ô2
+=
+t2
+->
+vÆue
+->
+	`begö
+(t2->value);
+
+215 ;
+ô2
+->
+ô
+!=
+NULL
+;ô2->
+	`√xt
+(it2))
+
+217 * 
+vÆue
+=
+ès
+->
+	`c›y
+(
+fm£
+->value);
+
+218 
+fm£1
+=(
+Fõld_Mu…_Såu˘_EÀ
+*)(
+ô2
+->
+	`£c⁄d
+(it2));
+
+219 
+ès
+->
+	`mu…
+(
+vÆue
+,
+fm£1
+->value);
+
+220 
+m£
+=(
+Fõld_Mu…_Såu˘_EÀ
+*)
+	`mÆloc
+((Field_Mult_Struct_Ele));
+
+221 
+	`Fõld_Mu…_Såu˘_EÀ_öô
+(
+m£
+);
+
+222 
+Tís‹_Produ˘_Såu˘
+* 
+çs
+=(Tís‹_Produ˘_Såu˘*)
+	`mÆloc
+((Tensor_Product_Struct));
+
+223 
+	`Tís‹_Produ˘_Såu˘_öô
+(
+çs
+);
+
+224 
+m£
+->
+vÆue
+=vÆue;m£->
+ba£
+=
+çs
+;
+
+225 
+çs
+->
+ñs
+=
+	`node_•licög
+(
+fm£
+->
+ba£
+->ñs,
+fm£1
+->base->els);
+
+226 
+	`Tís‹_Produ˘_Såu˘_gëid
+(
+ès
+->
+as
+,
+çs
+);
+
+227 
+	`∂us_mu…_°ru˘
+(
+ès
+,
+ª
+,&
+m£
+,1);
+
+229 
+	`‰ì
+(
+ô2
+);
+
+231 
+	`‰ì
+(
+ô1
+);
+
+233  
 ª
 ;
 
-209 
+234 
+	}
+}
+
+	@src/Tensors/Antisymmetric_Tensor.c
+
+1 
+	~<Tís‹s/A¡isymmëric_Tís‹.h
+>
+
+2 
+	$Tís‹_Ác_
+(
+Node
+* 
+n1
+,Node*
+n2
+)
+
+4 
+Node
+*
+ª
+=
+NULL
+;
+
+5 
+Node
+*
+ô
+=
+n1
+;ô!=
+NULL
+;ô=(Node*)(ô->
+Next
+))
+
+7 
+ª
+=
+	`node_föd
+(
+n2
+,
+ô
+->
+vÆue
+);
+
+8 if(
+ª
+!=
+NULL
+)
+
+15 
+	}
+}
+
+16 
+Node
+* 
+	$Tís‹_wedge_chuli_
+(
+Node
+*
+n
+,*
+nixu
+)
+
+18 
+size
+=
+	`node_size
+(
+n
+);
+
+19 if(
+size
+==0)
+
+20 { 
+NULL
+;}
+
+21 
+Algebø_Basic_EÀmít
+* 
+abe
+=
+NULL
+,*
+abe1
+=NULL;
+
+22 ** 
+ª1
+=(**)
+	`mÆloc
+((*)*
+size
+);
+
+23 
+Node
+* 
+ô
+=
+n
+;
+
+24 
+i
+=0;i<
+size
+;i++)
+
+26 
+ª1
+[
+i
+]=
+ô
+->
+vÆue
+;
+
+27 
+ô
+=(
+Node
+*)(ô->
+Next
+);
+
+29 *
+nixu
+=0;
+
+30 
+i
+=
+size
+-1;i>=0;i--)
+
+32 
+abe
+=(
+Algebø_Basic_EÀmít
+*)
+ª1
+[
+i
+];
+
+33 
+k
+=0;
+
+34 
+j
+=
+i
++1;j<
+size
+;j++)
+
+36 
+abe1
+=(
+Algebø_Basic_EÀmít
+*)
+ª1
+[
+j
+];
+
+37 if(
+abe1
+->
+id
+>
+abe
+->id)
+
+39 
+l
+=0;l<
+k
+;l++)
+
+41 * 
+ãmp
+=
+ª1
+[
+l
++
+i
+];
+
+42 
+ª1
+[
+l
++
+i
+]=re1[l+i+1];
+
+43 
+ª1
+[
+l
++
+i
++1]=
+ãmp
+;
+
+50 
+k
+++;
+
+53 *
+nixu
+=*nixu+
+k
+;
+
+55 
+	`‰ì
+(
+ª1
+);
+
+56 
+Node
+* 
+n1
+=
+NULL
+;
+
+57 
+i
+=0;i<
+size
+;i++)
+
+59 
+n1
+=
+	`node_pushback
+“1,
+ª1
+[
+i
+]);
+
+61  
+	`node_ªvî£
+(
+n1
+);
+
+63 
+	}
+}
+
+64 
+Tís‹
+* 
+	$Tís‹_Wedge_
+(
+Tís‹s_Algebø_Sy°em
+*
+ès
+,
+Tís‹
+*
+t1
+,Tís‹*
+t2
+)
+
+66 
+Tís‹
+* 
+ª
+=
+ès
+->
+	`T_¸óã
+();
+
+67 
+RB_Tøv
+ *
+ô1
+=
+t1
+->
+vÆue
+->
+	`begö
+(t1->value);
+
+68 
+Fõld_Mu…_Såu˘_EÀ
+* 
+fm£
+=
+NULL
+,*
+fm£1
+=NULL,*
+m£
+=NULL;
+
+69 ;
+ô1
+->
+ô
+!=
+NULL
+;ô1->
+	`√xt
+(it1))
+
+71 
+fm£
+=(
+Fõld_Mu…_Såu˘_EÀ
+*)(
+ô1
+->
+	`£c⁄d
+(it1));
+
+72 
+RB_Tøv
+* 
+ô2
+=
+t2
+->
+vÆue
+->
+	`begö
+(t2->value);
+
+73 ;
+ô2
+->
+ô
+!=
+NULL
+;ô2->
+	`√xt
+(it2))
+
+75 
+fm£1
+=(
+Fõld_Mu…_Såu˘_EÀ
+*)(
+ô2
+->
+	`£c⁄d
+(it2));
+
+76 
+Ác
+=
+	`Tís‹_Ác_
+(
+fm£
+->
+ba£
+->
+ñs
+,
+fm£1
+->base->els);
+
+77 if(
+Ác
+==0)
+
+79 * 
+vÆue
+=
+ès
+->
+	`c›y
+(
+fm£
+->value);
+
+80 
+ès
+->
+	`mu…
+(
+vÆue
+,
+fm£1
+->value);
+
+81 
+m£
+=(
+Fõld_Mu…_Såu˘_EÀ
+*)
+	`mÆloc
+((Field_Mult_Struct_Ele));
+
+82 
+	`Fõld_Mu…_Såu˘_EÀ_öô
+(
+m£
+);
+
+83 
+Tís‹_Produ˘_Såu˘
+* 
+çs
+=(Tís‹_Produ˘_Såu˘*)
+	`mÆloc
+((Tensor_Product_Struct));
+
+84 
+	`Tís‹_Produ˘_Såu˘_öô
+(
+çs
+);
+
+85 
+m£
+->
+vÆue
+=vÆue;m£->
+ba£
+=
+çs
+;
+
+86 
+Êag
+;
+Node
+* 
+nô
+=
+	`node_•licög
+(
+fm£
+->
+ba£
+->
+ñs
+,
+fm£1
+->base->els);
+
+87 
+çs
+->
+ñs
+=
+	`Tís‹_wedge_chuli_
+(
+nô
+,&
+Êag
+);
+
+88 
+	`¥ötf
+("yaochuli:%d\n",
+Êag
+);
+
+89 
+	`‰ì_node
+(
+nô
+);
+
+90 
+	`Tís‹_Produ˘_Såu˘_gëid
+(
+ès
+->
+as
+,
+çs
+);
+
+91 
+	`∂us_mu…_°ru˘
+(
+ès
+,
+ª
+,&
+m£
+,1);
+
+93 
+	`‰ì
+(
+ô2
+);
+
+95 
+	`‰ì
+(
+ô1
+);
+
+99  
+ª
+;
+
+100 
 	}
 }
 
@@ -10959,11 +11951,11 @@ d©a
 key
 );
 
-77 
+76 
 	}
 }
 
-79 
+78 
 	$maö
 (
 ¨gc
@@ -10971,7 +11963,7 @@ key
 ¨gv
 )
 
-81 
+80 
 RB_Tªe
  *
 åì
@@ -10979,25 +11971,25 @@ RB_Tªe
 	`mÆloc
 ((RB_Tree));
 
-82 
+81 
 	`RB_Tªe_öô_öt
 (
 åì
 );
 
-84 
+83 
 RB_öt
  
 r
 ;
 
-85 
+84 
 r
 .
 key
 =0;
 
-86 
+85 
 r
 .
 vÆue
@@ -11005,7 +11997,7 @@ vÆue
 NULL
 ;
 
-87 
+86 
 r
 .
 ¥›
@@ -11013,7 +12005,7 @@ r
 NULL
 ;
 
-89 
+88 
 åì
 ->
 	`ö£π
@@ -11021,13 +12013,13 @@ NULL
 r
 );
 
-90 
+89 
 r
 .
 key
 =-2;
 
-91 
+90 
 åì
 ->
 	`ö£π
@@ -11035,13 +12027,13 @@ key
 r
 );
 
-92 
+91 
 r
 .
 key
 =100;
 
-93 
+92 
 åì
 ->
 	`ö£π
@@ -11049,13 +12041,13 @@ key
 r
 );
 
-94 
+93 
 r
 .
 key
 =2;
 
-95 
+94 
 åì
 ->
 	`îa£
@@ -11063,7 +12055,7 @@ key
 r
 );
 
-96 autÿ
+95 autÿ
 ôî
 =
 åì
@@ -11071,7 +12063,7 @@ r
 	`rbegö
 (tree);
 
-97 ;
+96 ;
 ôî
 ->
 ô
@@ -11081,13 +12073,13 @@ NULL
 	`¥ev
 (iter))
 
-99 
+98 
 ôî
 ->
 	`£c⁄d
 (iter);
 
-100 
+99 
 	`¥ötf
 ("%d ",*((*)(
 ôî
@@ -11096,12 +12088,20 @@ NULL
 (iter))));
 
 102 
+	`¥ötf
+("%ld\n",
+åì
+->
+size
+);
+
+104 
 	`‰ì
 (
 ôî
 );
 
-107 
+109 
 	}
 }
 
@@ -16655,7 +17655,17 @@ Node
 node_dñëe_vÆue
 (Node*,*);
 
-26 #ifde‡
+26 
+Node
+* 
+node_•licög
+(Node*
+n1
+,Node*
+n2
+);
+
+27 #ifde‡
 __˝lu•lus
 
 
@@ -18320,6 +19330,92 @@ node1
 ;
 
 211 
+	}
+}
+
+213 
+Node
+* 
+	$node_•licög
+(
+Node
+*
+n1
+,Node*
+n2
+)
+
+216 
+Node
+* 
+l1
+=
+	`node_c›y
+(
+n1
+);
+
+217 
+Node
+* 
+l2
+=
+	`node_c›y
+(
+n2
+);
+
+218 
+Node
+* 
+l3
+=
+	`node_ªvî£
+(
+l1
+);
+
+219 if(
+l1
+==
+NULL
+)
+
+220 { 
+l2
+;}
+
+221 if(
+l2
+==
+NULL
+)
+
+223  
+l1
+;
+
+227 
+l3
+->
+Next
+=(*)
+l2
+;
+
+228 
+l2
+->
+Pªv
+=(*)
+l3
+;
+
+230  
+NULL
+;
+
+231 
 	}
 }
 
@@ -710898,8 +711994,8 @@ __GCC_IEC_559_COMPLEX
 .
 1
 /usr/include
-1054
-41641
+1056
+41715
 Demo/main.cpp
 Demo/test_h/quater_double.h
 Demo/test_h/vector_test.h
@@ -710913,10 +712009,12 @@ include/Space/SpaceManager.h
 include/Space/Tensor_Math.h
 include/Space/structures.h
 include/Tensors/Al_Tensors.h
+include/Tensors/Antisymmetric_Tensor.h
 src/Quaternions/Al_Quaternions.c
 src/Space/Algebra_Fun_.c
 src/Space/structures.c
 src/Tensors/Al_Tensors.c
+src/Tensors/Antisymmetric_Tensor.c
 thirdpart/cstructures/Demo/main.cpp
 thirdpart/cstructures/build/CMakeFiles/3.13.4/CompilerIdC/CMakeCCompilerId.c
 thirdpart/cstructures/build/CMakeFiles/3.13.4/CompilerIdCXX/CMakeCXXCompilerId.cpp

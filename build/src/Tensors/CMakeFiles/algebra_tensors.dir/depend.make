@@ -8,3 +8,11 @@ src/Tensors/CMakeFiles/algebra_tensors.dir/Al_Tensors.c.o: ../thirdpart/cstructu
 src/Tensors/CMakeFiles/algebra_tensors.dir/Al_Tensors.c.o: ../thirdpart/cstructures/include/tools_rbtree.h
 src/Tensors/CMakeFiles/algebra_tensors.dir/Al_Tensors.c.o: ../src/Tensors/Al_Tensors.c
 
+src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o: ../include/Space/Algebra_Fun_.h
+src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o: ../include/Space/structures.h
+src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o: ../include/Tensors/Al_Tensors.h
+src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o: ../include/Tensors/Antisymmetric_Tensor.h
+src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o: ../thirdpart/cstructures/include/tools_node.h
+src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o: ../thirdpart/cstructures/include/tools_rbtree.h
+src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o: ../src/Tensors/Antisymmetric_Tensor.c
+
