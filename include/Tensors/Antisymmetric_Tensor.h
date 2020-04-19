@@ -5,7 +5,7 @@
 extern "C"{
 #endif
 Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*,Tensor*,Tensor*);
-//void* Anti_Tensor_norm(struct Tensor)
+void* Anti_Tensor_norm(struct Tensors_Algebra_System*,Tensor*);
 #ifdef __cplusplus
 }
 #endif

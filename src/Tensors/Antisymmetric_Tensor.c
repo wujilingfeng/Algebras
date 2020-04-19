@@ -105,3 +105,23 @@ Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 	free(it1);    
     return re;
 }
+void* Anti_Tensor_norm(struct Tensors_Algebra_System*tas,Tensor*t)
+{
+	void* value=tas->copy_from_double(0);
+	void* value1=tas->copy_from_double(1);
+RB_Trav*it=t->value->begin(t->value);
+    Field_Mult_Struct_Ele* mse=NULL;
+    for(;it->it!=NULL;it->next(it))
+    {
+        mse=(Field_Mult_Struct_Ele*)(it->second(it));
+	mpf_pow_ui(value1,mse->value,2);
+	mpf_add(value,value,value1);
+
+    }
+    free(it);
+	tas->free_data(value1);
+	return value;
+
+
+
+}

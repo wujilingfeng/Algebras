@@ -1,4 +1,4 @@
-cscope 15 $HOME/Documents/c++/tensor -q 0000011797 0003729131
+cscope 15 $HOME/Documents/c++/tensor -q 0000011798 0003729675
 	@Demo/main.cpp
 
 1 
@@ -7953,6 +7953,14 @@ T’sÜ_Wedge_
 T’sÜs_Algeb¿_Sy¡em
 *,Tensor*,Tensor*);
 
+8 * 
+AÁi_T’sÜ_nÜm
+(
+T’sÜs_Algeb¿_Sy¡em
+*,
+T’sÜ
+*);
+
 9 #ifdeà
 __ýlu¥lus
 
@@ -11860,6 +11868,112 @@ m£
 ;
 
 107 
+	}
+}
+
+108 * 
+	$AÁi_T’sÜ_nÜm
+(
+T’sÜs_Algeb¿_Sy¡em
+*
+s
+,
+T’sÜ
+*
+t
+)
+
+110 * 
+v®ue
+=
+s
+->
+	`cÝy_äom_doubË
+(0);
+
+111 * 
+v®ue1
+=
+s
+->
+	`cÝy_äom_doubË
+(1);
+
+112 
+RB_T¿v
+*
+™
+=
+t
+->
+v®ue
+->
+	`begš
+(t->value);
+
+113 
+F›ld_MuÉ_SŒuù_EË
+* 
+m£
+=
+NULL
+;
+
+114 ;
+™
+->™!=
+NULL
+;™->
+	`Ãxt
+(it))
+
+116 
+m£
+=(
+F›ld_MuÉ_SŒuù_EË
+*)(
+™
+->
+	`£cÚd
+(it));
+
+117 
+	`mpf_pow_ui
+(
+v®ue1
+,
+m£
+->
+v®ue
+,2);
+
+118 
+	`mpf_add
+(
+v®ue
+,v®ue,
+v®ue1
+);
+
+121 
+	`ä“
+(
+™
+);
+
+122 
+s
+->
+	`ä“_d©a
+(
+v®ue1
+);
+
+123  
+v®ue
+;
+
+127 
 	}
 }
 
