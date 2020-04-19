@@ -77,14 +77,19 @@ void Tensor_Product_Struct_getid(struct Algebra_Space*as,Tensor_Product_Struct*t
 	mpz_t a,b,c;
 	mpz_inits(a,b,c,NULL);
 	mpz_set_ui(a,size);
+
 	for(Node* it=tps->els;it!=NULL;it=(Node*)(it->Next))
 	{
 		Algebra_Basic_Element* abe=(Algebra_Basic_Element*)(it->value);
+				
 		mpz_pow_ui(b,a,size1-1);
+
 		mpz_mul_ui(b,b,abe->id);
+
 		mpz_add(c,c,b);
 		size1--;
 	}
+
 	mpz_set(tps->id,c);
 	mpz_clear(a);mpz_clear(b);mpz_clear(c);
 }

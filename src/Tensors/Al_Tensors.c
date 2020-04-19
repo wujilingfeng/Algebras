@@ -214,16 +214,19 @@ Tensor* W_Tensor_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 		RB_Trav* it2=t2->value->begin(t2->value);
 		for(;it2->it!=NULL;it2->next(it2))
 		{
-			void* value=tas->copy(fmse->value);
+
 			fmse1=(Field_Mult_Struct_Ele*)(it2->second(it2));
+			void* value=tas->copy(fmse->value);
 			tas->mult(value,fmse1->value);
 			mse=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
     			Field_Mult_Struct_Ele_init(mse);
 			Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
 			Tensor_Product_Struct_init(tps);
 			mse->value=value;mse->base=tps;
+
 			tps->els=node_splicing(fmse->base->els,fmse1->base->els);
 			Tensor_Product_Struct_getid(tas->as,tps);
+
 			plus_mult_struct(tas,re,&mse,1);		
 		}  
 		free(it2);

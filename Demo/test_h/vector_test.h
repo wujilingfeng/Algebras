@@ -1,4 +1,5 @@
 #include<Tensors/Al_Tensors.h>
+#include<Tensors/Antisymmetric_Tensor.h>
 void double_mult(void*p1,void*p2)
 {
     double*q1=(double*)p1,*q2=(double*)p2;
@@ -39,6 +40,12 @@ void* Tensor_mpf_copy(void*p)
     mpf_inits(re,NULL);
     mpf_set(re,q);
     return (void*)(re);
+}
+void Tensor_mpf_free(void*p)
+{
+    __mpf_struct* q=(__mpf_struct*)p;
+    mpf_clear(q);
+    free(q);
 }
 void* Tensor_double2_mpf(double d)
 {    
@@ -90,7 +97,8 @@ void test_vector()
     tas->mult=Tensor_mpf_mult;
     tas->plus=Tensor_mpf_plus;
     tas->copy=Tensor_mpf_copy;
-
+    tas->copy_from_double=Tensor_double2_mpf;
+    tas->free_data=Tensor_mpf_free;
     int ids[]={0,5,4};
     double d=10.4;
     mpf_t f1;
@@ -105,7 +113,6 @@ void test_vector()
     tensor_mpf_print_self(t);
     ids[0]=3;
     d=-0.3;
-
     mpf_set_d(f1,d);
     //t->insert(tas->as,t,ids,3,double_copy(&d));
     t->insert(tas->as,t,ids,3,Tensor_mpf_copy(f1));
@@ -119,6 +126,12 @@ void test_vector()
     tensor_mpf_print_self(t1);
     tas->T_plus(tas,t,t1);
     tensor_mpf_print_self(t);
+    Tensor* t3=tas->T_create();
+    int ids2=3;
+    t3->insert(tas->as,t3,&ids2,1,Tensor_mpf_copy(f1));
+    tensor_mpf_print_self(t3);
+    Tensor* t4=Tensor_Wedge_(tas,t,t3);
+    tensor_mpf_print_self(t4);
 
     //tensor_double_print_self(t1);
     //tas->T

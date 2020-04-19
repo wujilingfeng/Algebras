@@ -24,6 +24,8 @@ static Node* Tensor_wedge_chuli_(Node*n,int *nixu)
     for(int i=0;i<size;i++)
     {
         re1[i]=it->value;
+        abe=(Algebra_Basic_Element*)re1[i];
+        printf("id:%d\n",abe->id);
         it=(Node*)(it->Next);
     }
     *nixu=0;
@@ -36,13 +38,6 @@ static Node* Tensor_wedge_chuli_(Node*n,int *nixu)
             abe1=(Algebra_Basic_Element*)re1[j];
             if(abe1->id>abe->id)
             {
-                for(int l=0;l<k;l++)
-                {
-                    void* temp=re1[l+i];
-                    re1[l+i]=re1[l+i+1];
-                    re1[l+i+1]=temp;
-                
-                }
                 break;
             }
             else
@@ -50,14 +45,22 @@ static Node* Tensor_wedge_chuli_(Node*n,int *nixu)
                 k++;
             }
         }
+        for(int l=0;l<k;l++)
+        {
+            void* temp=re1[l+i];
+            re1[l+i]=re1[l+i+1];
+            re1[l+i+1]=temp;        
+        }
+
         *nixu=*nixu+k;
     }
-    free(re1);
     Node* n1=NULL;
     for(int i=0;i<size;i++)
     {
         n1=node_pushback(n1,re1[i]);
     }
+
+    free(re1);
     return node_reverse(n1);
 
 }
@@ -85,16 +88,20 @@ Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 			mse->value=value;mse->base=tps;
             int flag;Node* nit=node_splicing(fmse->base->els,fmse1->base->els);
             tps->els=Tensor_wedge_chuli_(nit,&flag);
-			printf("yaochuli:%d\n",flag);
+            if(flag%2==1)
+            {
+                void* value1=tas->copy_from_double(-1);
+                tas->mult(value,value1);
+                tas->free_data(value1);
+            }
             free_node(nit);
 			Tensor_Product_Struct_getid(tas->as,tps);
+
 			plus_mult_struct(tas,re,&mse,1);		
+
 		}  
 		free(it2);
 	}
-	free(it1);
-
-
-    
+	free(it1);    
     return re;
 }

@@ -37,11 +37,12 @@ void zero_plus_struct_ele(Plus_Struct_Ele*);
 typedef struct Tensors_Algebra_System
 {
     Algebra_Space* as,*dual_as;
-
+	void* (*copy_from_double)(double);
 	void *(*copy)(void*);
 //域乘法和加法,改变第一个参数
 	void(*mult)(void*,void*);
 	void(*plus)(void*,void*);
+	void(*free_data)(void*);
 	void (*T_plus)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 	Tensor* (*Tensor_Product)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 	Tensor*(*T_create)();
