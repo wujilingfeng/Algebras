@@ -73,8 +73,9 @@ void tensor_double_print_self(Tensor*t)
 }
 void tensor_mpf_print_self(Tensor* t)
 {
+    printf("************************************\n");
+
     RB_Trav *it=t->value->begin(t->value);
-    printf("kaishi\n");
     for(;it->it!=NULL;it->next(it))
     {
         gmp_printf("id:%Zd \n",(__mpz_struct*)it->first(it));
@@ -87,8 +88,9 @@ void tensor_mpf_print_self(Tensor* t)
         }
         printf("\n");
     }
-
-
+    free(it);
+    printf("************************************\n");
+    
 }
 void test_vector()
 {
@@ -126,15 +128,19 @@ void test_vector()
     tensor_mpf_print_self(t1);
     tas->T_plus(tas,t,t1);
     tensor_mpf_print_self(t);
+    gmp_printf("norm:%.Ff\n",(__mpf_struct*)tas->T_norm(tas,t));
     Tensor* t3=tas->T_create();
-    int ids2=3;
+    int ids2=2;
     t3->insert(tas->as,t3,&ids2,1,Tensor_mpf_copy(f1));
     tensor_mpf_print_self(t3);
     Tensor* t4=Tensor_Wedge_(tas,t,t3);
     tensor_mpf_print_self(t4);
+    printf("contraction\n");
+    Tensor* tc=W_Tensor_Contraction(tas,t,t3,1,0);
+    tensor_mpf_print_self(tc);
 
-    //tensor_double_print_self(t1);
-    //tas->T
+   // tensor_double_print_self(tc);
+        //tas->T
 
         //t->insert()
     //Vector *v=vas->create_v(vas->as,0,qua_copy(&d));

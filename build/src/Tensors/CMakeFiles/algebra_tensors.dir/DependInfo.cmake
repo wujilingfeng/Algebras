@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/libo/Documents/c++/tensor/src/Tensors/Al_Tensors.c" "/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/algebra_tensors.dir/Al_Tensors.c.o"
-  "/home/libo/Documents/c++/tensor/src/Tensors/Antisymmetric_Tensor.c" "/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o"
+  "/home/libo/Documents/c++/Algebras/src/Tensors/Al_Tensors.c" "/home/libo/Documents/c++/Algebras/build/src/Tensors/CMakeFiles/algebra_tensors.dir/Al_Tensors.c.o"
+  "/home/libo/Documents/c++/Algebras/src/Tensors/Antisymmetric_Tensor.c" "/home/libo/Documents/c++/Algebras/build/src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

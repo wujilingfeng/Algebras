@@ -48,7 +48,7 @@ string.h
 stddef.h
 -
 
-/home/libo/Documents/c++/tensor/Demo/main.cpp
+/home/libo/Documents/c++/Algebras/Demo/main.cpp
 stdio.h
 -
 string.h
@@ -60,9 +60,9 @@ gmp.h
 Space/Algebra_Fun_.h
 -
 test_h/vector_test.h
-/home/libo/Documents/c++/tensor/Demo/test_h/vector_test.h
+/home/libo/Documents/c++/Algebras/Demo/test_h/vector_test.h
 
-/home/libo/Documents/c++/tensor/Demo/test_h/vector_test.h
+/home/libo/Documents/c++/Algebras/Demo/test_h/vector_test.h
 Tensors/Al_Tensors.h
 -
 Tensors/Antisymmetric_Tensor.h

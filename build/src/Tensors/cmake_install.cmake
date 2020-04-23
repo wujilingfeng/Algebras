@@ -1,4 +1,4 @@
-# Install script for directory: /home/libo/Documents/c++/tensor/src/Tensors
+# Install script for directory: /home/libo/Documents/c++/Algebras/src/Tensors
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -46,6 +46,6 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/share/cmake-3.13/Modules" TYPE FILE FILES "/home/libo/Documents/c++/tensor/src/Tensors/FindALGEBRA_TENSORS.cmake")
+file(INSTALL DESTINATION "/usr/share/cmake-3.13/Modules" TYPE FILE FILES "/home/libo/Documents/c++/Algebras/src/Tensors/FindALGEBRA_TENSORS.cmake")
 endif()
 

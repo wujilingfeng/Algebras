@@ -46,6 +46,8 @@ typedef struct Tensors_Algebra_System
 	void (*T_plus)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 	Tensor* (*Tensor_Product)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 	Tensor*(*T_create)();
+	void (*T_free)(struct Tensors_Algebra_System* ,Tensor*);
+	void* (*T_norm)(struct Tensors_Algebra_System*,Tensor*);
 
 	void* prop;
 }Tensors_Algebra_System;
@@ -55,10 +57,10 @@ void plus_plus_struct(Tensors_Algebra_System*tal,Plus_Struct_Ele*pse,Plus_Struct
 //张量积运算
 Tensor* W_Tensor_Product(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 
-//张量的缩并运算
-//Tensor*Tensor_Contraction
+//张量的缩并运算,可以等价于张量积运算
+Tensor*W_Tensor_Contraction(struct Tensors_Algebra_System*,Tensor*,Tensor*,int zuo1,int zuo2);
 //缩并运算效率不高，带度量的内积运算效率比较高
-
+void* Tensor_norm(struct Tensors_Algebra_System*,Tensor*);
 /*
 typedef struct Vectors_Algebra_System
 {

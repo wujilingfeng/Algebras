@@ -54,6 +54,13 @@ void test_gmp()
    printf("lre:%d\n",re);
     //转化为double类型
     //mpf_get_d()
+    //整除运算
+//mpz_cdiv_q(mt1,fmse->base->id,mt2);
+		
+		//减法
+		//mpz_sub_ui(mt1,mt1,1);
+		//取余运算
+//		mpz_cdiv_r(mt1,mt1,a);
 }
 typedef struct  rb_t
 {

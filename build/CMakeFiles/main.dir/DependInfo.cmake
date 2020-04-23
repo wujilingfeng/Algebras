@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/libo/Documents/c++/tensor/Demo/main.cpp" "/home/libo/Documents/c++/tensor/build/CMakeFiles/main.dir/Demo/main.cpp.o"
+  "/home/libo/Documents/c++/Algebras/Demo/main.cpp" "/home/libo/Documents/c++/Algebras/build/CMakeFiles/main.dir/Demo/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,8 +16,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/libo/Documents/c++/tensor/build/src/Tensors/CMakeFiles/algebra_tensors.dir/DependInfo.cmake"
-  "/home/libo/Documents/c++/tensor/build/src/Space/CMakeFiles/algebra_fun_.dir/DependInfo.cmake"
+  "/home/libo/Documents/c++/Algebras/build/src/Tensors/CMakeFiles/algebra_tensors.dir/DependInfo.cmake"
+  "/home/libo/Documents/c++/Algebras/build/src/Space/CMakeFiles/algebra_fun_.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

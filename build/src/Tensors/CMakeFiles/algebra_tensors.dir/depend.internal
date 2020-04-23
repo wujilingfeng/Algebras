@@ -7,7 +7,7 @@ src/Tensors/CMakeFiles/algebra_tensors.dir/Al_Tensors.c.o
  ../include/Tensors/Al_Tensors.h
  ../thirdpart/cstructures/include/tools_node.h
  ../thirdpart/cstructures/include/tools_rbtree.h
- /home/libo/Documents/c++/tensor/src/Tensors/Al_Tensors.c
+ /home/libo/Documents/c++/Algebras/src/Tensors/Al_Tensors.c
 src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o
  ../include/Space/Algebra_Fun_.h
  ../include/Space/structures.h
@@ -15,4 +15,4 @@ src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o
  ../include/Tensors/Antisymmetric_Tensor.h
  ../thirdpart/cstructures/include/tools_node.h
  ../thirdpart/cstructures/include/tools_rbtree.h
- /home/libo/Documents/c++/tensor/src/Tensors/Antisymmetric_Tensor.c
+ /home/libo/Documents/c++/Algebras/src/Tensors/Antisymmetric_Tensor.c

@@ -40,7 +40,11 @@ string.h
 stddef.h
 -
 
-/home/libo/Documents/c++/tensor/src/Space/Algebra_Fun_.c
+/home/libo/Documents/c++/Algebras/src/Space/Algebra_Fun_.c
 Space/Algebra_Fun_.h
+-
+
+/home/libo/Documents/c++/Algebras/src/Space/structures.c
+Space/structures.h
 -
 

@@ -77,7 +77,7 @@ void Tensor_Product_Struct_getid(struct Algebra_Space*as,Tensor_Product_Struct*t
 	mpz_t a,b,c;
 	mpz_inits(a,b,c,NULL);
 	mpz_set_ui(a,size);
-
+	//int i=0;
 	for(Node* it=tps->els;it!=NULL;it=(Node*)(it->Next))
 	{
 		Algebra_Basic_Element* abe=(Algebra_Basic_Element*)(it->value);

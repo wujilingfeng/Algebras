@@ -1,4 +1,4 @@
-# Install script for directory: /home/libo/Documents/c++/tensor
+# Install script for directory: /home/libo/Documents/c++/Algebras
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/libo/Documents/c++/tensor/build/src/cmake_install.cmake")
+  include("/home/libo/Documents/c++/Algebras/build/src/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/libo/Documents/c++/tensor/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/libo/Documents/c++/Algebras/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -8,5 +8,5 @@ CMakeFiles/main.dir/Demo/main.cpp.o
  ../include/Tensors/Antisymmetric_Tensor.h
  ../thirdpart/cstructures/include/tools_node.h
  ../thirdpart/cstructures/include/tools_rbtree.h
- /home/libo/Documents/c++/tensor/Demo/main.cpp
- /home/libo/Documents/c++/tensor/Demo/test_h/vector_test.h
+ /home/libo/Documents/c++/Algebras/Demo/main.cpp
+ /home/libo/Documents/c++/Algebras/Demo/test_h/vector_test.h

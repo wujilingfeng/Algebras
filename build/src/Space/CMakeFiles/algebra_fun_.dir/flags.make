@@ -6,5 +6,5 @@ C_FLAGS = -std=c99   -Wall -g -lstdc++
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/libo/Documents/c++/tensor/include -I/home/libo/Documents/c++/tensor/thirdpart/cstructures/include 
+C_INCLUDES = -I/home/libo/Documents/c++/Algebras/include -I/home/libo/Documents/c++/Algebras/thirdpart/cstructures/include 
 

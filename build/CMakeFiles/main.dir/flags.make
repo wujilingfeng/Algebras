@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++11   -Wall -g -lstdc++
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/libo/Documents/c++/tensor/include -I/home/libo/Documents/c++/tensor/thirdpart/cstructures/include 
+CXX_INCLUDES = -I/home/libo/Documents/c++/Algebras/include -I/home/libo/Documents/c++/Algebras/thirdpart/cstructures/include 
 
