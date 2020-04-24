@@ -72,7 +72,7 @@ CMakeFiles/main.dir/all: src/Space/CMakeFiles/algebra_fun_.dir/all
 CMakeFiles/main.dir/all: src/Tensors/CMakeFiles/algebra_tensors.dir/all
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=7,8 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=12,13 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Include target in all.
@@ -106,12 +106,14 @@ clean: CMakeFiles/main.dir/clean
 # Directory level rules for directory src
 
 # Convenience name for "all" pass in the directory.
+src/all: src/CMakeFiles/algebras.dir/all
 src/all: src/Space/all
 src/all: src/Tensors/all
 
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
+src/clean: src/CMakeFiles/algebras.dir/clean
 src/clean: src/Space/clean
 src/clean: src/Tensors/clean
 
@@ -122,6 +124,43 @@ src/preinstall: src/Space/preinstall
 src/preinstall: src/Tensors/preinstall
 
 .PHONY : src/preinstall
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/algebras.dir
+
+# All Build rule for target.
+src/CMakeFiles/algebras.dir/all:
+	$(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/depend
+	$(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=7,8,9,10,11 "Built target algebras"
+.PHONY : src/CMakeFiles/algebras.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/algebras.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/algebras.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/libo/Documents/c++/Algebras/build/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/algebras.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/libo/Documents/c++/Algebras/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/algebras.dir/rule
+
+# Convenience name for target.
+algebras: src/CMakeFiles/algebras.dir/rule
+
+.PHONY : algebras
+
+# clean rule for target.
+src/CMakeFiles/algebras.dir/clean:
+	$(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/clean
+.PHONY : src/CMakeFiles/algebras.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/algebras.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory src/Space

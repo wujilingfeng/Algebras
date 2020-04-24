@@ -6,11 +6,7 @@ void Field_Mult_Struct_Ele_init(Field_Mult_Struct_Ele*mse)
     mse->base=NULL;
 	mse->iters=NULL;
     mse->prop=NULL;
-	
-
 }
-
-
 Field_Mult_Struct_Ele* create_field_mult_struct_ele(Algebra_Space* as,int* ids,int size,void* value)
 {
     Field_Mult_Struct_Ele *mse=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
@@ -175,13 +171,17 @@ void Tensors_Algebra_System_init(Tensors_Algebra_System*tas,int size)
 		as->create_element(as);
 	}
 	tas->dual_as=as;
-	tas->copy=NULL;
+	//tas->copy=NULL;
 	tas->mult=NULL;
 	tas->plus=NULL;
+	tas->copy_from_double=NULL;
+	tas->set_copy=NULL;
 	tas->T_plus=plus_plus_struct;
 	tas->T_create=Tensor_create_;
 	tas->T_free=Tensor_free;
 	tas->T_norm=Tensor_norm;
+	tas->T_product=W_Tensor_Product;
+	tas->T_inner_product=W_Tensor_Inner_Product;
 	tas->prop=NULL;
 }
 void plus_mult_struct(Tensors_Algebra_System* tal,Plus_Struct_Ele*pse,Field_Mult_Struct_Ele**mses,int size)
@@ -196,7 +196,9 @@ void plus_mult_struct(Tensors_Algebra_System* tal,Plus_Struct_Ele*pse,Field_Mult
 		{
             		Field_Mult_Struct_Ele* re=malloc(sizeof(Field_Mult_Struct_Ele));
 			Field_Mult_Struct_Ele_init(re);
-            		re->value=tal->copy(mses[i]->value);
+			re->value=tal->copy_from_double(1);
+			tal->set_copy(re->value,mses[i]->value);
+            		//re->value=tal->copy(mses[i]->value);
 			Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
 			Tensor_Product_Struct_init(tps);
 			tps->els=node_copy(mses[i]->base->els);
@@ -240,7 +242,9 @@ Tensor* W_Tensor_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 		{
 
 			fmse1=(Field_Mult_Struct_Ele*)(it2->second(it2));
-			void* value=tas->copy(fmse->value);
+			void*value=tas->copy_from_double(1);
+			tas->set_copy(value,fmse->value);
+			//void* value=tas->copy(fmse->value);
 			tas->mult(value,fmse1->value);
 			mse=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
     			Field_Mult_Struct_Ele_init(mse);
@@ -257,6 +261,34 @@ Tensor* W_Tensor_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 	free(it1);
 
 	return re;
+}
+//张量内积运算
+void* W_Tensor_Inner_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
+{
+	void*value=tas->copy_from_double(0),*value1=tas->copy_from_double(1);
+	RB_mpz rbm,*rbm1=NULL;
+	RB_init_mpz(&rbm);
+	Field_Mult_Struct_Ele* fmse=NULL;
+	RB_Trav* it=t1->value->begin(t1->value);
+	for(;it->it!=NULL;it->next(it))
+	{
+		fmse=(Field_Mult_Struct_Ele*)(it->second(it));
+		mpz_set(rbm.key,fmse->value);
+		tas->set_copy(value1,fmse->value);
+		rbm1=(RB_mpz*)t2->value->find(t2->value,&rbm); 
+		if(rbm1!=NULL)
+		{
+			fmse=(Field_Mult_Struct_Ele*)(rbm1->value);
+			tas->mult(value1,fmse->value);
+			tas->plus(value,value1);
+			
+		}  
+		//rbm1=t2->find(t2,);
+	}    
+	free(it);
+	mpz_clear(rbm.key);
+	tas->free_data(value1);	
+	return value;
 }
 
 static Node* Contraction_chuli_splicing(Node*n1,Node* n2,int zuo1,int zuo2)
@@ -348,7 +380,9 @@ static void fmses_tensor_plus_node(struct Tensors_Algebra_System*tas,Tensor* t,N
 			{
 				Field_Mult_Struct_Ele* fmse=malloc(sizeof(Field_Mult_Struct_Ele));
 				Field_Mult_Struct_Ele_init(fmse);
-				void *value=tas->copy(fmse1->value);
+				void* value=tas->copy_from_double(1);
+				tas->set_copy(value,fmse1->value);
+				//void *value=tas->copy(fmse1->value);
 				tas->mult(value,fmse2->value);
 
 				fmse->value=value;
@@ -364,7 +398,9 @@ static void fmses_tensor_plus_node(struct Tensors_Algebra_System*tas,Tensor* t,N
 			else
 			{
 				Tensor_Product_Struct_free(tps);
-				void *value=tas->copy(fmse1->value);
+				void*value=tas->copy_from_double(1);
+				tas->set_copy(value,fmse1->value);
+				//void *value=tas->copy(fmse1->value);
 				tas->mult(value,fmse2->value);
 				tas->plus(((Field_Mult_Struct_Ele*)(rbm1->value))->value,value);
 				tas->free_data(value);
@@ -472,8 +508,13 @@ RB_Trav*it=t->value->begin(t->value);
     for(;it->it!=NULL;it->next(it))
     {
         mse=(Field_Mult_Struct_Ele*)(it->second(it));
-	mpf_pow_ui(value1,mse->value,2);
-	mpf_add(value,value,value1);
+	tas->set_copy(value1,mse->value);
+	tas->mult(value1,value1);
+	
+	tas->plus(value,value1);
+	//tas->mult(v)
+	//mpf_pow_ui(value1,mse->value,2);
+	//mpf_add(value,value,value1);
 
     }
     free(it);

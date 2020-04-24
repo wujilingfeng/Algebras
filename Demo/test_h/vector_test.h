@@ -47,6 +47,12 @@ void Tensor_mpf_free(void*p)
     mpf_clear(q);
     free(q);
 }
+static void Tensor_mpf_set_copy(void *p1,void*p2)
+{
+	__mpf_struct*q1=(__mpf_struct*)p1,*q2=(__mpf_struct*)p2;
+	mpf_set(q1,q2);
+
+}
 void* Tensor_double2_mpf(double d)
 {    
     __mpf_struct*re=(__mpf_struct*)malloc(sizeof(__mpf_struct));
@@ -98,8 +104,9 @@ void test_vector()
     Tensors_Algebra_System_init(tas,7);
     tas->mult=Tensor_mpf_mult;
     tas->plus=Tensor_mpf_plus;
-    tas->copy=Tensor_mpf_copy;
+ //   tas->copy=Tensor_mpf_copy;
     tas->copy_from_double=Tensor_double2_mpf;
+    tas->set_copy=Tensor_mpf_set_copy;
     tas->free_data=Tensor_mpf_free;
     int ids[]={0,5,4};
     double d=10.4;

@@ -5,12 +5,13 @@
 /home/libo/Documents/c++/Algebras/build/CMakeFiles/rebuild_cache.dir
 /home/libo/Documents/c++/Algebras/build/CMakeFiles/list_install_components.dir
 /home/libo/Documents/c++/Algebras/build/CMakeFiles/install.dir
-/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/rebuild_cache.dir
+/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/edit_cache.dir
 /home/libo/Documents/c++/Algebras/build/src/CMakeFiles/install/strip.dir
 /home/libo/Documents/c++/Algebras/build/src/CMakeFiles/install/local.dir
-/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/edit_cache.dir
-/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/list_install_components.dir
+/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir
+/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/rebuild_cache.dir
 /home/libo/Documents/c++/Algebras/build/src/CMakeFiles/install.dir
+/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/list_install_components.dir
 /home/libo/Documents/c++/Algebras/build/src/Space/CMakeFiles/install/strip.dir
 /home/libo/Documents/c++/Algebras/build/src/Space/CMakeFiles/install/local.dir
 /home/libo/Documents/c++/Algebras/build/src/Space/CMakeFiles/edit_cache.dir

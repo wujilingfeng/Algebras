@@ -56,16 +56,16 @@ CMAKE_BINARY_DIR = /home/libo/Documents/c++/Algebras/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : rebuild_cache/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -91,26 +91,16 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -123,6 +113,16 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -156,18 +156,154 @@ depend:
 	cd /home/libo/Documents/c++/Algebras/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/CMakeFiles/algebras.dir/rule:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/algebras.dir/rule
+.PHONY : src/CMakeFiles/algebras.dir/rule
+
+# Convenience name for target.
+algebras: src/CMakeFiles/algebras.dir/rule
+
+.PHONY : algebras
+
+# fast build rule for target.
+algebras/fast:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/build
+.PHONY : algebras/fast
+
+Space/Algebra_Fun_.o: Space/Algebra_Fun_.c.o
+
+.PHONY : Space/Algebra_Fun_.o
+
+# target to build an object file
+Space/Algebra_Fun_.c.o:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Space/Algebra_Fun_.c.o
+.PHONY : Space/Algebra_Fun_.c.o
+
+Space/Algebra_Fun_.i: Space/Algebra_Fun_.c.i
+
+.PHONY : Space/Algebra_Fun_.i
+
+# target to preprocess a source file
+Space/Algebra_Fun_.c.i:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Space/Algebra_Fun_.c.i
+.PHONY : Space/Algebra_Fun_.c.i
+
+Space/Algebra_Fun_.s: Space/Algebra_Fun_.c.s
+
+.PHONY : Space/Algebra_Fun_.s
+
+# target to generate assembly for a file
+Space/Algebra_Fun_.c.s:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Space/Algebra_Fun_.c.s
+.PHONY : Space/Algebra_Fun_.c.s
+
+Space/structures.o: Space/structures.c.o
+
+.PHONY : Space/structures.o
+
+# target to build an object file
+Space/structures.c.o:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Space/structures.c.o
+.PHONY : Space/structures.c.o
+
+Space/structures.i: Space/structures.c.i
+
+.PHONY : Space/structures.i
+
+# target to preprocess a source file
+Space/structures.c.i:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Space/structures.c.i
+.PHONY : Space/structures.c.i
+
+Space/structures.s: Space/structures.c.s
+
+.PHONY : Space/structures.s
+
+# target to generate assembly for a file
+Space/structures.c.s:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Space/structures.c.s
+.PHONY : Space/structures.c.s
+
+Tensors/Al_Tensors.o: Tensors/Al_Tensors.c.o
+
+.PHONY : Tensors/Al_Tensors.o
+
+# target to build an object file
+Tensors/Al_Tensors.c.o:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Tensors/Al_Tensors.c.o
+.PHONY : Tensors/Al_Tensors.c.o
+
+Tensors/Al_Tensors.i: Tensors/Al_Tensors.c.i
+
+.PHONY : Tensors/Al_Tensors.i
+
+# target to preprocess a source file
+Tensors/Al_Tensors.c.i:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Tensors/Al_Tensors.c.i
+.PHONY : Tensors/Al_Tensors.c.i
+
+Tensors/Al_Tensors.s: Tensors/Al_Tensors.c.s
+
+.PHONY : Tensors/Al_Tensors.s
+
+# target to generate assembly for a file
+Tensors/Al_Tensors.c.s:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Tensors/Al_Tensors.c.s
+.PHONY : Tensors/Al_Tensors.c.s
+
+Tensors/Antisymmetric_Tensor.o: Tensors/Antisymmetric_Tensor.c.o
+
+.PHONY : Tensors/Antisymmetric_Tensor.o
+
+# target to build an object file
+Tensors/Antisymmetric_Tensor.c.o:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Tensors/Antisymmetric_Tensor.c.o
+.PHONY : Tensors/Antisymmetric_Tensor.c.o
+
+Tensors/Antisymmetric_Tensor.i: Tensors/Antisymmetric_Tensor.c.i
+
+.PHONY : Tensors/Antisymmetric_Tensor.i
+
+# target to preprocess a source file
+Tensors/Antisymmetric_Tensor.c.i:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Tensors/Antisymmetric_Tensor.c.i
+.PHONY : Tensors/Antisymmetric_Tensor.c.i
+
+Tensors/Antisymmetric_Tensor.s: Tensors/Antisymmetric_Tensor.c.s
+
+.PHONY : Tensors/Antisymmetric_Tensor.s
+
+# target to generate assembly for a file
+Tensors/Antisymmetric_Tensor.c.s:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Tensors/Antisymmetric_Tensor.c.s
+.PHONY : Tensors/Antisymmetric_Tensor.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... edit_cache"
-	@echo "... list_install_components"
+	@echo "... algebras"
+	@echo "... rebuild_cache"
 	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... Space/Algebra_Fun_.o"
+	@echo "... Space/Algebra_Fun_.i"
+	@echo "... Space/Algebra_Fun_.s"
+	@echo "... Space/structures.o"
+	@echo "... Space/structures.i"
+	@echo "... Space/structures.s"
+	@echo "... Tensors/Al_Tensors.o"
+	@echo "... Tensors/Al_Tensors.i"
+	@echo "... Tensors/Al_Tensors.s"
+	@echo "... Tensors/Antisymmetric_Tensor.o"
+	@echo "... Tensors/Antisymmetric_Tensor.i"
+	@echo "... Tensors/Antisymmetric_Tensor.s"
 .PHONY : help
 
 

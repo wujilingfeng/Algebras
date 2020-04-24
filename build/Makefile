@@ -170,6 +170,19 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
+# Target rules for targets named algebras
+
+# Build rule for target.
+algebras: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 algebras
+.PHONY : algebras
+
+# fast build rule for target.
+algebras/fast:
+	$(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/build
+.PHONY : algebras/fast
+
+#=============================================================================
 # Target rules for targets named algebra_fun_
 
 # Build rule for target.
@@ -235,6 +248,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... algebras"
 	@echo "... algebra_fun_"
 	@echo "... algebra_tensors"
 	@echo "... Demo/main.o"

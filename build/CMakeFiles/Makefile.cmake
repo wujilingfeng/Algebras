@@ -50,6 +50,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main.dir/DependInfo.cmake"
+  "src/CMakeFiles/algebras.dir/DependInfo.cmake"
   "src/Space/CMakeFiles/algebra_fun_.dir/DependInfo.cmake"
   "src/Tensors/CMakeFiles/algebra_tensors.dir/DependInfo.cmake"
   )

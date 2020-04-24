@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../temp_libs/libalgebras.a  CMakeFiles/algebras.dir/Space/Algebra_Fun_.c.o CMakeFiles/algebras.dir/Space/structures.c.o CMakeFiles/algebras.dir/Tensors/Al_Tensors.c.o CMakeFiles/algebras.dir/Tensors/Antisymmetric_Tensor.c.o
+/usr/bin/ranlib ../../temp_libs/libalgebras.a

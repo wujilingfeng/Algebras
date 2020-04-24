@@ -76,10 +76,12 @@ Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 		for(;it2->it!=NULL;it2->next(it2))
 		{
 			fmse1=(Field_Mult_Struct_Ele*)(it2->second(it2));
-            int fac=Tensor_fac_(fmse->base->els,fmse1->base->els);
-            if(fac==0)
-            {continue;}
-			void* value=tas->copy(fmse->value);
+			int fac=Tensor_fac_(fmse->base->els,fmse1->base->els);
+			if(fac==0)
+			{continue;}
+			void*value=tas->copy_from_double(1);
+			tas->set_copy(value,fmse->value);
+			//void* value=tas->copy(fmse->value);
 			tas->mult(value,fmse1->value);
 			mse=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
     		Field_Mult_Struct_Ele_init(mse);

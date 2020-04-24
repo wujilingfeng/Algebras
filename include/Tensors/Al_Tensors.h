@@ -38,7 +38,8 @@ typedef struct Tensors_Algebra_System
 {
     Algebra_Space* as,*dual_as;
 	void* (*copy_from_double)(double);
-	void *(*copy)(void*);
+	void (*set_copy)(void*,void*);
+	
 //域乘法和加法,改变第一个参数
 	void(*mult)(void*,void*);
 	void(*plus)(void*,void*);
@@ -48,7 +49,8 @@ typedef struct Tensors_Algebra_System
 	Tensor*(*T_create)();
 	void (*T_free)(struct Tensors_Algebra_System* ,Tensor*);
 	void* (*T_norm)(struct Tensors_Algebra_System*,Tensor*);
-
+	Tensor* (*T_product)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
+	void* (*T_inner_product)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 	void* prop;
 }Tensors_Algebra_System;
 void Tensors_Algebra_System_init(Tensors_Algebra_System*,int);
@@ -56,10 +58,13 @@ void plus_mult_struct(Tensors_Algebra_System*tas,Plus_Struct_Ele*pse,Field_Mult_
 void plus_plus_struct(Tensors_Algebra_System*tal,Plus_Struct_Ele*pse,Plus_Struct_Ele* pse1); 
 //张量积运算
 Tensor* W_Tensor_Product(struct Tensors_Algebra_System*,Tensor*,Tensor*);
-
+//张量内积运算
+void* W_Tensor_Inner_Product(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 //张量的缩并运算,可以等价于张量积运算
+////缩并运算效率不高，带度量的内积运算效率比较高
 Tensor*W_Tensor_Contraction(struct Tensors_Algebra_System*,Tensor*,Tensor*,int zuo1,int zuo2);
-//缩并运算效率不高，带度量的内积运算效率比较高
+
+//返回张量模长的平方
 void* Tensor_norm(struct Tensors_Algebra_System*,Tensor*);
 /*
 typedef struct Vectors_Algebra_System

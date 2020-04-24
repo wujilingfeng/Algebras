@@ -46,7 +46,7 @@ void test_gmp()
     mpf_mul(f1,f,f1);
     //mpf_set_d(f1,4);
     //mpf_sqrt_ui(f1,4);
-    gmp_printf("f=%.Ff\n",f1);
+    gmp_printf("f1=%.Ff,f=%.Ff\n",f1);
     mpf_cmp(f,f1);
     //
     //对double比较
