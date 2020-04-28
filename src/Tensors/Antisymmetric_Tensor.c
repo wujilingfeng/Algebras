@@ -89,6 +89,7 @@ Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 			Tensor_Product_Struct_init(tps);
 			mse->value=value;mse->base=tps;
             int flag;Node* nit=node_splicing(fmse->base->els,fmse1->base->els);
+            mse->order=fmse->order+fmse1->order;
             tps->els=Tensor_wedge_chuli_(nit,&flag);
             if(flag%2==1)
             {
@@ -99,7 +100,9 @@ Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
             free_node(nit);
 			Tensor_Product_Struct_getid(tas->as,tps);
 
-			plus_mult_struct(tas,re,&mse,1);		
+			plus_mult_struct(tas,re,&mse,1);
+            Tensor_Product_Struct_free(mse->base);
+            tas->free_data(mse->value);		
 
 		}  
 		free(it2);

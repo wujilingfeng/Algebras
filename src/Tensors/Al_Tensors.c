@@ -4,7 +4,9 @@ void Field_Mult_Struct_Ele_init(Field_Mult_Struct_Ele*mse)
 {
     mse->value=NULL;
     mse->base=NULL;
+    //iters用不到
 	mse->iters=NULL;
+	mse->order=0;
     mse->prop=NULL;
 }
 Field_Mult_Struct_Ele* create_field_mult_struct_ele(Algebra_Space* as,int* ids,int size,void* value)
@@ -23,6 +25,7 @@ Field_Mult_Struct_Ele* create_field_mult_struct_ele(Algebra_Space* as,int* ids,i
 	Tensor_Product_Struct_getid(as,tps);
 	mse->base=tps;
     mse->value=value;
+    mse->order=size;
     return mse;
 }
 
@@ -52,7 +55,6 @@ void zero_plus_struct_ele(struct Plus_Struct_Ele*q)
 
 static void Tensor_insert_ele(Algebra_Space*as,struct Tensor*t,int* ids,int size,void*value)
 {
-
 	Field_Mult_Struct_Ele* fmse=create_field_mult_struct_ele(as,ids,size,value);
 	
 	RB_mpz rbm,*rbm1;
@@ -104,10 +106,23 @@ static void* Tensor_get_value(Algebra_Space*as,Tensor* t,int *ids,int size)
 	mpz_clear(rbm.key);
 	mpz_clear(a);mpz_clear(b);mpz_clear(c);
 }
+static int the_order_of_tensor(struct Tensor* t)
+{
+	RB_Trav*it=t->value->begin(t->value);
+	if(it->it!=NULL)
+	{
+		Field_Mult_Struct_Ele*fmse=(Field_Mult_Struct_Ele*)(it->second(it));
+		free(it);
+		return fmse->order;
+	}
+	free(it);
+	return 0;
+}
 void Plus_Struct_Ele_init(Plus_Struct_Ele*pse)
 {
     pse->value=(RB_Tree*)malloc(sizeof(RB_Tree));
     RB_Tree_init_mpz(pse->value);
+    pse->order=the_order_of_tensor;
 	pse->zero=zero_plus_struct_ele;
 	pse->insert=Tensor_insert_ele;
 	pse->get_value=Tensor_get_value;
@@ -176,6 +191,8 @@ void Tensors_Algebra_System_init(Tensors_Algebra_System*tas,int size)
 	tas->plus=NULL;
 	tas->copy_from_double=NULL;
 	tas->set_copy=NULL;
+	tas->cmp=NULL;
+	tas->cmp_d=NULL;
 	tas->T_plus=plus_plus_struct;
 	tas->T_create=Tensor_create_;
 	tas->T_free=Tensor_free;
@@ -196,6 +213,7 @@ void plus_mult_struct(Tensors_Algebra_System* tal,Plus_Struct_Ele*pse,Field_Mult
 		{
             		Field_Mult_Struct_Ele* re=malloc(sizeof(Field_Mult_Struct_Ele));
 			Field_Mult_Struct_Ele_init(re);
+			re->order=mses[i]->order;
 			re->value=tal->copy_from_double(1);
 			tal->set_copy(re->value,mses[i]->value);
             		//re->value=tal->copy(mses[i]->value);
@@ -254,7 +272,10 @@ Tensor* W_Tensor_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 
 			tps->els=node_splicing(fmse->base->els,fmse1->base->els);
 			Tensor_Product_Struct_getid(tas->as,tps);
-			plus_mult_struct(tas,re,&mse,1);		
+			mse->order=fmse->order+fmse1->order;
+			plus_mult_struct(tas,re,&mse,1);
+			tas->free_data(mse->value);
+			Tensor_Product_Struct_free(mse->base);		
 		}  
 		free(it2);
 	}
@@ -273,7 +294,7 @@ void* W_Tensor_Inner_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*
 	for(;it->it!=NULL;it->next(it))
 	{
 		fmse=(Field_Mult_Struct_Ele*)(it->second(it));
-		mpz_set(rbm.key,fmse->value);
+		mpz_set(rbm.key,(__mpz_struct*)(it->first(it)));
 		tas->set_copy(value1,fmse->value);
 		rbm1=(RB_mpz*)t2->value->find(t2->value,&rbm); 
 		if(rbm1!=NULL)
@@ -388,6 +409,7 @@ static void fmses_tensor_plus_node(struct Tensors_Algebra_System*tas,Tensor* t,N
 				fmse->value=value;
 
 				fmse->base=tps;
+				fmse->order=fmse1->order+fmse2->order-2;
 				mpz_set(rbm.key,tps->id);
 
 				rbm.value=(void*)fmse;

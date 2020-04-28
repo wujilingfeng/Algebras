@@ -13,6 +13,18 @@ static void  Tensor_mpf_plus(void*p1,void*p2)
     __mpf_struct*q2=(__mpf_struct*)p2;
     mpf_add(q1,q2,q1);
 }
+static int Tensor_mpf_cmp(void*p1,void*p2)
+{
+    __mpf_struct*q1=(__mpf_struct*)p1,*q2=(__mpf_struct*)p2;
+    return mpf_cmp(q1,q2);
+
+}
+static int Tensor_mpf_cmp_d(void*p1,double d)
+{
+    __mpf_struct*q1=(__mpf_struct*)p1;
+    return mpf_cmp_d(q1,d);
+
+}
 /*
 static void* Tensor_mpf_copy(void*p)
 { 
@@ -44,7 +56,7 @@ static void* Tensor_double2_mpf(double d)
 void tensor_mpf_print_self(Tensor* t)
 {
     printf("************************************\n");
-
+	printf("order:%d\n",t->order(t));
     RB_Trav *it=t->value->begin(t->value);
     for(;it->it!=NULL;it->next(it))
     {
@@ -71,6 +83,8 @@ void Tensors_Algebra_System_mpf_init(Tensors_Algebra_System*tas,int size)
     tas->copy_from_double=Tensor_double2_mpf;
 	tas->set_copy=Tensor_mpf_set_copy;
     tas->free_data=Tensor_mpf_free;
+    tas->cmp=Tensor_mpf_cmp;
+    tas->cmp_d=Tensor_mpf_cmp_d;
 
 
 }

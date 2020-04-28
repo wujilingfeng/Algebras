@@ -10,6 +10,7 @@ typedef struct Field_Mult_Struct_Ele{
     void * value;
 	Tensor_Product_Struct *base;
 	Node* iters;
+	int order;
     //Algebra_Basic_Element* base;
     void* prop;
 }Field_Mult_Struct_Ele;
@@ -23,6 +24,7 @@ Field_Mult_Struct_Ele* create_field_mult_struct_ele(Algebra_Space* as,int* ids,i
 typedef struct Plus_Struct_Ele{
     RB_Tree* value;
 	void (*zero)(struct Tensor*);
+	int (*order)(struct Tensor*);
 	void (*insert)(Algebra_Space*,struct Tensor*,int*,int,void*);
 	void* (*get_value)(Algebra_Space*as,struct Tensor* t,int *ids,int size);
     void* prop;
@@ -30,7 +32,7 @@ typedef struct Plus_Struct_Ele{
 //初始化为加法单位元(环的0元)
 void Plus_Struct_Ele_init(Plus_Struct_Ele*);
 
-//加法单位元化
+//加法单位元化,但是不推荐使用
 void zero_plus_struct_ele(Plus_Struct_Ele*);
 
 
@@ -43,6 +45,8 @@ typedef struct Tensors_Algebra_System
 //域乘法和加法,改变第一个参数
 	void(*mult)(void*,void*);
 	void(*plus)(void*,void*);
+	int(*cmp)(void*,void*);
+	int(*cmp_d)(void*,double);
 	void(*free_data)(void*);
 	void (*T_plus)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 	Tensor* (*Tensor_Product)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
