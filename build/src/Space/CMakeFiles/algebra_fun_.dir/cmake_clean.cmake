@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
+  "../../../temp_libs/libalgebra_fun_.a"
+  "../../../temp_libs/libalgebra_fun_.pdb"
   "CMakeFiles/algebra_fun_.dir/Algebra_Fun_.c.o"
   "CMakeFiles/algebra_fun_.dir/structures.c.o"
-  "../../../temp_libs/libalgebra_fun_.pdb"
-  "../../../temp_libs/libalgebra_fun_.a"
 )
 
 # Per-language clean rules from dependency scanning.

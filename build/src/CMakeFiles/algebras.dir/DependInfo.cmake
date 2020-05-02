@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/home/libo/Documents/c++/Algebras/src/Space/structures.c" "/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir/Space/structures.c.o"
   "/home/libo/Documents/c++/Algebras/src/Tensors/Al_Tensors.c" "/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir/Tensors/Al_Tensors.c.o"
   "/home/libo/Documents/c++/Algebras/src/Tensors/Antisymmetric_Tensor.c" "/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir/Tensors/Antisymmetric_Tensor.c.o"
+  "/home/libo/Documents/c++/Algebras/src/Tensors/Tensors_Operation.c" "/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir/Tensors/Tensors_Operation.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -46,6 +46,7 @@ typedef struct Algebra_Space{
 void Algebra_Space_init(Algebra_Space* as);
 Algebra_Basic_Element* Algebra_Space_Create_Element(Algebra_Space*);
 Algebra_Basic_Element* Algebra_Space_get_kv(struct Algebra_Space*,int); 
+void Algebra_Space_free(Algebra_Space* as);
 void Tensor_Product_Struct_getid(struct Algebra_Space*as,Tensor_Product_Struct*);
 
 

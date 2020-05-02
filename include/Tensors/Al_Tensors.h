@@ -34,7 +34,7 @@ void Plus_Struct_Ele_init(Plus_Struct_Ele*);
 
 //加法单位元化,但是不推荐使用
 void zero_plus_struct_ele(Plus_Struct_Ele*);
-
+void* Tensor_get_value(Algebra_Space*as,Tensor* t,int *ids,int size);
 
 typedef struct Tensors_Algebra_System
 {
@@ -45,6 +45,7 @@ typedef struct Tensors_Algebra_System
 //域乘法和加法,改变第一个参数
 	void(*mult)(void*,void*);
 	void(*plus)(void*,void*);
+	void(*div)(void*,void*);
 	int(*cmp)(void*,void*);
 	int(*cmp_d)(void*,double);
 	void(*free_data)(void*);
@@ -58,6 +59,7 @@ typedef struct Tensors_Algebra_System
 	void* prop;
 }Tensors_Algebra_System;
 void Tensors_Algebra_System_init(Tensors_Algebra_System*,int);
+void Tensors_Algebra_System_free(Tensors_Algebra_System*);
 void plus_mult_struct(Tensors_Algebra_System*tas,Plus_Struct_Ele*pse,Field_Mult_Struct_Ele**mses,int size);
 void plus_plus_struct(Tensors_Algebra_System*tal,Plus_Struct_Ele*pse,Plus_Struct_Ele* pse1); 
 //张量积运算
@@ -66,6 +68,8 @@ Tensor* W_Tensor_Product(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 void* W_Tensor_Inner_Product(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 //张量的缩并运算,可以等价于张量积运算
 ////缩并运算效率不高，带度量的内积运算效率比较高
+int fmses_classi_dim(Field_Mult_Struct_Ele*fmse,int zuo1);
+//zuo1 zuo2取值为0,1...
 Tensor*W_Tensor_Contraction(struct Tensors_Algebra_System*,Tensor*,Tensor*,int zuo1,int zuo2);
 
 //返回张量模长的平方

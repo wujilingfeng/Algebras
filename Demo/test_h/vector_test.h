@@ -1,5 +1,6 @@
 #include<Tensors/Al_Tensors.h>
 #include<Tensors/Antisymmetric_Tensor.h>
+#include<Tensors/Tensors_Operation.h>
 void double_mult(void*p1,void*p2)
 {
     double*q1=(double*)p1,*q2=(double*)p2;
@@ -30,8 +31,12 @@ void Tensor_mpf_plus(void*p1,void*p2)
     __mpf_struct*q1=(__mpf_struct*)p1;
     __mpf_struct*q2=(__mpf_struct*)p2;
     mpf_add(q1,q2,q1);
-
-
+}
+void Tensor_mpf_div(void* p1,void*p2)
+{
+    __mpf_struct*q1=(__mpf_struct*)p1;
+    __mpf_struct*q2=(__mpf_struct*)p2;
+    mpf_div(q1,q1,q2);
 }
 void* Tensor_mpf_copy(void*p)
 { 
@@ -110,12 +115,14 @@ void tensor_mpf_print_self(Tensor* t)
     printf("************************************\n");
     
 }
+
 void test_vector()
 {
 	Tensors_Algebra_System* tas=(Tensors_Algebra_System*)malloc(sizeof(Tensors_Algebra_System));
     Tensors_Algebra_System_init(tas,7);
     tas->mult=Tensor_mpf_mult;
     tas->plus=Tensor_mpf_plus;
+    tas->div=Tensor_mpf_div;
  //   tas->copy=Tensor_mpf_copy;
     tas->copy_from_double=Tensor_double2_mpf;
     tas->set_copy=Tensor_mpf_set_copy;
@@ -158,8 +165,27 @@ void test_vector()
     tensor_mpf_print_self(t4);
     printf("contraction\n");
     Tensor* tc=W_Tensor_Contraction(tas,t,t3,1,0);
-    tensor_mpf_print_self(tc);
 
+    tensor_mpf_print_self(tc);
+    printf("test inverse\n");
+    Tensor* t_i=tas->T_create();
+    ids[0]=0;ids[1]=0;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(1));
+    ids[1]=1;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(1));
+    ids[0]=1;ids[1]=0;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(1)); 
+    ids[0]=2;ids[1]=2;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(9.4));
+
+    Tensor*ts=Tensor_inverse(tas,t_i);
+    //tensor_mpf_print_self(ts[0]);
+    //tensor_mpf_print_self(ts[1]);
+    Tensors_Algebra_System_free(tas);
+    free(tas);
+
+//    Algebra_Space_free(tas->as);
+ //   Algebra_Space_free(tas->dual_as); 
    // tensor_double_print_self(tc);
         //tas->T
 

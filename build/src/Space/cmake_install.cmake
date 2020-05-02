@@ -39,13 +39,13 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/usr/share/cmake-3.13/Modules/FindALGEBRA_FUN_.cmake")
+   "/usr/share/cmake-3.16/Modules/FindALGEBRA_FUN_.cmake")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/share/cmake-3.13/Modules" TYPE FILE FILES "/home/libo/Documents/c++/Algebras/src/Space/FindALGEBRA_FUN_.cmake")
+file(INSTALL DESTINATION "/usr/share/cmake-3.16/Modules" TYPE FILE FILES "/home/libo/Documents/c++/Algebras/src/Space/FindALGEBRA_FUN_.cmake")
 endif()
 

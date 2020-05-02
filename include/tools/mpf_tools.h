@@ -13,6 +13,12 @@ static void  Tensor_mpf_plus(void*p1,void*p2)
     __mpf_struct*q2=(__mpf_struct*)p2;
     mpf_add(q1,q2,q1);
 }
+void Tensor_mpf_div(void* p1,void*p2)
+{
+    __mpf_struct*q1=(__mpf_struct*)p1;
+    __mpf_struct*q2=(__mpf_struct*)p2;
+    mpf_div(q1,q1,q2);
+}
 static int Tensor_mpf_cmp(void*p1,void*p2)
 {
     __mpf_struct*q1=(__mpf_struct*)p1,*q2=(__mpf_struct*)p2;
@@ -79,6 +85,7 @@ void Tensors_Algebra_System_mpf_init(Tensors_Algebra_System*tas,int size)
     Tensors_Algebra_System_init(tas,size);
     tas->mult=Tensor_mpf_mult;
     tas->plus=Tensor_mpf_plus;
+    tas->div=Tensor_mpf_div;
    // tas->copy=Tensor_mpf_copy;
     tas->copy_from_double=Tensor_double2_mpf;
 	tas->set_copy=Tensor_mpf_set_copy;

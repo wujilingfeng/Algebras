@@ -70,6 +70,18 @@ Algebra_Basic_Element* Algebra_Space_get_kv(struct Algebra_Space* as,int id)
 	rbt1=(RB_int*)as->elements->find(as->elements,&rbt);	
 	return (Algebra_Basic_Element*)(rbt1->value);
 }
+void Algebra_Space_free(Algebra_Space* as)
+{
+	RB_Trav* it=as->elements->begin(as->elements);
+	for(;it->it!=NULL;it->next(it))
+	{
+		free(it->second(it));
+		
+	}
+	free(it);
+	RB_Tree_free(as->elements);
+
+}
 void Tensor_Product_Struct_getid(struct Algebra_Space*as,Tensor_Product_Struct*tps)
 {
 	int size=as->elements->size,size1=node_size(tps->els);

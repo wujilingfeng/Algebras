@@ -1,3 +1,4 @@
+PROJECT(Algebras)
 cmake_minimum_required(VERSION 2.8)
 add_compile_options(-Wall -g -lstdc++)
 #set(CMAKE_EXE_LINKER_FLAGS ${CMAKE_EXE_LINKER_FLAGS} -no-pie)

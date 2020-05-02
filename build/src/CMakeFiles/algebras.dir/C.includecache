@@ -30,6 +30,14 @@ gmp.h
 Space/Algebra_Fun_.h
 -
 
+../include/Tensors/Antisymmetric_Tensor.h
+Tensors/Al_Tensors.h
+-
+
+../include/Tensors/Tensors_Operation.h
+Antisymmetric_Tensor.h
+../include/Tensors/Antisymmetric_Tensor.h
+
 ../thirdpart/cstructures/include/tools_node.h
 stdlib.h
 -
@@ -44,7 +52,7 @@ string.h
 stddef.h
 -
 
-/home/libo/Documents/c++/Algebras/src/Tensors/Al_Tensors.c
-Tensors/Al_Tensors.h
+/home/libo/Documents/c++/Algebras/src/Tensors/Tensors_Operation.c
+Tensors/Tensors_Operation.h
 -
 

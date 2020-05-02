@@ -1,4 +1,4 @@
-cscope 15 $HOME/Documents/c++/Algebras -q 0000011820 0003737956
+cscope 15 $HOME/Documents/c++/Algebras -q 0000011846 0003777893
 	@Demo/main.cpp
 
 1 
@@ -1243,13 +1243,73 @@ q2
 	}
 }
 
-56 * 
+56 
+	$Tís‹_mpf_cmp
+(*
+p1
+,*
+p2
+)
+
+58 
+__mpf_°ru˘
+*
+q1
+=(__mpf_°ru˘*)
+p1
+,*
+q2
+=(__mpf_°ru˘*)
+p2
+;
+
+59  
+	`mpf_cmp
+(
+q1
+,
+q2
+);
+
+61 
+	}
+}
+
+62 
+	$Tís‹_mpf_cmp_d
+(*
+p1
+,
+d
+)
+
+64 
+__mpf_°ru˘
+*
+q1
+=(__mpf_°ru˘*)
+p1
+;
+
+65  
+	`mpf_cmp_d
+(
+q1
+,
+d
+);
+
+67 
+	}
+}
+
+68 * 
 	$Tís‹_doubÀ2_mpf
 (
 d
 )
 
-58 
+70 
 __mpf_°ru˘
 *
 ª
@@ -1257,7 +1317,7 @@ __mpf_°ru˘
 	`mÆloc
 ((__mpf_struct));
 
-59 
+71 
 	`mpf_öôs
 (
 ª
@@ -1265,7 +1325,7 @@ __mpf_°ru˘
 NULL
 );
 
-60 
+72 
 	`mpf_£t_d
 (
 ª
@@ -1273,15 +1333,15 @@ NULL
 d
 );
 
-61  (*)
+73  (*)
 ª
 ;
 
-62 
+74 
 	}
 }
 
-63 
+75 
 	$ãns‹_doubÀ_¥öt_£lf
 (
 Tís‹
@@ -1289,7 +1349,7 @@ Tís‹
 t
 )
 
-65 
+77 
 RB_Tøv
  *
 ô
@@ -1301,11 +1361,11 @@ vÆue
 	`begö
 (t->value);
 
-66 
+78 
 	`¥ötf
 ("kaishi\n");
 
-67 ;
+79 ;
 ô
 ->ô!=
 NULL
@@ -1313,7 +1373,7 @@ NULL
 	`√xt
 (it))
 
-69 
+81 
 	`gmp_¥ötf
 ("id:%Zd \n",(
 __mpz_°ru˘
@@ -1323,7 +1383,7 @@ __mpz_°ru˘
 	`fú°
 (it));
 
-70 
+82 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -1333,7 +1393,7 @@ fm£
 	`£c⁄d
 (it);
 
-71 
+83 
 	`¥ötf
 ("vÆue:%lf\n",*((*)(
 fm£
@@ -1341,7 +1401,7 @@ fm£
 vÆue
 )));
 
-72 
+84 
 Node
 * 
 ô1
@@ -1357,7 +1417,7 @@ NULL
 Next
 )
 
-75 
+87 
 	`¥ötf
 ("%d ",((
 Algebø_Basic_EÀmít
@@ -1369,15 +1429,15 @@ vÆue
 id
 );
 
-77 
+89 
 	`¥ötf
 ("\n");
 
-79 
+91 
 	}
 }
 
-80 
+92 
 	$ãns‹_mpf_¥öt_£lf
 (
 Tís‹
@@ -1385,11 +1445,19 @@ Tís‹
 t
 )
 
-82 
+94 
 	`¥ötf
 ("************************************\n");
 
-84 
+95 
+	`¥ötf
+("‹dî:%d\n",
+t
+->
+	`‹dî
+(t));
+
+96 
 RB_Tøv
  *
 ô
@@ -1401,7 +1469,7 @@ vÆue
 	`begö
 (t->value);
 
-85 ;
+97 ;
 ô
 ->ô!=
 NULL
@@ -1409,7 +1477,7 @@ NULL
 	`√xt
 (it))
 
-87 
+99 
 	`gmp_¥ötf
 ("id:%Zd \n",(
 __mpz_°ru˘
@@ -1419,7 +1487,7 @@ __mpz_°ru˘
 	`fú°
 (it));
 
-88 
+100 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -1429,7 +1497,7 @@ fm£
 	`£c⁄d
 (it);
 
-89 
+101 
 	`gmp_¥ötf
 ("vÆue:%.Ff\n",(
 __mpf_°ru˘
@@ -1439,7 +1507,7 @@ fm£
 vÆue
 ));
 
-90 
+102 
 Node
 * 
 ô1
@@ -1455,7 +1523,7 @@ NULL
 Next
 )
 
-93 
+105 
 	`¥ötf
 ("%d ",((
 Algebø_Basic_EÀmít
@@ -1467,29 +1535,29 @@ vÆue
 id
 );
 
-95 
+107 
 	`¥ötf
 ("\n");
 
-97 
+109 
 	`‰ì
 (
 ô
 );
 
-98 
+110 
 	`¥ötf
 ("************************************\n");
 
-100 
+112 
 	}
 }
 
-101 
+113 
 	$ã°_ve˘‹
 ()
 
-103 
+115 
 Tís‹s_Algebø_Sy°em
 * 
 ès
@@ -1497,13 +1565,13 @@ Tís‹s_Algebø_Sy°em
 	`mÆloc
 ((Tensors_Algebra_System));
 
-104 
+116 
 	`Tís‹s_Algebø_Sy°em_öô
 (
 ès
 ,7);
 
-105 
+117 
 ès
 ->
 mu…
@@ -1511,7 +1579,7 @@ mu…
 Tís‹_mpf_mu…
 ;
 
-106 
+118 
 ès
 ->
 ∂us
@@ -1519,7 +1587,7 @@ Tís‹_mpf_mu…
 Tís‹_mpf_∂us
 ;
 
-108 
+120 
 ès
 ->
 c›y_‰om_doubÀ
@@ -1527,7 +1595,7 @@ c›y_‰om_doubÀ
 Tís‹_doubÀ2_mpf
 ;
 
-109 
+121 
 ès
 ->
 £t_c›y
@@ -1535,7 +1603,7 @@ Tís‹_doubÀ2_mpf
 Tís‹_mpf_£t_c›y
 ;
 
-110 
+122 
 ès
 ->
 ‰ì_d©a
@@ -1543,21 +1611,37 @@ Tís‹_mpf_£t_c›y
 Tís‹_mpf_‰ì
 ;
 
-111 
+123 
+ès
+->
+cmp
+=
+Tís‹_mpf_cmp
+;
+
+124 
+ès
+->
+cmp_d
+=
+Tís‹_mpf_cmp_d
+;
+
+125 
 ids
 []={0,5,4};
 
-112 
+126 
 d
 =10.4;
 
-113 
+127 
 mpf_t
  
 f1
 ;
 
-114 
+128 
 	`mpf_öôs
 (
 f1
@@ -1565,13 +1649,13 @@ f1
 NULL
 );
 
-115 
+129 
 	`mpf_£t_°r
 (
 f1
 ,"43.2",10);
 
-116 
+130 
 __mpf_°ru˘
 *
 f2
@@ -1581,13 +1665,13 @@ f2
 f1
 );
 
-117 
+131 
 	`gmp_¥ötf
 ("%.Ff\n",
 f2
 );
 
-118 
+132 
 Tís‹
 * 
 t
@@ -1597,7 +1681,7 @@ t
 	`T_¸óã
 ();
 
-119 
+133 
 t
 ->
 	`ö£π
@@ -1613,21 +1697,21 @@ ids
 f1
 ));
 
-122 
+136 
 	`ãns‹_mpf_¥öt_£lf
 (
 t
 );
 
-123 
+137 
 ids
 [0]=3;
 
-124 
+138 
 d
 =-0.3;
 
-125 
+139 
 	`mpf_£t_d
 (
 f1
@@ -1635,7 +1719,7 @@ f1
 d
 );
 
-127 
+141 
 t
 ->
 	`ö£π
@@ -1651,13 +1735,13 @@ ids
 f1
 ));
 
-129 
+143 
 	`ãns‹_mpf_¥öt_£lf
 (
 t
 );
 
-130 
+144 
 Tís‹
 * 
 t1
@@ -1667,21 +1751,21 @@ t1
 	`T_¸óã
 ();
 
-131 
+145 
 ids1
 []={0,2,1};
 
-132 
+146 
 d
 =5.001;
 
-133 
+147 
 	`mpf_£t_d
 (
 f1
 ,-10.0003);
 
-134 
+148 
 t1
 ->
 	`ö£π
@@ -1697,13 +1781,13 @@ ids1
 f1
 ));
 
-135 
+149 
 	`ãns‹_mpf_¥öt_£lf
 (
 t1
 );
 
-136 
+150 
 ès
 ->
 	`T_∂us
@@ -1713,13 +1797,13 @@ t
 t1
 );
 
-137 
+151 
 	`ãns‹_mpf_¥öt_£lf
 (
 t
 );
 
-138 
+152 
 	`gmp_¥ötf
 ("n‹m:%.Ff\n",(
 __mpf_°ru˘
@@ -1731,7 +1815,7 @@ __mpf_°ru˘
 t
 ));
 
-139 
+153 
 Tís‹
 * 
 t3
@@ -1741,11 +1825,11 @@ t3
 	`T_¸óã
 ();
 
-140 
+154 
 ids2
 =2;
 
-141 
+155 
 t3
 ->
 	`ö£π
@@ -1761,13 +1845,13 @@ ids2
 f1
 ));
 
-142 
+156 
 	`ãns‹_mpf_¥öt_£lf
 (
 t3
 );
 
-143 
+157 
 Tís‹
 * 
 t4
@@ -1781,17 +1865,17 @@ t
 t3
 );
 
-144 
+158 
 	`ãns‹_mpf_¥öt_£lf
 (
 t4
 );
 
-145 
+159 
 	`¥ötf
 ("contraction\n");
 
-146 
+160 
 Tís‹
 * 
 tc
@@ -1805,13 +1889,25 @@ t
 t3
 ,1,0);
 
-147 
+161 
 	`ãns‹_mpf_¥öt_£lf
 (
 tc
 );
 
-156 
+162 
+	`Tís‹s_Algebø_Sy°em_‰ì
+(
+ès
+);
+
+163 
+	`‰ì
+(
+ès
+);
+
+173 
 	}
 }
 
@@ -7137,6 +7233,5822 @@ __CRAYXC
 	}
 }
 
+	@build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c
+
+1 #ifde‡
+__˝lu•lus
+
+
+5 #i‡
+deföed
+(
+__18CXX
+)
+
+6 
+	#ID_VOID_MAIN
+
+
+	)
+
+8 #i‡
+deföed
+(
+__CLASSIC_C__
+)
+
+10 c⁄°
+
+	)
+
+11 vﬁ©ûe
+
+	)
+
+18 #i‡
+deföed
+(
+__INTEL_COMPILER
+Ë|| deföed(
+__ICC
+)
+
+19 
+	#COMPILER_ID
+ "I¡ñ"
+
+	)
+
+20 #i‡
+deföed
+(
+_MSC_VER
+)
+
+21 
+	#SIMULATE_ID
+ "MSVC"
+
+	)
+
+23 #i‡
+deföed
+(
+__GNUC__
+)
+
+24 
+	#SIMULATE_ID
+ "GNU"
+
+	)
+
+27 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__INTEL_COMPILER
+/100)
+
+	)
+
+28 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__INTEL_COMPILER
+/10 % 10)
+
+	)
+
+29 #i‡
+deföed
+(
+__INTEL_COMPILER_UPDATE
+)
+
+30 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__INTEL_COMPILER_UPDATE
+)
+
+	)
+
+32 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__INTEL_COMPILER
+ % 10)
+
+	)
+
+34 #i‡
+deföed
+(
+__INTEL_COMPILER_BUILD_DATE
+)
+
+36 
+	#COMPILER_VERSION_TWEAK
+ 
+	`DEC
+(
+__INTEL_COMPILER_BUILD_DATE
+)
+
+	)
+
+38 #i‡
+deföed
+(
+_MSC_VER
+)
+
+40 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+_MSC_VER
+ / 100)
+
+	)
+
+41 
+	#SIMULATE_VERSION_MINOR
+ 
+	`DEC
+(
+_MSC_VER
+ % 100)
+
+	)
+
+43 #i‡
+deföed
+(
+__GNUC__
+)
+
+44 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+__GNUC__
+)
+
+	)
+
+45 #ñi‡
+deföed
+(
+__GNUG__
+)
+
+46 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+__GNUG__
+)
+
+	)
+
+48 #i‡
+deföed
+(
+__GNUC_MINOR__
+)
+
+49 
+	#SIMULATE_VERSION_MINOR
+ 
+	`DEC
+(
+__GNUC_MINOR__
+)
+
+	)
+
+51 #i‡
+deföed
+(
+__GNUC_PATCHLEVEL__
+)
+
+52 
+	#SIMULATE_VERSION_PATCH
+ 
+	`DEC
+(
+__GNUC_PATCHLEVEL__
+)
+
+	)
+
+55 #ñi‡
+deföed
+(
+__PATHCC__
+)
+
+56 
+	#COMPILER_ID
+ "P©hSˇÀ"
+
+	)
+
+57 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__PATHCC__
+)
+
+	)
+
+58 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__PATHCC_MINOR__
+)
+
+	)
+
+59 #i‡
+deföed
+(
+__PATHCC_PATCHLEVEL__
+)
+
+60 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__PATHCC_PATCHLEVEL__
+)
+
+	)
+
+63 #ñi‡
+deföed
+(
+__BORLANDC__
+Ë&& deföed(
+__CODEGEARC_VERSION__
+)
+
+64 
+	#COMPILER_ID
+ "Emb¨ˇdîo"
+
+	)
+
+65 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__CODEGEARC_VERSION__
+>>24 & 0x00FF)
+
+	)
+
+66 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__CODEGEARC_VERSION__
+>>16 & 0x00FF)
+
+	)
+
+67 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__CODEGEARC_VERSION__
+ & 0xFFFF)
+
+	)
+
+69 #ñi‡
+deföed
+(
+__BORLANDC__
+)
+
+70 
+	#COMPILER_ID
+ "B‹œnd"
+
+	)
+
+72 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__BORLANDC__
+>>8)
+
+	)
+
+73 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__BORLANDC__
+ & 0xFF)
+
+	)
+
+75 #ñi‡
+deföed
+(
+__WATCOMC__
+) && __WATCOMC__ < 1200
+
+76 
+	#COMPILER_ID
+ "W©com"
+
+	)
+
+78 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__WATCOMC__
+ / 100)
+
+	)
+
+79 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+((
+__WATCOMC__
+ / 10Ë% 10)
+
+	)
+
+80 #i‡(
+__WATCOMC__
+ % 10) > 0
+
+81 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__WATCOMC__
+ % 10)
+
+	)
+
+84 #ñi‡
+deföed
+(
+__WATCOMC__
+)
+
+85 
+	#COMPILER_ID
+ "O≥nW©com"
+
+	)
+
+87 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+((
+__WATCOMC__
+ - 1100Ë/ 100)
+
+	)
+
+88 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+((
+__WATCOMC__
+ / 10Ë% 10)
+
+	)
+
+89 #i‡(
+__WATCOMC__
+ % 10) > 0
+
+90 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__WATCOMC__
+ % 10)
+
+	)
+
+93 #ñi‡
+deföed
+(
+__SUNPRO_C
+)
+
+94 
+	#COMPILER_ID
+ "SunPro"
+
+	)
+
+95 #i‡
+__SUNPRO_C
+ >= 0x5100
+
+97 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__SUNPRO_C
+>>12)
+
+	)
+
+98 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__SUNPRO_C
+>>4 & 0xFF)
+
+	)
+
+99 
+	#COMPILER_VERSION_PATCH
+ 
+	`HEX
+(
+__SUNPRO_C
+ & 0xF)
+
+	)
+
+102 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__SUNPRO_C
+>>8)
+
+	)
+
+103 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__SUNPRO_C
+>>4 & 0xF)
+
+	)
+
+104 
+	#COMPILER_VERSION_PATCH
+ 
+	`HEX
+(
+__SUNPRO_C
+ & 0xF)
+
+	)
+
+107 #ñi‡
+deföed
+(
+__HP_cc
+)
+
+108 
+	#COMPILER_ID
+ "HP"
+
+	)
+
+110 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__HP_cc
+/10000)
+
+	)
+
+111 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__HP_cc
+/100 % 100)
+
+	)
+
+112 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__HP_cc
+ % 100)
+
+	)
+
+114 #ñi‡
+deföed
+(
+__DECC
+)
+
+115 
+	#COMPILER_ID
+ "Com∑q"
+
+	)
+
+117 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__DECC_VER
+/10000000)
+
+	)
+
+118 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__DECC_VER
+/100000 % 100)
+
+	)
+
+119 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__DECC_VER
+ % 10000)
+
+	)
+
+121 #ñi‡
+deföed
+(
+__IBMC__
+Ë&& deföed(
+__COMPILER_VER__
+)
+
+122 
+	#COMPILER_ID
+ "zOS"
+
+	)
+
+124 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__IBMC__
+/100)
+
+	)
+
+125 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__IBMC__
+/10 % 10)
+
+	)
+
+126 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__IBMC__
+ % 10)
+
+	)
+
+128 #ñi‡
+deföed
+(
+__ibmxl__
+Ë&& deföed(
+__˛™g__
+)
+
+129 
+	#COMPILER_ID
+ "XLCœng"
+
+	)
+
+130 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__ibmxl_vîsi⁄__
+)
+
+	)
+
+131 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__ibmxl_ªÀa£__
+)
+
+	)
+
+132 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__ibmxl_modifiˇti⁄__
+)
+
+	)
+
+133 
+	#COMPILER_VERSION_TWEAK
+ 
+	`DEC
+(
+__ibmxl_±f_fix_Àvñ__
+)
+
+	)
+
+136 #ñi‡
+deföed
+(
+__IBMC__
+Ë&& !deföed(
+__COMPILER_VER__
+) && __IBMC__ >= 800
+
+137 
+	#COMPILER_ID
+ "XL"
+
+	)
+
+139 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__IBMC__
+/100)
+
+	)
+
+140 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__IBMC__
+/10 % 10)
+
+	)
+
+141 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__IBMC__
+ % 10)
+
+	)
+
+143 #ñi‡
+deföed
+(
+__IBMC__
+Ë&& !deföed(
+__COMPILER_VER__
+) && __IBMC__ < 800
+
+144 
+	#COMPILER_ID
+ "VisuÆAge"
+
+	)
+
+146 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__IBMC__
+/100)
+
+	)
+
+147 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__IBMC__
+/10 % 10)
+
+	)
+
+148 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__IBMC__
+ % 10)
+
+	)
+
+150 #ñi‡
+deföed
+(
+__PGI
+)
+
+151 
+	#COMPILER_ID
+ "PGI"
+
+	)
+
+152 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__PGIC__
+)
+
+	)
+
+153 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__PGIC_MINOR__
+)
+
+	)
+
+154 #i‡
+deföed
+(
+__PGIC_PATCHLEVEL__
+)
+
+155 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__PGIC_PATCHLEVEL__
+)
+
+	)
+
+158 #ñi‡
+deföed
+(
+_CRAYC
+)
+
+159 
+	#COMPILER_ID
+ "Cøy"
+
+	)
+
+160 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+_RELEASE_MAJOR
+)
+
+	)
+
+161 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+_RELEASE_MINOR
+)
+
+	)
+
+163 #ñi‡
+deföed
+(
+__TI_COMPILER_VERSION__
+)
+
+164 
+	#COMPILER_ID
+ "TI"
+
+	)
+
+166 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__TI_COMPILER_VERSION__
+/1000000)
+
+	)
+
+167 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__TI_COMPILER_VERSION__
+/1000 % 1000)
+
+	)
+
+168 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__TI_COMPILER_VERSION__
+ % 1000)
+
+	)
+
+170 #ñi‡
+deföed
+(
+__FUJITSU
+Ë|| deföed(
+__FCC_VERSION
+Ë|| deföed(
+__fcc_vîsi⁄
+)
+
+171 
+	#COMPILER_ID
+ "Fujôsu"
+
+	)
+
+173 #ñi‡
+deföed
+(
+__ghs__
+)
+
+174 
+	#COMPILER_ID
+ "GHS"
+
+	)
+
+176 #ifde‡
+__GHS_VERSION_NUMBER
+
+
+177 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__GHS_VERSION_NUMBER
+ / 100)
+
+	)
+
+178 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__GHS_VERSION_NUMBER
+ / 10 % 10)
+
+	)
+
+179 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__GHS_VERSION_NUMBER
+ % 10)
+
+	)
+
+182 #ñi‡
+deföed
+(
+__TINYC__
+)
+
+183 
+	#COMPILER_ID
+ "TöyCC"
+
+	)
+
+185 #ñi‡
+deföed
+(
+__BCC__
+)
+
+186 
+	#COMPILER_ID
+ "Bru˚"
+
+	)
+
+188 #ñi‡
+deföed
+(
+__SCO_VERSION__
+)
+
+189 
+	#COMPILER_ID
+ "SCO"
+
+	)
+
+191 #ñi‡
+deföed
+(
+__ARMCC_VERSION
+Ë&& !deföed(
+__˛™g__
+)
+
+192 
+	#COMPILER_ID
+ "ARMCC"
+
+	)
+
+193 #i‡
+__ARMCC_VERSION
+ >= 1000000
+
+195 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__ARMCC_VERSION
+/1000000)
+
+	)
+
+196 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__ARMCC_VERSION
+/10000 % 100)
+
+	)
+
+197 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__ARMCC_VERSION
+ % 10000)
+
+	)
+
+200 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__ARMCC_VERSION
+/100000)
+
+	)
+
+201 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__ARMCC_VERSION
+/10000 % 10)
+
+	)
+
+202 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__ARMCC_VERSION
+ % 10000)
+
+	)
+
+206 #ñi‡
+deföed
+(
+__˛™g__
+Ë&& deföed(
+__≠∂e_buûd_vîsi⁄__
+)
+
+207 
+	#COMPILER_ID
+ "AµÀCœng"
+
+	)
+
+208 #i‡
+deföed
+(
+_MSC_VER
+)
+
+209 
+	#SIMULATE_ID
+ "MSVC"
+
+	)
+
+211 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__˛™g_maj‹__
+)
+
+	)
+
+212 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__˛™g_mö‹__
+)
+
+	)
+
+213 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__˛™g_∑tchÀvñ__
+)
+
+	)
+
+214 #i‡
+deföed
+(
+_MSC_VER
+)
+
+216 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+_MSC_VER
+ / 100)
+
+	)
+
+217 
+	#SIMULATE_VERSION_MINOR
+ 
+	`DEC
+(
+_MSC_VER
+ % 100)
+
+	)
+
+219 
+	#COMPILER_VERSION_TWEAK
+ 
+	`DEC
+(
+__≠∂e_buûd_vîsi⁄__
+)
+
+	)
+
+221 #ñi‡
+deföed
+(
+__˛™g__
+Ë&& deföed(
+__ARMCOMPILER_VERSION
+)
+
+222 
+	#COMPILER_ID
+ "ARMCœng"
+
+	)
+
+223 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__ARMCOMPILER_VERSION
+/1000000)
+
+	)
+
+224 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__ARMCOMPILER_VERSION
+/10000 % 100)
+
+	)
+
+225 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__ARMCOMPILER_VERSION
+ % 10000)
+
+	)
+
+226 
+	#COMPILER_VERSION_INTERNAL
+ 
+	`DEC
+(
+__ARMCOMPILER_VERSION
+)
+
+	)
+
+228 #ñi‡
+deföed
+(
+__˛™g__
+)
+
+229 
+	#COMPILER_ID
+ "Cœng"
+
+	)
+
+230 #i‡
+deföed
+(
+_MSC_VER
+)
+
+231 
+	#SIMULATE_ID
+ "MSVC"
+
+	)
+
+233 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__˛™g_maj‹__
+)
+
+	)
+
+234 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__˛™g_mö‹__
+)
+
+	)
+
+235 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__˛™g_∑tchÀvñ__
+)
+
+	)
+
+236 #i‡
+deföed
+(
+_MSC_VER
+)
+
+238 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+_MSC_VER
+ / 100)
+
+	)
+
+239 
+	#SIMULATE_VERSION_MINOR
+ 
+	`DEC
+(
+_MSC_VER
+ % 100)
+
+	)
+
+242 #ñi‡
+deföed
+(
+__GNUC__
+)
+
+243 
+	#COMPILER_ID
+ "GNU"
+
+	)
+
+244 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__GNUC__
+)
+
+	)
+
+245 #i‡
+deföed
+(
+__GNUC_MINOR__
+)
+
+246 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__GNUC_MINOR__
+)
+
+	)
+
+248 #i‡
+deföed
+(
+__GNUC_PATCHLEVEL__
+)
+
+249 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__GNUC_PATCHLEVEL__
+)
+
+	)
+
+252 #ñi‡
+deföed
+(
+_MSC_VER
+)
+
+253 
+	#COMPILER_ID
+ "MSVC"
+
+	)
+
+255 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+_MSC_VER
+ / 100)
+
+	)
+
+256 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+_MSC_VER
+ % 100)
+
+	)
+
+257 #i‡
+deföed
+(
+_MSC_FULL_VER
+)
+
+258 #i‡
+_MSC_VER
+ >= 1400
+
+260 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+_MSC_FULL_VER
+ % 100000)
+
+	)
+
+263 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+_MSC_FULL_VER
+ % 10000)
+
+	)
+
+266 #i‡
+deföed
+(
+_MSC_BUILD
+)
+
+267 
+	#COMPILER_VERSION_TWEAK
+ 
+	`DEC
+(
+_MSC_BUILD
+)
+
+	)
+
+270 #ñi‡
+deföed
+(
+__VISUALDSPVERSION__
+Ë|| deföed(
+__ADSPBLACKFIN__
+Ë|| deföed(
+__ADSPTS__
+Ë|| deföed(
+__ADSP21000__
+)
+
+271 
+	#COMPILER_ID
+ "ADSP"
+
+	)
+
+272 #i‡
+deföed
+(
+__VISUALDSPVERSION__
+)
+
+274 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__VISUALDSPVERSION__
+>>24)
+
+	)
+
+275 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__VISUALDSPVERSION__
+>>16 & 0xFF)
+
+	)
+
+276 
+	#COMPILER_VERSION_PATCH
+ 
+	`HEX
+(
+__VISUALDSPVERSION__
+>>8 & 0xFF)
+
+	)
+
+279 #ñi‡
+deföed
+(
+__IAR_SYSTEMS_ICC__
+Ë|| deföed(
+__IAR_SYSTEMS_ICC
+)
+
+280 
+	#COMPILER_ID
+ "IAR"
+
+	)
+
+281 #i‡
+deföed
+(
+__VER__
+Ë&& deföed(
+__ICCARM__
+)
+
+282 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+((
+__VER__
+Ë/ 1000000)
+
+	)
+
+283 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(((
+__VER__
+Ë/ 1000Ë% 1000)
+
+	)
+
+284 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+((
+__VER__
+Ë% 1000)
+
+	)
+
+285 
+	#COMPILER_VERSION_INTERNAL
+ 
+	`DEC
+(
+__IAR_SYSTEMS_ICC__
+)
+
+	)
+
+286 #ñi‡
+deföed
+(
+__VER__
+Ë&& (deföed(
+__ICCAVR__
+Ë|| deföed(
+__ICCRX__
+Ë|| deföed(
+__ICCRH850__
+Ë|| deföed(
+__ICCRL78__
+Ë|| deföed(
+__ICC430__
+Ë|| deföed(
+__ICCRISCV__
+Ë|| deföed(
+__ICCV850__
+Ë|| deföed(
+__ICC8051__
+))
+
+287 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+((
+__VER__
+Ë/ 100)
+
+	)
+
+288 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+((
+__VER__
+Ë- (((__VER__Ë/ 100)*100))
+
+	)
+
+289 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__SUBVERSION__
+)
+
+	)
+
+290 
+	#COMPILER_VERSION_INTERNAL
+ 
+	`DEC
+(
+__IAR_SYSTEMS_ICC__
+)
+
+	)
+
+293 #ñi‡
+deföed
+(
+__SDCC_VERSION_MAJOR
+Ë|| deföed(
+SDCC
+)
+
+294 
+	#COMPILER_ID
+ "SDCC"
+
+	)
+
+295 #i‡
+deföed
+(
+__SDCC_VERSION_MAJOR
+)
+
+296 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__SDCC_VERSION_MAJOR
+)
+
+	)
+
+297 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__SDCC_VERSION_MINOR
+)
+
+	)
+
+298 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__SDCC_VERSION_PATCH
+)
+
+	)
+
+301 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+SDCC
+/100)
+
+	)
+
+302 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+SDCC
+/10 % 10)
+
+	)
+
+303 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+SDCC
+ % 10)
+
+	)
+
+310 #ñi‡
+deföed
+(
+__hpux
+Ë|| deföed(
+__hpua
+)
+
+311 
+	#COMPILER_ID
+ "HP"
+
+	)
+
+314 
+	#COMPILER_ID
+ ""
+
+	)
+
+321 c⁄°* 
+	göfo_compûî
+ = "INFO" ":" "compûî[" 
+COMPILER_ID
+ "]";
+
+322 #ifde‡
+SIMULATE_ID
+
+
+323 c⁄°* 
+	göfo_simuœã
+ = "INFO" ":" "simuœã[" 
+SIMULATE_ID
+ "]";
+
+326 #ifde‡
+__QNXNTO__
+
+
+327 c⁄°* 
+	gqnx¡o
+ = "INFO" ":" "qnxnto[]";
+
+330 #i‡
+deföed
+(
+__CRAYXE
+Ë|| deföed(
+__CRAYXC
+)
+
+331 c⁄° *
+	göfo_¸ay
+ = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";
+
+334 
+	#STRINGIFY_HELPER
+(
+X
+Ë#X
+
+	)
+
+335 
+	#STRINGIFY
+(
+X
+Ë
+	`STRINGIFY_HELPER
+(X)
+
+	)
+
+338 #i‡
+deföed
+(
+__löux
+Ë|| deföed(
+__löux__
+Ë|| deföed(
+löux
+)
+
+339 
+	#PLATFORM_ID
+ "Löux"
+
+	)
+
+341 #ñi‡
+deföed
+(
+__CYGWIN__
+)
+
+342 
+	#PLATFORM_ID
+ "Cygwö"
+
+	)
+
+344 #ñi‡
+deföed
+(
+__MINGW32__
+)
+
+345 
+	#PLATFORM_ID
+ "MöGW"
+
+	)
+
+347 #ñi‡
+deföed
+(
+__APPLE__
+)
+
+348 
+	#PLATFORM_ID
+ "D¨wö"
+
+	)
+
+350 #ñi‡
+deföed
+(
+_WIN32
+Ë|| deföed(
+__WIN32__
+Ë|| deföed(
+WIN32
+)
+
+351 
+	#PLATFORM_ID
+ "Wödows"
+
+	)
+
+353 #ñi‡
+deföed
+(
+__FªeBSD__
+Ë|| deföed(
+__FªeBSD
+)
+
+354 
+	#PLATFORM_ID
+ "FªeBSD"
+
+	)
+
+356 #ñi‡
+deföed
+(
+__NëBSD__
+Ë|| deföed(
+__NëBSD
+)
+
+357 
+	#PLATFORM_ID
+ "NëBSD"
+
+	)
+
+359 #ñi‡
+deföed
+(
+__O≥nBSD__
+Ë|| deföed(
+__OPENBSD
+)
+
+360 
+	#PLATFORM_ID
+ "O≥nBSD"
+
+	)
+
+362 #ñi‡
+deföed
+(
+__sun
+Ë|| deföed(
+sun
+)
+
+363 
+	#PLATFORM_ID
+ "SunOS"
+
+	)
+
+365 #ñi‡
+deföed
+(
+_AIX
+Ë|| deföed(
+__AIX
+Ë|| deföed(
+__AIX__
+Ë|| deföed(
+__aix
+Ë|| deföed(
+__aix__
+)
+
+366 
+	#PLATFORM_ID
+ "AIX"
+
+	)
+
+368 #ñi‡
+deföed
+(
+__hpux
+Ë|| deföed(
+__hpux__
+)
+
+369 
+	#PLATFORM_ID
+ "HP-UX"
+
+	)
+
+371 #ñi‡
+deföed
+(
+__HAIKU__
+)
+
+372 
+	#PLATFORM_ID
+ "Haiku"
+
+	)
+
+374 #ñi‡
+deföed
+(
+__BeOS
+Ë|| deföed(
+__BEOS__
+Ë|| deföed(
+_BEOS
+)
+
+375 
+	#PLATFORM_ID
+ "BeOS"
+
+	)
+
+377 #ñi‡
+deföed
+(
+__QNX__
+Ë|| deföed(
+__QNXNTO__
+)
+
+378 
+	#PLATFORM_ID
+ "QNX"
+
+	)
+
+380 #ñi‡
+deföed
+(
+__åu64
+Ë|| deföed(
+_åu64
+Ë|| deföed(
+__TRU64__
+)
+
+381 
+	#PLATFORM_ID
+ "Tru64"
+
+	)
+
+383 #ñi‡
+deföed
+(
+__riscos
+Ë|| deföed(
+__riscos__
+)
+
+384 
+	#PLATFORM_ID
+ "RISCos"
+
+	)
+
+386 #ñi‡
+deföed
+(
+__söix
+Ë|| deföed(
+__söix__
+Ë|| deföed(
+__SINIX__
+)
+
+387 
+	#PLATFORM_ID
+ "SINIX"
+
+	)
+
+389 #ñi‡
+deföed
+(
+__UNIX_SV__
+)
+
+390 
+	#PLATFORM_ID
+ "UNIX_SV"
+
+	)
+
+392 #ñi‡
+deföed
+(
+__bsdos__
+)
+
+393 
+	#PLATFORM_ID
+ "BSDOS"
+
+	)
+
+395 #ñi‡
+deföed
+(
+_MPRAS
+Ë|| deföed(
+MPRAS
+)
+
+396 
+	#PLATFORM_ID
+ "MP-RAS"
+
+	)
+
+398 #ñi‡
+deföed
+(
+__osf
+Ë|| deföed(
+__osf__
+)
+
+399 
+	#PLATFORM_ID
+ "OSF1"
+
+	)
+
+401 #ñi‡
+deföed
+(
+_SCO_SV
+Ë|| deföed(
+SCO_SV
+Ë|| deföed(
+sco_sv
+)
+
+402 
+	#PLATFORM_ID
+ "SCO_SV"
+
+	)
+
+404 #ñi‡
+deföed
+(
+__u…rix
+Ë|| deföed(
+__u…rix__
+Ë|| deföed(
+_ULTRIX
+)
+
+405 
+	#PLATFORM_ID
+ "ULTRIX"
+
+	)
+
+407 #ñi‡
+deföed
+(
+__XENIX__
+Ë|| deföed(
+_XENIX
+Ë|| deföed(
+XENIX
+)
+
+408 
+	#PLATFORM_ID
+ "Xíix"
+
+	)
+
+410 #ñi‡
+deföed
+(
+__WATCOMC__
+)
+
+411 #i‡
+deföed
+(
+__LINUX__
+)
+
+412 
+	#PLATFORM_ID
+ "Löux"
+
+	)
+
+414 #ñi‡
+deföed
+(
+__DOS__
+)
+
+415 
+	#PLATFORM_ID
+ "DOS"
+
+	)
+
+417 #ñi‡
+deföed
+(
+__OS2__
+)
+
+418 
+	#PLATFORM_ID
+ "OS2"
+
+	)
+
+420 #ñi‡
+deföed
+(
+__WINDOWS__
+)
+
+421 
+	#PLATFORM_ID
+ "Wödows3x"
+
+	)
+
+424 
+	#PLATFORM_ID
+
+
+	)
+
+427 #ñi‡
+deföed
+(
+__INTEGRITY
+)
+
+428 #i‡
+deföed
+(
+INT_178B
+)
+
+429 
+	#PLATFORM_ID
+ "I¡egrôy178"
+
+	)
+
+432 
+	#PLATFORM_ID
+ "I¡egrôy"
+
+	)
+
+436 
+	#PLATFORM_ID
+
+
+	)
+
+445 #i‡
+deföed
+(
+_WIN32
+Ë&& deföed(
+_MSC_VER
+)
+
+446 #i‡
+deföed
+(
+_M_IA64
+)
+
+447 
+	#ARCHITECTURE_ID
+ "IA64"
+
+	)
+
+449 #ñi‡
+deföed
+(
+_M_X64
+Ë|| deföed(
+_M_AMD64
+)
+
+450 
+	#ARCHITECTURE_ID
+ "x64"
+
+	)
+
+452 #ñi‡
+deföed
+(
+_M_IX86
+)
+
+453 
+	#ARCHITECTURE_ID
+ "X86"
+
+	)
+
+455 #ñi‡
+deföed
+(
+_M_ARM64
+)
+
+456 
+	#ARCHITECTURE_ID
+ "ARM64"
+
+	)
+
+458 #ñi‡
+deföed
+(
+_M_ARM
+)
+
+459 #i‡
+_M_ARM
+ == 4
+
+460 
+	#ARCHITECTURE_ID
+ "ARMV4I"
+
+	)
+
+461 #ñi‡
+_M_ARM
+ == 5
+
+462 
+	#ARCHITECTURE_ID
+ "ARMV5I"
+
+	)
+
+464 
+	#ARCHITECTURE_ID
+ "ARMV" 
+	`STRINGIFY
+(
+_M_ARM
+)
+
+	)
+
+467 #ñi‡
+deföed
+(
+_M_MIPS
+)
+
+468 
+	#ARCHITECTURE_ID
+ "MIPS"
+
+	)
+
+470 #ñi‡
+deföed
+(
+_M_SH
+)
+
+471 
+	#ARCHITECTURE_ID
+ "SHx"
+
+	)
+
+474 
+	#ARCHITECTURE_ID
+ ""
+
+	)
+
+477 #ñi‡
+deföed
+(
+__WATCOMC__
+)
+
+478 #i‡
+deföed
+(
+_M_I86
+)
+
+479 
+	#ARCHITECTURE_ID
+ "I86"
+
+	)
+
+481 #ñi‡
+deföed
+(
+_M_IX86
+)
+
+482 
+	#ARCHITECTURE_ID
+ "X86"
+
+	)
+
+485 
+	#ARCHITECTURE_ID
+ ""
+
+	)
+
+488 #ñi‡
+deföed
+(
+__IAR_SYSTEMS_ICC__
+Ë|| deföed(
+__IAR_SYSTEMS_ICC
+)
+
+489 #i‡
+deföed
+(
+__ICCARM__
+)
+
+490 
+	#ARCHITECTURE_ID
+ "ARM"
+
+	)
+
+492 #ñi‡
+deföed
+(
+__ICCRX__
+)
+
+493 
+	#ARCHITECTURE_ID
+ "RX"
+
+	)
+
+495 #ñi‡
+deföed
+(
+__ICCRH850__
+)
+
+496 
+	#ARCHITECTURE_ID
+ "RH850"
+
+	)
+
+498 #ñi‡
+deföed
+(
+__ICCRL78__
+)
+
+499 
+	#ARCHITECTURE_ID
+ "RL78"
+
+	)
+
+501 #ñi‡
+deföed
+(
+__ICCRISCV__
+)
+
+502 
+	#ARCHITECTURE_ID
+ "RISCV"
+
+	)
+
+504 #ñi‡
+deföed
+(
+__ICCAVR__
+)
+
+505 
+	#ARCHITECTURE_ID
+ "AVR"
+
+	)
+
+507 #ñi‡
+deföed
+(
+__ICC430__
+)
+
+508 
+	#ARCHITECTURE_ID
+ "MSP430"
+
+	)
+
+510 #ñi‡
+deföed
+(
+__ICCV850__
+)
+
+511 
+	#ARCHITECTURE_ID
+ "V850"
+
+	)
+
+513 #ñi‡
+deföed
+(
+__ICC8051__
+)
+
+514 
+	#ARCHITECTURE_ID
+ "8051"
+
+	)
+
+517 
+	#ARCHITECTURE_ID
+ ""
+
+	)
+
+520 #ñi‡
+deföed
+(
+__ghs__
+)
+
+521 #i‡
+deföed
+(
+__PPC64__
+)
+
+522 
+	#ARCHITECTURE_ID
+ "PPC64"
+
+	)
+
+524 #ñi‡
+deföed
+(
+__µc__
+)
+
+525 
+	#ARCHITECTURE_ID
+ "PPC"
+
+	)
+
+527 #ñi‡
+deföed
+(
+__ARM__
+)
+
+528 
+	#ARCHITECTURE_ID
+ "ARM"
+
+	)
+
+530 #ñi‡
+deföed
+(
+__x86_64__
+)
+
+531 
+	#ARCHITECTURE_ID
+ "x64"
+
+	)
+
+533 #ñi‡
+deföed
+(
+__i386__
+)
+
+534 
+	#ARCHITECTURE_ID
+ "X86"
+
+	)
+
+537 
+	#ARCHITECTURE_ID
+ ""
+
+	)
+
+540 
+	#ARCHITECTURE_ID
+
+
+	)
+
+544 
+	#DEC
+(
+n
+) \
+
+545 ('0' + (((
+n
+) / 10000000)%10)), \
+
+546 ('0' + (((
+n
+) / 1000000)%10)), \
+
+547 ('0' + (((
+n
+) / 100000)%10)), \
+
+548 ('0' + (((
+n
+) / 10000)%10)), \
+
+549 ('0' + (((
+n
+) / 1000)%10)), \
+
+550 ('0' + (((
+n
+) / 100)%10)), \
+
+551 ('0' + (((
+n
+) / 10)%10)), \
+
+552 ('0' + ((
+n
+Ë% 10))
+
+	)
+
+555 
+	#HEX
+(
+n
+) \
+
+556 ('0' + ((
+n
+)>>28 & 0xF)), \
+
+557 ('0' + ((
+n
+)>>24 & 0xF)), \
+
+558 ('0' + ((
+n
+)>>20 & 0xF)), \
+
+559 ('0' + ((
+n
+)>>16 & 0xF)), \
+
+560 ('0' + ((
+n
+)>>12 & 0xF)), \
+
+561 ('0' + ((
+n
+)>>8 & 0xF)), \
+
+562 ('0' + ((
+n
+)>>4 & 0xF)), \
+
+563 ('0' + ((
+n
+Ë& 0xF))
+
+	)
+
+566 #ifde‡
+COMPILER_VERSION_MAJOR
+
+
+567 c⁄° 
+	göfo_vîsi⁄
+[] = {
+
+570 
+COMPILER_VERSION_MAJOR
+,
+
+571 #ifde‡
+COMPILER_VERSION_MINOR
+
+
+572 '.', 
+COMPILER_VERSION_MINOR
+,
+
+573 #ifde‡
+COMPILER_VERSION_PATCH
+
+
+574 '.', 
+COMPILER_VERSION_PATCH
+,
+
+575 #ifde‡
+COMPILER_VERSION_TWEAK
+
+
+576 '.', 
+COMPILER_VERSION_TWEAK
+,
+
+584 #ifde‡
+COMPILER_VERSION_INTERNAL
+
+
+585 c⁄° 
+	göfo_vîsi⁄_öã∫Æ
+[] = {
+
+589 
+COMPILER_VERSION_INTERNAL
+,']','\0'};
+
+593 #ifde‡
+SIMULATE_VERSION_MAJOR
+
+
+594 c⁄° 
+	göfo_simuœã_vîsi⁄
+[] = {
+
+597 
+SIMULATE_VERSION_MAJOR
+,
+
+598 #ifde‡
+SIMULATE_VERSION_MINOR
+
+
+599 '.', 
+SIMULATE_VERSION_MINOR
+,
+
+600 #ifde‡
+SIMULATE_VERSION_PATCH
+
+
+601 '.', 
+SIMULATE_VERSION_PATCH
+,
+
+602 #ifde‡
+SIMULATE_VERSION_TWEAK
+
+
+603 '.', 
+SIMULATE_VERSION_TWEAK
+,
+
+614 c⁄°* 
+	göfo_∂©f‹m
+ = "INFO" ":" "∂©f‹m[" 
+PLATFORM_ID
+ "]";
+
+615 c⁄°* 
+	göfo_¨ch
+ = "INFO" ":" "¨ch[" 
+ARCHITECTURE_ID
+ "]";
+
+620 #i‡!
+deföed
+(
+__STDC__
+)
+
+621 #i‡(
+deföed
+(
+_MSC_VER
+Ë&& !deföed(
+__˛™g__
+)) \
+
+622 || (
+deföed
+(
+__ibmxl__
+Ë|| 
+	$deföed
+(
+__IBMC__
+))
+
+623 
+	#C_DIALECT
+ "90"
+
+	)
+
+625 
+	#C_DIALECT
+
+
+	)
+
+627 #ñi‡
+__STDC_VERSION__
+ >= 201000L
+
+628 
+	#C_DIALECT
+ "11"
+
+	)
+
+629 #ñi‡
+__STDC_VERSION__
+ >= 199901L
+
+630 
+	#C_DIALECT
+ "99"
+
+	)
+
+632 
+	#C_DIALECT
+ "90"
+
+	)
+
+634 c⁄° * 
+öfo_œnguage_düÀ˘_deÁu…
+ =
+
+635 "INFO" ":" "düÀ˘_deÁu…[" 
+C_DIALECT
+ "]";
+
+639 #ifde‡
+ID_VOID_MAIN
+
+
+640 
+	$maö
+(Ë{
+	}
+}
+
+642 #i‡
+deföed
+(
+__CLASSIC_C__
+)
+
+643 
+	$maö
+(
+¨gc
+, 
+¨gv
+) argc; *argv[];
+
+645 
+	$maö
+(
+¨gc
+, * 
+¨gv
+[])
+
+648 
+ªquúe
+ = 0;
+
+649 
+ªquúe
+ +
+öfo_compûî
+[
+¨gc
+];
+
+650 
+ªquúe
+ +
+öfo_∂©f‹m
+[
+¨gc
+];
+
+651 
+ªquúe
+ +
+öfo_¨ch
+[
+¨gc
+];
+
+652 #ifde‡
+COMPILER_VERSION_MAJOR
+
+
+653 
+ªquúe
+ +
+öfo_vîsi⁄
+[
+¨gc
+];
+
+655 #ifde‡
+COMPILER_VERSION_INTERNAL
+
+
+656 
+ªquúe
+ +
+öfo_vîsi⁄_öã∫Æ
+[
+¨gc
+];
+
+658 #ifde‡
+SIMULATE_ID
+
+
+659 
+ªquúe
+ +
+öfo_simuœã
+[
+¨gc
+];
+
+661 #ifde‡
+SIMULATE_VERSION_MAJOR
+
+
+662 
+ªquúe
+ +
+öfo_simuœã_vîsi⁄
+[
+¨gc
+];
+
+664 #i‡
+	`deföed
+(
+__CRAYXE
+Ë|| deföed(
+__CRAYXC
+)
+
+665 
+ªquúe
+ +
+öfo_¸ay
+[
+¨gc
+];
+
+667 
+ªquúe
+ +
+öfo_œnguage_düÀ˘_deÁu…
+[
+¨gc
+];
+
+668 ()
+¨gv
+;
+
+669  
+ªquúe
+;
+
+670 
+	}
+}
+
+	@build/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp
+
+4 #i‚de‡
+__˝lu•lus
+
+
+12 #i‡
+deföed
+(
+__COMO__
+)
+
+13 
+	#COMPILER_ID
+ "Comóu"
+
+	)
+
+15 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__COMO_VERSION__
+ / 100)
+
+	)
+
+16 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__COMO_VERSION__
+ % 100)
+
+	)
+
+18 #ñi‡
+deföed
+(
+__INTEL_COMPILER
+Ë|| deföed(
+__ICC
+)
+
+19 
+	#COMPILER_ID
+ "I¡ñ"
+
+	)
+
+20 #i‡
+deföed
+(
+_MSC_VER
+)
+
+21 
+	#SIMULATE_ID
+ "MSVC"
+
+	)
+
+23 #i‡
+deföed
+(
+__GNUC__
+)
+
+24 
+	#SIMULATE_ID
+ "GNU"
+
+	)
+
+27 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__INTEL_COMPILER
+/100)
+
+	)
+
+28 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__INTEL_COMPILER
+/10 % 10)
+
+	)
+
+29 #i‡
+deföed
+(
+__INTEL_COMPILER_UPDATE
+)
+
+30 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__INTEL_COMPILER_UPDATE
+)
+
+	)
+
+32 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__INTEL_COMPILER
+ % 10)
+
+	)
+
+34 #i‡
+deföed
+(
+__INTEL_COMPILER_BUILD_DATE
+)
+
+36 
+	#COMPILER_VERSION_TWEAK
+ 
+	`DEC
+(
+__INTEL_COMPILER_BUILD_DATE
+)
+
+	)
+
+38 #i‡
+deföed
+(
+_MSC_VER
+)
+
+40 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+_MSC_VER
+ / 100)
+
+	)
+
+41 
+	#SIMULATE_VERSION_MINOR
+ 
+	`DEC
+(
+_MSC_VER
+ % 100)
+
+	)
+
+43 #i‡
+deföed
+(
+__GNUC__
+)
+
+44 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+__GNUC__
+)
+
+	)
+
+45 #ñi‡
+deföed
+(
+__GNUG__
+)
+
+46 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+__GNUG__
+)
+
+	)
+
+48 #i‡
+deföed
+(
+__GNUC_MINOR__
+)
+
+49 
+	#SIMULATE_VERSION_MINOR
+ 
+	`DEC
+(
+__GNUC_MINOR__
+)
+
+	)
+
+51 #i‡
+deföed
+(
+__GNUC_PATCHLEVEL__
+)
+
+52 
+	#SIMULATE_VERSION_PATCH
+ 
+	`DEC
+(
+__GNUC_PATCHLEVEL__
+)
+
+	)
+
+55 #ñi‡
+deföed
+(
+__PATHCC__
+)
+
+56 
+	#COMPILER_ID
+ "P©hSˇÀ"
+
+	)
+
+57 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__PATHCC__
+)
+
+	)
+
+58 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__PATHCC_MINOR__
+)
+
+	)
+
+59 #i‡
+deföed
+(
+__PATHCC_PATCHLEVEL__
+)
+
+60 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__PATHCC_PATCHLEVEL__
+)
+
+	)
+
+63 #ñi‡
+deföed
+(
+__BORLANDC__
+Ë&& deföed(
+__CODEGEARC_VERSION__
+)
+
+64 
+	#COMPILER_ID
+ "Emb¨ˇdîo"
+
+	)
+
+65 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__CODEGEARC_VERSION__
+>>24 & 0x00FF)
+
+	)
+
+66 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__CODEGEARC_VERSION__
+>>16 & 0x00FF)
+
+	)
+
+67 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__CODEGEARC_VERSION__
+ & 0xFFFF)
+
+	)
+
+69 #ñi‡
+deföed
+(
+__BORLANDC__
+)
+
+70 
+	#COMPILER_ID
+ "B‹œnd"
+
+	)
+
+72 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__BORLANDC__
+>>8)
+
+	)
+
+73 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__BORLANDC__
+ & 0xFF)
+
+	)
+
+75 #ñi‡
+deföed
+(
+__WATCOMC__
+) && __WATCOMC__ < 1200
+
+76 
+	#COMPILER_ID
+ "W©com"
+
+	)
+
+78 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__WATCOMC__
+ / 100)
+
+	)
+
+79 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+((
+__WATCOMC__
+ / 10Ë% 10)
+
+	)
+
+80 #i‡(
+__WATCOMC__
+ % 10) > 0
+
+81 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__WATCOMC__
+ % 10)
+
+	)
+
+84 #ñi‡
+deföed
+(
+__WATCOMC__
+)
+
+85 
+	#COMPILER_ID
+ "O≥nW©com"
+
+	)
+
+87 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+((
+__WATCOMC__
+ - 1100Ë/ 100)
+
+	)
+
+88 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+((
+__WATCOMC__
+ / 10Ë% 10)
+
+	)
+
+89 #i‡(
+__WATCOMC__
+ % 10) > 0
+
+90 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__WATCOMC__
+ % 10)
+
+	)
+
+93 #ñi‡
+deföed
+(
+__SUNPRO_CC
+)
+
+94 
+	#COMPILER_ID
+ "SunPro"
+
+	)
+
+95 #i‡
+__SUNPRO_CC
+ >= 0x5100
+
+97 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__SUNPRO_CC
+>>12)
+
+	)
+
+98 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__SUNPRO_CC
+>>4 & 0xFF)
+
+	)
+
+99 
+	#COMPILER_VERSION_PATCH
+ 
+	`HEX
+(
+__SUNPRO_CC
+ & 0xF)
+
+	)
+
+102 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__SUNPRO_CC
+>>8)
+
+	)
+
+103 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__SUNPRO_CC
+>>4 & 0xF)
+
+	)
+
+104 
+	#COMPILER_VERSION_PATCH
+ 
+	`HEX
+(
+__SUNPRO_CC
+ & 0xF)
+
+	)
+
+107 #ñi‡
+deföed
+(
+__HP_aCC
+)
+
+108 
+	#COMPILER_ID
+ "HP"
+
+	)
+
+110 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__HP_aCC
+/10000)
+
+	)
+
+111 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__HP_aCC
+/100 % 100)
+
+	)
+
+112 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__HP_aCC
+ % 100)
+
+	)
+
+114 #ñi‡
+deföed
+(
+__DECCXX
+)
+
+115 
+	#COMPILER_ID
+ "Com∑q"
+
+	)
+
+117 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__DECCXX_VER
+/10000000)
+
+	)
+
+118 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__DECCXX_VER
+/100000 % 100)
+
+	)
+
+119 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__DECCXX_VER
+ % 10000)
+
+	)
+
+121 #ñi‡
+deföed
+(
+__IBMCPP__
+Ë&& deföed(
+__COMPILER_VER__
+)
+
+122 
+	#COMPILER_ID
+ "zOS"
+
+	)
+
+124 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__IBMCPP__
+/100)
+
+	)
+
+125 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__IBMCPP__
+/10 % 10)
+
+	)
+
+126 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__IBMCPP__
+ % 10)
+
+	)
+
+128 #ñi‡
+deföed
+(
+__ibmxl__
+Ë&& deföed(
+__˛™g__
+)
+
+129 
+	#COMPILER_ID
+ "XLCœng"
+
+	)
+
+130 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__ibmxl_vîsi⁄__
+)
+
+	)
+
+131 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__ibmxl_ªÀa£__
+)
+
+	)
+
+132 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__ibmxl_modifiˇti⁄__
+)
+
+	)
+
+133 
+	#COMPILER_VERSION_TWEAK
+ 
+	`DEC
+(
+__ibmxl_±f_fix_Àvñ__
+)
+
+	)
+
+136 #ñi‡
+deföed
+(
+__IBMCPP__
+Ë&& !deföed(
+__COMPILER_VER__
+) && __IBMCPP__ >= 800
+
+137 
+	#COMPILER_ID
+ "XL"
+
+	)
+
+139 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__IBMCPP__
+/100)
+
+	)
+
+140 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__IBMCPP__
+/10 % 10)
+
+	)
+
+141 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__IBMCPP__
+ % 10)
+
+	)
+
+143 #ñi‡
+deföed
+(
+__IBMCPP__
+Ë&& !deföed(
+__COMPILER_VER__
+) && __IBMCPP__ < 800
+
+144 
+	#COMPILER_ID
+ "VisuÆAge"
+
+	)
+
+146 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__IBMCPP__
+/100)
+
+	)
+
+147 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__IBMCPP__
+/10 % 10)
+
+	)
+
+148 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__IBMCPP__
+ % 10)
+
+	)
+
+150 #ñi‡
+deföed
+(
+__PGI
+)
+
+151 
+	#COMPILER_ID
+ "PGI"
+
+	)
+
+152 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__PGIC__
+)
+
+	)
+
+153 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__PGIC_MINOR__
+)
+
+	)
+
+154 #i‡
+deföed
+(
+__PGIC_PATCHLEVEL__
+)
+
+155 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__PGIC_PATCHLEVEL__
+)
+
+	)
+
+158 #ñi‡
+deföed
+(
+_CRAYC
+)
+
+159 
+	#COMPILER_ID
+ "Cøy"
+
+	)
+
+160 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+_RELEASE_MAJOR
+)
+
+	)
+
+161 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+_RELEASE_MINOR
+)
+
+	)
+
+163 #ñi‡
+deföed
+(
+__TI_COMPILER_VERSION__
+)
+
+164 
+	#COMPILER_ID
+ "TI"
+
+	)
+
+166 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__TI_COMPILER_VERSION__
+/1000000)
+
+	)
+
+167 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__TI_COMPILER_VERSION__
+/1000 % 1000)
+
+	)
+
+168 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__TI_COMPILER_VERSION__
+ % 1000)
+
+	)
+
+170 #ñi‡
+deföed
+(
+__FUJITSU
+Ë|| deföed(
+__FCC_VERSION
+Ë|| deföed(
+__fcc_vîsi⁄
+)
+
+171 
+	#COMPILER_ID
+ "Fujôsu"
+
+	)
+
+173 #ñi‡
+deföed
+(
+__ghs__
+)
+
+174 
+	#COMPILER_ID
+ "GHS"
+
+	)
+
+176 #ifde‡
+__GHS_VERSION_NUMBER
+
+
+177 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__GHS_VERSION_NUMBER
+ / 100)
+
+	)
+
+178 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__GHS_VERSION_NUMBER
+ / 10 % 10)
+
+	)
+
+179 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__GHS_VERSION_NUMBER
+ % 10)
+
+	)
+
+182 #ñi‡
+deföed
+(
+__SCO_VERSION__
+)
+
+183 
+	#COMPILER_ID
+ "SCO"
+
+	)
+
+185 #ñi‡
+deföed
+(
+__ARMCC_VERSION
+Ë&& !deföed(
+__˛™g__
+)
+
+186 
+	#COMPILER_ID
+ "ARMCC"
+
+	)
+
+187 #i‡
+__ARMCC_VERSION
+ >= 1000000
+
+189 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__ARMCC_VERSION
+/1000000)
+
+	)
+
+190 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__ARMCC_VERSION
+/10000 % 100)
+
+	)
+
+191 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__ARMCC_VERSION
+ % 10000)
+
+	)
+
+194 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__ARMCC_VERSION
+/100000)
+
+	)
+
+195 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__ARMCC_VERSION
+/10000 % 10)
+
+	)
+
+196 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__ARMCC_VERSION
+ % 10000)
+
+	)
+
+200 #ñi‡
+deföed
+(
+__˛™g__
+Ë&& deföed(
+__≠∂e_buûd_vîsi⁄__
+)
+
+201 
+	#COMPILER_ID
+ "AµÀCœng"
+
+	)
+
+202 #i‡
+deföed
+(
+_MSC_VER
+)
+
+203 
+	#SIMULATE_ID
+ "MSVC"
+
+	)
+
+205 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__˛™g_maj‹__
+)
+
+	)
+
+206 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__˛™g_mö‹__
+)
+
+	)
+
+207 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__˛™g_∑tchÀvñ__
+)
+
+	)
+
+208 #i‡
+deföed
+(
+_MSC_VER
+)
+
+210 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+_MSC_VER
+ / 100)
+
+	)
+
+211 
+	#SIMULATE_VERSION_MINOR
+ 
+	`DEC
+(
+_MSC_VER
+ % 100)
+
+	)
+
+213 
+	#COMPILER_VERSION_TWEAK
+ 
+	`DEC
+(
+__≠∂e_buûd_vîsi⁄__
+)
+
+	)
+
+215 #ñi‡
+deföed
+(
+__˛™g__
+Ë&& deföed(
+__ARMCOMPILER_VERSION
+)
+
+216 
+	#COMPILER_ID
+ "ARMCœng"
+
+	)
+
+217 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__ARMCOMPILER_VERSION
+/1000000)
+
+	)
+
+218 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__ARMCOMPILER_VERSION
+/10000 % 100)
+
+	)
+
+219 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__ARMCOMPILER_VERSION
+ % 10000)
+
+	)
+
+220 
+	#COMPILER_VERSION_INTERNAL
+ 
+	`DEC
+(
+__ARMCOMPILER_VERSION
+)
+
+	)
+
+222 #ñi‡
+deföed
+(
+__˛™g__
+)
+
+223 
+	#COMPILER_ID
+ "Cœng"
+
+	)
+
+224 #i‡
+deföed
+(
+_MSC_VER
+)
+
+225 
+	#SIMULATE_ID
+ "MSVC"
+
+	)
+
+227 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__˛™g_maj‹__
+)
+
+	)
+
+228 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__˛™g_mö‹__
+)
+
+	)
+
+229 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__˛™g_∑tchÀvñ__
+)
+
+	)
+
+230 #i‡
+deföed
+(
+_MSC_VER
+)
+
+232 
+	#SIMULATE_VERSION_MAJOR
+ 
+	`DEC
+(
+_MSC_VER
+ / 100)
+
+	)
+
+233 
+	#SIMULATE_VERSION_MINOR
+ 
+	`DEC
+(
+_MSC_VER
+ % 100)
+
+	)
+
+236 #ñi‡
+deföed
+(
+__GNUC__
+Ë|| deföed(
+__GNUG__
+)
+
+237 
+	#COMPILER_ID
+ "GNU"
+
+	)
+
+238 #i‡
+deföed
+(
+__GNUC__
+)
+
+239 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__GNUC__
+)
+
+	)
+
+241 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+__GNUG__
+)
+
+	)
+
+243 #i‡
+deföed
+(
+__GNUC_MINOR__
+)
+
+244 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+__GNUC_MINOR__
+)
+
+	)
+
+246 #i‡
+deföed
+(
+__GNUC_PATCHLEVEL__
+)
+
+247 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__GNUC_PATCHLEVEL__
+)
+
+	)
+
+250 #ñi‡
+deföed
+(
+_MSC_VER
+)
+
+251 
+	#COMPILER_ID
+ "MSVC"
+
+	)
+
+253 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+(
+_MSC_VER
+ / 100)
+
+	)
+
+254 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(
+_MSC_VER
+ % 100)
+
+	)
+
+255 #i‡
+deföed
+(
+_MSC_FULL_VER
+)
+
+256 #i‡
+_MSC_VER
+ >= 1400
+
+258 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+_MSC_FULL_VER
+ % 100000)
+
+	)
+
+261 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+_MSC_FULL_VER
+ % 10000)
+
+	)
+
+264 #i‡
+deföed
+(
+_MSC_BUILD
+)
+
+265 
+	#COMPILER_VERSION_TWEAK
+ 
+	`DEC
+(
+_MSC_BUILD
+)
+
+	)
+
+268 #ñi‡
+deföed
+(
+__VISUALDSPVERSION__
+Ë|| deföed(
+__ADSPBLACKFIN__
+Ë|| deföed(
+__ADSPTS__
+Ë|| deföed(
+__ADSP21000__
+)
+
+269 
+	#COMPILER_ID
+ "ADSP"
+
+	)
+
+270 #i‡
+deföed
+(
+__VISUALDSPVERSION__
+)
+
+272 
+	#COMPILER_VERSION_MAJOR
+ 
+	`HEX
+(
+__VISUALDSPVERSION__
+>>24)
+
+	)
+
+273 
+	#COMPILER_VERSION_MINOR
+ 
+	`HEX
+(
+__VISUALDSPVERSION__
+>>16 & 0xFF)
+
+	)
+
+274 
+	#COMPILER_VERSION_PATCH
+ 
+	`HEX
+(
+__VISUALDSPVERSION__
+>>8 & 0xFF)
+
+	)
+
+277 #ñi‡
+deföed
+(
+__IAR_SYSTEMS_ICC__
+Ë|| deföed(
+__IAR_SYSTEMS_ICC
+)
+
+278 
+	#COMPILER_ID
+ "IAR"
+
+	)
+
+279 #i‡
+deföed
+(
+__VER__
+Ë&& deföed(
+__ICCARM__
+)
+
+280 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+((
+__VER__
+Ë/ 1000000)
+
+	)
+
+281 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+(((
+__VER__
+Ë/ 1000Ë% 1000)
+
+	)
+
+282 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+((
+__VER__
+Ë% 1000)
+
+	)
+
+283 
+	#COMPILER_VERSION_INTERNAL
+ 
+	`DEC
+(
+__IAR_SYSTEMS_ICC__
+)
+
+	)
+
+284 #ñi‡
+deföed
+(
+__VER__
+Ë&& (deföed(
+__ICCAVR__
+Ë|| deföed(
+__ICCRX__
+Ë|| deföed(
+__ICCRH850__
+Ë|| deföed(
+__ICCRL78__
+Ë|| deföed(
+__ICC430__
+Ë|| deföed(
+__ICCRISCV__
+Ë|| deföed(
+__ICCV850__
+Ë|| deföed(
+__ICC8051__
+))
+
+285 
+	#COMPILER_VERSION_MAJOR
+ 
+	`DEC
+((
+__VER__
+Ë/ 100)
+
+	)
+
+286 
+	#COMPILER_VERSION_MINOR
+ 
+	`DEC
+((
+__VER__
+Ë- (((__VER__Ë/ 100)*100))
+
+	)
+
+287 
+	#COMPILER_VERSION_PATCH
+ 
+	`DEC
+(
+__SUBVERSION__
+)
+
+	)
+
+288 
+	#COMPILER_VERSION_INTERNAL
+ 
+	`DEC
+(
+__IAR_SYSTEMS_ICC__
+)
+
+	)
+
+295 #ñi‡
+deföed
+(
+__hpux
+Ë|| deföed(
+__hpua
+)
+
+296 
+	#COMPILER_ID
+ "HP"
+
+	)
+
+299 
+	#COMPILER_ID
+ ""
+
+	)
+
+306 c⁄°* 
+	göfo_compûî
+ = "INFO" ":" "compûî[" 
+COMPILER_ID
+ "]";
+
+307 #ifde‡
+SIMULATE_ID
+
+
+308 c⁄°* 
+	göfo_simuœã
+ = "INFO" ":" "simuœã[" 
+SIMULATE_ID
+ "]";
+
+311 #ifde‡
+__QNXNTO__
+
+
+312 c⁄°* 
+	gqnx¡o
+ = "INFO" ":" "qnxnto[]";
+
+315 #i‡
+deföed
+(
+__CRAYXE
+Ë|| deföed(
+__CRAYXC
+)
+
+316 c⁄° *
+	göfo_¸ay
+ = "INFO" ":" "compiler_wrapper[CrayPrgEnv]";
+
+319 
+	#STRINGIFY_HELPER
+(
+X
+Ë#X
+
+	)
+
+320 
+	#STRINGIFY
+(
+X
+Ë
+	`STRINGIFY_HELPER
+(X)
+
+	)
+
+323 #i‡
+deföed
+(
+__löux
+Ë|| deföed(
+__löux__
+Ë|| deföed(
+löux
+)
+
+324 
+	#PLATFORM_ID
+ "Löux"
+
+	)
+
+326 #ñi‡
+deföed
+(
+__CYGWIN__
+)
+
+327 
+	#PLATFORM_ID
+ "Cygwö"
+
+	)
+
+329 #ñi‡
+deföed
+(
+__MINGW32__
+)
+
+330 
+	#PLATFORM_ID
+ "MöGW"
+
+	)
+
+332 #ñi‡
+deföed
+(
+__APPLE__
+)
+
+333 
+	#PLATFORM_ID
+ "D¨wö"
+
+	)
+
+335 #ñi‡
+deföed
+(
+_WIN32
+Ë|| deföed(
+__WIN32__
+Ë|| deföed(
+WIN32
+)
+
+336 
+	#PLATFORM_ID
+ "Wödows"
+
+	)
+
+338 #ñi‡
+deföed
+(
+__FªeBSD__
+Ë|| deföed(
+__FªeBSD
+)
+
+339 
+	#PLATFORM_ID
+ "FªeBSD"
+
+	)
+
+341 #ñi‡
+deföed
+(
+__NëBSD__
+Ë|| deföed(
+__NëBSD
+)
+
+342 
+	#PLATFORM_ID
+ "NëBSD"
+
+	)
+
+344 #ñi‡
+deföed
+(
+__O≥nBSD__
+Ë|| deföed(
+__OPENBSD
+)
+
+345 
+	#PLATFORM_ID
+ "O≥nBSD"
+
+	)
+
+347 #ñi‡
+deföed
+(
+__sun
+Ë|| deföed(
+sun
+)
+
+348 
+	#PLATFORM_ID
+ "SunOS"
+
+	)
+
+350 #ñi‡
+deföed
+(
+_AIX
+Ë|| deföed(
+__AIX
+Ë|| deföed(
+__AIX__
+Ë|| deföed(
+__aix
+Ë|| deföed(
+__aix__
+)
+
+351 
+	#PLATFORM_ID
+ "AIX"
+
+	)
+
+353 #ñi‡
+deföed
+(
+__hpux
+Ë|| deföed(
+__hpux__
+)
+
+354 
+	#PLATFORM_ID
+ "HP-UX"
+
+	)
+
+356 #ñi‡
+deföed
+(
+__HAIKU__
+)
+
+357 
+	#PLATFORM_ID
+ "Haiku"
+
+	)
+
+359 #ñi‡
+deföed
+(
+__BeOS
+Ë|| deföed(
+__BEOS__
+Ë|| deföed(
+_BEOS
+)
+
+360 
+	#PLATFORM_ID
+ "BeOS"
+
+	)
+
+362 #ñi‡
+deföed
+(
+__QNX__
+Ë|| deföed(
+__QNXNTO__
+)
+
+363 
+	#PLATFORM_ID
+ "QNX"
+
+	)
+
+365 #ñi‡
+deföed
+(
+__åu64
+Ë|| deföed(
+_åu64
+Ë|| deföed(
+__TRU64__
+)
+
+366 
+	#PLATFORM_ID
+ "Tru64"
+
+	)
+
+368 #ñi‡
+deföed
+(
+__riscos
+Ë|| deföed(
+__riscos__
+)
+
+369 
+	#PLATFORM_ID
+ "RISCos"
+
+	)
+
+371 #ñi‡
+deföed
+(
+__söix
+Ë|| deföed(
+__söix__
+Ë|| deföed(
+__SINIX__
+)
+
+372 
+	#PLATFORM_ID
+ "SINIX"
+
+	)
+
+374 #ñi‡
+deföed
+(
+__UNIX_SV__
+)
+
+375 
+	#PLATFORM_ID
+ "UNIX_SV"
+
+	)
+
+377 #ñi‡
+deföed
+(
+__bsdos__
+)
+
+378 
+	#PLATFORM_ID
+ "BSDOS"
+
+	)
+
+380 #ñi‡
+deföed
+(
+_MPRAS
+Ë|| deföed(
+MPRAS
+)
+
+381 
+	#PLATFORM_ID
+ "MP-RAS"
+
+	)
+
+383 #ñi‡
+deföed
+(
+__osf
+Ë|| deföed(
+__osf__
+)
+
+384 
+	#PLATFORM_ID
+ "OSF1"
+
+	)
+
+386 #ñi‡
+deföed
+(
+_SCO_SV
+Ë|| deföed(
+SCO_SV
+Ë|| deföed(
+sco_sv
+)
+
+387 
+	#PLATFORM_ID
+ "SCO_SV"
+
+	)
+
+389 #ñi‡
+deföed
+(
+__u…rix
+Ë|| deföed(
+__u…rix__
+Ë|| deföed(
+_ULTRIX
+)
+
+390 
+	#PLATFORM_ID
+ "ULTRIX"
+
+	)
+
+392 #ñi‡
+deföed
+(
+__XENIX__
+Ë|| deföed(
+_XENIX
+Ë|| deföed(
+XENIX
+)
+
+393 
+	#PLATFORM_ID
+ "Xíix"
+
+	)
+
+395 #ñi‡
+deföed
+(
+__WATCOMC__
+)
+
+396 #i‡
+deföed
+(
+__LINUX__
+)
+
+397 
+	#PLATFORM_ID
+ "Löux"
+
+	)
+
+399 #ñi‡
+deföed
+(
+__DOS__
+)
+
+400 
+	#PLATFORM_ID
+ "DOS"
+
+	)
+
+402 #ñi‡
+deföed
+(
+__OS2__
+)
+
+403 
+	#PLATFORM_ID
+ "OS2"
+
+	)
+
+405 #ñi‡
+deföed
+(
+__WINDOWS__
+)
+
+406 
+	#PLATFORM_ID
+ "Wödows3x"
+
+	)
+
+409 
+	#PLATFORM_ID
+
+
+	)
+
+412 #ñi‡
+deföed
+(
+__INTEGRITY
+)
+
+413 #i‡
+deföed
+(
+INT_178B
+)
+
+414 
+	#PLATFORM_ID
+ "I¡egrôy178"
+
+	)
+
+417 
+	#PLATFORM_ID
+ "I¡egrôy"
+
+	)
+
+421 
+	#PLATFORM_ID
+
+
+	)
+
+430 #i‡
+deföed
+(
+_WIN32
+Ë&& deföed(
+_MSC_VER
+)
+
+431 #i‡
+deföed
+(
+_M_IA64
+)
+
+432 
+	#ARCHITECTURE_ID
+ "IA64"
+
+	)
+
+434 #ñi‡
+deföed
+(
+_M_X64
+Ë|| deföed(
+_M_AMD64
+)
+
+435 
+	#ARCHITECTURE_ID
+ "x64"
+
+	)
+
+437 #ñi‡
+deföed
+(
+_M_IX86
+)
+
+438 
+	#ARCHITECTURE_ID
+ "X86"
+
+	)
+
+440 #ñi‡
+deföed
+(
+_M_ARM64
+)
+
+441 
+	#ARCHITECTURE_ID
+ "ARM64"
+
+	)
+
+443 #ñi‡
+deföed
+(
+_M_ARM
+)
+
+444 #i‡
+_M_ARM
+ == 4
+
+445 
+	#ARCHITECTURE_ID
+ "ARMV4I"
+
+	)
+
+446 #ñi‡
+_M_ARM
+ == 5
+
+447 
+	#ARCHITECTURE_ID
+ "ARMV5I"
+
+	)
+
+449 
+	#ARCHITECTURE_ID
+ "ARMV" 
+	`STRINGIFY
+(
+_M_ARM
+)
+
+	)
+
+452 #ñi‡
+deföed
+(
+_M_MIPS
+)
+
+453 
+	#ARCHITECTURE_ID
+ "MIPS"
+
+	)
+
+455 #ñi‡
+deföed
+(
+_M_SH
+)
+
+456 
+	#ARCHITECTURE_ID
+ "SHx"
+
+	)
+
+459 
+	#ARCHITECTURE_ID
+ ""
+
+	)
+
+462 #ñi‡
+deföed
+(
+__WATCOMC__
+)
+
+463 #i‡
+deföed
+(
+_M_I86
+)
+
+464 
+	#ARCHITECTURE_ID
+ "I86"
+
+	)
+
+466 #ñi‡
+deföed
+(
+_M_IX86
+)
+
+467 
+	#ARCHITECTURE_ID
+ "X86"
+
+	)
+
+470 
+	#ARCHITECTURE_ID
+ ""
+
+	)
+
+473 #ñi‡
+deföed
+(
+__IAR_SYSTEMS_ICC__
+Ë|| deföed(
+__IAR_SYSTEMS_ICC
+)
+
+474 #i‡
+deföed
+(
+__ICCARM__
+)
+
+475 
+	#ARCHITECTURE_ID
+ "ARM"
+
+	)
+
+477 #ñi‡
+deföed
+(
+__ICCRX__
+)
+
+478 
+	#ARCHITECTURE_ID
+ "RX"
+
+	)
+
+480 #ñi‡
+deföed
+(
+__ICCRH850__
+)
+
+481 
+	#ARCHITECTURE_ID
+ "RH850"
+
+	)
+
+483 #ñi‡
+deföed
+(
+__ICCRL78__
+)
+
+484 
+	#ARCHITECTURE_ID
+ "RL78"
+
+	)
+
+486 #ñi‡
+deföed
+(
+__ICCRISCV__
+)
+
+487 
+	#ARCHITECTURE_ID
+ "RISCV"
+
+	)
+
+489 #ñi‡
+deföed
+(
+__ICCAVR__
+)
+
+490 
+	#ARCHITECTURE_ID
+ "AVR"
+
+	)
+
+492 #ñi‡
+deföed
+(
+__ICC430__
+)
+
+493 
+	#ARCHITECTURE_ID
+ "MSP430"
+
+	)
+
+495 #ñi‡
+deföed
+(
+__ICCV850__
+)
+
+496 
+	#ARCHITECTURE_ID
+ "V850"
+
+	)
+
+498 #ñi‡
+deföed
+(
+__ICC8051__
+)
+
+499 
+	#ARCHITECTURE_ID
+ "8051"
+
+	)
+
+502 
+	#ARCHITECTURE_ID
+ ""
+
+	)
+
+505 #ñi‡
+deföed
+(
+__ghs__
+)
+
+506 #i‡
+deföed
+(
+__PPC64__
+)
+
+507 
+	#ARCHITECTURE_ID
+ "PPC64"
+
+	)
+
+509 #ñi‡
+deföed
+(
+__µc__
+)
+
+510 
+	#ARCHITECTURE_ID
+ "PPC"
+
+	)
+
+512 #ñi‡
+deföed
+(
+__ARM__
+)
+
+513 
+	#ARCHITECTURE_ID
+ "ARM"
+
+	)
+
+515 #ñi‡
+deföed
+(
+__x86_64__
+)
+
+516 
+	#ARCHITECTURE_ID
+ "x64"
+
+	)
+
+518 #ñi‡
+deföed
+(
+__i386__
+)
+
+519 
+	#ARCHITECTURE_ID
+ "X86"
+
+	)
+
+522 
+	#ARCHITECTURE_ID
+ ""
+
+	)
+
+525 
+	#ARCHITECTURE_ID
+
+
+	)
+
+529 
+	#DEC
+(
+n
+) \
+
+530 ('0' + (((
+n
+) / 10000000)%10)), \
+
+531 ('0' + (((
+n
+) / 1000000)%10)), \
+
+532 ('0' + (((
+n
+) / 100000)%10)), \
+
+533 ('0' + (((
+n
+) / 10000)%10)), \
+
+534 ('0' + (((
+n
+) / 1000)%10)), \
+
+535 ('0' + (((
+n
+) / 100)%10)), \
+
+536 ('0' + (((
+n
+) / 10)%10)), \
+
+537 ('0' + ((
+n
+Ë% 10))
+
+	)
+
+540 
+	#HEX
+(
+n
+) \
+
+541 ('0' + ((
+n
+)>>28 & 0xF)), \
+
+542 ('0' + ((
+n
+)>>24 & 0xF)), \
+
+543 ('0' + ((
+n
+)>>20 & 0xF)), \
+
+544 ('0' + ((
+n
+)>>16 & 0xF)), \
+
+545 ('0' + ((
+n
+)>>12 & 0xF)), \
+
+546 ('0' + ((
+n
+)>>8 & 0xF)), \
+
+547 ('0' + ((
+n
+)>>4 & 0xF)), \
+
+548 ('0' + ((
+n
+Ë& 0xF))
+
+	)
+
+551 #ifde‡
+COMPILER_VERSION_MAJOR
+
+
+552 c⁄° 
+	göfo_vîsi⁄
+[] = {
+
+555 
+COMPILER_VERSION_MAJOR
+,
+
+556 #ifde‡
+COMPILER_VERSION_MINOR
+
+
+557 '.', 
+COMPILER_VERSION_MINOR
+,
+
+558 #ifde‡
+COMPILER_VERSION_PATCH
+
+
+559 '.', 
+COMPILER_VERSION_PATCH
+,
+
+560 #ifde‡
+COMPILER_VERSION_TWEAK
+
+
+561 '.', 
+COMPILER_VERSION_TWEAK
+,
+
+569 #ifde‡
+COMPILER_VERSION_INTERNAL
+
+
+570 c⁄° 
+	göfo_vîsi⁄_öã∫Æ
+[] = {
+
+574 
+COMPILER_VERSION_INTERNAL
+,']','\0'};
+
+578 #ifde‡
+SIMULATE_VERSION_MAJOR
+
+
+579 c⁄° 
+	göfo_simuœã_vîsi⁄
+[] = {
+
+582 
+SIMULATE_VERSION_MAJOR
+,
+
+583 #ifde‡
+SIMULATE_VERSION_MINOR
+
+
+584 '.', 
+SIMULATE_VERSION_MINOR
+,
+
+585 #ifde‡
+SIMULATE_VERSION_PATCH
+
+
+586 '.', 
+SIMULATE_VERSION_PATCH
+,
+
+587 #ifde‡
+SIMULATE_VERSION_TWEAK
+
+
+588 '.', 
+SIMULATE_VERSION_TWEAK
+,
+
+599 c⁄°* 
+	göfo_∂©f‹m
+ = "INFO" ":" "∂©f‹m[" 
+PLATFORM_ID
+ "]";
+
+600 c⁄°* 
+	göfo_¨ch
+ = "INFO" ":" "¨ch[" 
+ARCHITECTURE_ID
+ "]";
+
+605 #i‡
+deföed
+(
+__INTEL_COMPILER
+Ë&& deföed(
+_MSVC_LANG
+) && _MSVC_LANG < 201403L
+
+606 #i‡
+deföed
+(
+__INTEL_CXX11_MODE__
+)
+
+607 #i‡
+deföed
+(
+__˝p_aggªg©e_nsdmi
+)
+
+608 
+	#CXX_STD
+ 201402L
+
+	)
+
+610 
+	#CXX_STD
+ 201103L
+
+	)
+
+613 
+	#CXX_STD
+ 199711L
+
+	)
+
+615 #ñi‡
+deföed
+(
+_MSC_VER
+Ë&& deföed(
+_MSVC_LANG
+)
+
+616 
+	#CXX_STD
+ 
+_MSVC_LANG
+
+
+	)
+
+618 
+	#CXX_STD
+ 
+__˝lu•lus
+
+
+	)
+
+621 c⁄° * 
+	göfo_œnguage_düÀ˘_deÁu…
+ = "INFO" ":" "dialect_default["
+
+622 #i‡
+CXX_STD
+ > 201703L
+
+624 #ñi‡
+CXX_STD
+ >= 201703L
+
+626 #ñi‡
+CXX_STD
+ >= 201402L
+
+628 #ñi‡
+CXX_STD
+ >= 201103L
+
+637 
+	$maö
+(
+¨gc
+, * 
+¨gv
+[])
+
+639 
+ªquúe
+ = 0;
+
+640 
+ªquúe
+ +
+öfo_compûî
+[
+¨gc
+];
+
+641 
+ªquúe
+ +
+öfo_∂©f‹m
+[
+¨gc
+];
+
+642 #ifde‡
+COMPILER_VERSION_MAJOR
+
+
+643 
+ªquúe
+ +
+öfo_vîsi⁄
+[
+¨gc
+];
+
+645 #ifde‡
+COMPILER_VERSION_INTERNAL
+
+
+646 
+ªquúe
+ +
+öfo_vîsi⁄_öã∫Æ
+[
+¨gc
+];
+
+648 #ifde‡
+SIMULATE_ID
+
+
+649 
+ªquúe
+ +
+öfo_simuœã
+[
+¨gc
+];
+
+651 #ifde‡
+SIMULATE_VERSION_MAJOR
+
+
+652 
+ªquúe
+ +
+öfo_simuœã_vîsi⁄
+[
+¨gc
+];
+
+654 #i‡
+	`deföed
+(
+__CRAYXE
+Ë|| deföed(
+__CRAYXC
+)
+
+655 
+ªquúe
+ +
+öfo_¸ay
+[
+¨gc
+];
+
+657 
+ªquúe
+ +
+öfo_œnguage_düÀ˘_deÁu…
+[
+¨gc
+];
+
+658 ()
+¨gv
+;
+
+659  
+ªquúe
+;
+
+660 
+	}
+}
+
 	@build/CMakeFiles/feature_tests.c
 
 2 c⁄° 
@@ -7546,6 +13458,14 @@ Algebø_S∑˚
 *,);
 
 49 
+Algebø_S∑˚_‰ì
+(
+Algebø_S∑˚
+* 
+as
+);
+
+50 
 Tís‹_Produ˘_Såu˘_gëid
 (
 Algebø_S∑˚
@@ -7555,7 +13475,7 @@ as
 Tís‹_Produ˘_Såu˘
 *);
 
-52 #ifde‡
+53 #ifde‡
 __˝lu•lus
 
 
@@ -7801,21 +13721,25 @@ Node
 ôîs
 ;
 
-14 * 
+13 
+‹dî
+;
+
+15 * 
 ¥›
 ;
 
-15 }
+16 }
 	tFõld_Mu…_Såu˘_EÀ
 ;
 
-18 
+19 
 Fõld_Mu…_Såu˘_EÀ_öô
 (
 Fõld_Mu…_Såu˘_EÀ
 *);
 
-21 
+22 
 Fõld_Mu…_Såu˘_EÀ
 * 
 ¸óã_fõld_mu…_°ru˘_ñe
@@ -7831,23 +13755,29 @@ size
 vÆue
 );
 
-23 
+24 
 	sPlus_Såu˘_EÀ
 {
 
-24 
+25 
 RB_Tªe
 * 
 vÆue
 ;
 
-25 (*
+26 (*
 zîo
 )(
 Tís‹
 *);
 
-26 (*
+27 (*
+‹dî
+)(
+Tís‹
+*);
+
+28 (*
 ö£π
 )(
 Algebø_S∑˚
@@ -7855,7 +13785,7 @@ Algebø_S∑˚
 Tís‹
 *,*,,*);
 
-27 * (*
+29 * (*
 gë_vÆue
 )(
 Algebø_S∑˚
@@ -7871,31 +13801,31 @@ ids
 size
 );
 
-28 * 
+30 * 
 ¥›
 ;
 
-29 }
+31 }
 	tPlus_Såu˘_EÀ
 ;
 
-31 
+33 
 Plus_Såu˘_EÀ_öô
 (
 Plus_Såu˘_EÀ
 *);
 
-34 
+36 
 zîo_∂us_°ru˘_ñe
 (
 Plus_Såu˘_EÀ
 *);
 
-37 
+39 
 	sTís‹s_Algebø_Sy°em
 
 
-39 
+41 
 Algebø_S∑˚
 * 
 as
@@ -7903,27 +13833,35 @@ as
 duÆ_as
 ;
 
-40 * (*
+42 * (*
 c›y_‰om_doubÀ
 )();
 
-41 (*
+43 (*
 £t_c›y
 )(*,*);
 
-44 (*
+46 (*
 mu…
 )(*,*);
 
-45 (*
+47 (*
 ∂us
 )(*,*);
 
-46 (*
+48 (*
+cmp
+)(*,*);
+
+49 (*
+cmp_d
+)(*,);
+
+50 (*
 ‰ì_d©a
 )(*);
 
-47 (*
+51 (*
 T_∂us
 )(
 Tís‹s_Algebø_Sy°em
@@ -7931,7 +13869,7 @@ Tís‹s_Algebø_Sy°em
 Tís‹
 *,Tensor*);
 
-48 
+52 
 Tís‹
 * (*
 Tís‹_Produ˘
@@ -7939,13 +13877,13 @@ Tís‹_Produ˘
 Tís‹s_Algebø_Sy°em
 *,Tensor*,Tensor*);
 
-49 
+53 
 Tís‹
 *(*
 T_¸óã
 )();
 
-50 (*
+54 (*
 T_‰ì
 )(
 Tís‹s_Algebø_Sy°em
@@ -7953,7 +13891,7 @@ Tís‹s_Algebø_Sy°em
 Tís‹
 *);
 
-51 * (*
+55 * (*
 T_n‹m
 )(
 Tís‹s_Algebø_Sy°em
@@ -7961,7 +13899,7 @@ Tís‹s_Algebø_Sy°em
 Tís‹
 *);
 
-52 
+56 
 Tís‹
 * (*
 T_¥odu˘
@@ -7969,7 +13907,7 @@ T_¥odu˘
 Tís‹s_Algebø_Sy°em
 *,Tensor*,Tensor*);
 
-53 * (*
+57 * (*
 T_ö√r_¥odu˘
 )(
 Tís‹s_Algebø_Sy°em
@@ -7977,21 +13915,27 @@ Tís‹s_Algebø_Sy°em
 Tís‹
 *,Tensor*);
 
-54 * 
+58 * 
 ¥›
 ;
 
-55 }
+59 }
 	tTís‹s_Algebø_Sy°em
 ;
 
-56 
+60 
 Tís‹s_Algebø_Sy°em_öô
 (
 Tís‹s_Algebø_Sy°em
 *,);
 
-57 
+61 
+Tís‹s_Algebø_Sy°em_‰ì
+(
+Tís‹s_Algebø_Sy°em
+*);
+
+62 
 ∂us_mu…_°ru˘
 (
 Tís‹s_Algebø_Sy°em
@@ -8009,7 +13953,7 @@ m£s
 size
 );
 
-58 
+63 
 ∂us_∂us_°ru˘
 (
 Tís‹s_Algebø_Sy°em
@@ -8023,7 +13967,7 @@ p£
 p£1
 );
 
-60 
+65 
 Tís‹
 * 
 W_Tís‹_Produ˘
@@ -8031,7 +13975,7 @@ W_Tís‹_Produ˘
 Tís‹s_Algebø_Sy°em
 *,Tensor*,Tensor*);
 
-62 * 
+67 * 
 W_Tís‹_I¬î_Produ˘
 (
 Tís‹s_Algebø_Sy°em
@@ -8039,7 +13983,7 @@ Tís‹s_Algebø_Sy°em
 Tís‹
 *,Tensor*);
 
-65 
+70 
 Tís‹
 *
 W_Tís‹_C⁄åa˘i⁄
@@ -8051,7 +13995,7 @@ zuo1
 zuo2
 );
 
-68 * 
+73 * 
 Tís‹_n‹m
 (
 Tís‹s_Algebø_Sy°em
@@ -8059,7 +14003,7 @@ Tís‹s_Algebø_Sy°em
 Tís‹
 *);
 
-95 #ifde‡
+100 #ifde‡
 __˝lu•lus
 
 
@@ -8177,15 +14121,15 @@ q2
 	}
 }
 
-25 
-	$Tís‹_mpf_£t_c›y
+16 
+	$Tís‹_mpf_cmp
 (*
 p1
 ,*
 p2
 )
 
-27 
+18 
 __mpf_°ru˘
 *
 q1
@@ -8197,7 +14141,67 @@ q2
 p2
 ;
 
-28 
+19  
+	`mpf_cmp
+(
+q1
+,
+q2
+);
+
+21 
+	}
+}
+
+22 
+	$Tís‹_mpf_cmp_d
+(*
+p1
+,
+d
+)
+
+24 
+__mpf_°ru˘
+*
+q1
+=(__mpf_°ru˘*)
+p1
+;
+
+25  
+	`mpf_cmp_d
+(
+q1
+,
+d
+);
+
+27 
+	}
+}
+
+37 
+	$Tís‹_mpf_£t_c›y
+(*
+p1
+,*
+p2
+)
+
+39 
+__mpf_°ru˘
+*
+q1
+=(__mpf_°ru˘*)
+p1
+,*
+q2
+=(__mpf_°ru˘*)
+p2
+;
+
+40 
 	`mpf_£t
 (
 q1
@@ -8205,17 +14209,17 @@ q1
 q2
 );
 
-30 
+42 
 	}
 }
 
-31 
+43 
 	$Tís‹_mpf_‰ì
 (*
 p
 )
 
-33 
+45 
 __mpf_°ru˘
 * 
 q
@@ -8223,29 +14227,29 @@ q
 p
 ;
 
-34 
+46 
 	`mpf_˛ór
 (
 q
 );
 
-35 
+47 
 	`‰ì
 (
 q
 );
 
-36 
+48 
 	}
 }
 
-37 * 
+49 * 
 	$Tís‹_doubÀ2_mpf
 (
 d
 )
 
-39 
+51 
 __mpf_°ru˘
 *
 ª
@@ -8253,7 +14257,7 @@ __mpf_°ru˘
 	`mÆloc
 ((__mpf_struct));
 
-40 
+52 
 	`mpf_öôs
 (
 ª
@@ -8261,7 +14265,7 @@ __mpf_°ru˘
 NULL
 );
 
-41 
+53 
 	`mpf_£t_d
 (
 ª
@@ -8269,15 +14273,15 @@ NULL
 d
 );
 
-42  (*)
+54  (*)
 ª
 ;
 
-43 
+55 
 	}
 }
 
-44 
+56 
 	$ãns‹_mpf_¥öt_£lf
 (
 Tís‹
@@ -8285,11 +14289,19 @@ Tís‹
 t
 )
 
-46 
+58 
 	`¥ötf
 ("************************************\n");
 
-48 
+59 
+	`¥ötf
+("‹dî:%d\n",
+t
+->
+	`‹dî
+(t));
+
+60 
 RB_Tøv
  *
 ô
@@ -8301,7 +14313,7 @@ vÆue
 	`begö
 (t->value);
 
-49 ;
+61 ;
 ô
 ->ô!=
 NULL
@@ -8309,7 +14321,7 @@ NULL
 	`√xt
 (it))
 
-51 
+63 
 	`gmp_¥ötf
 ("id:%Zd \n",(
 __mpz_°ru˘
@@ -8319,7 +14331,7 @@ __mpz_°ru˘
 	`fú°
 (it));
 
-52 
+64 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -8329,7 +14341,7 @@ fm£
 	`£c⁄d
 (it);
 
-53 
+65 
 	`gmp_¥ötf
 ("vÆue:%.Ff\n",(
 __mpf_°ru˘
@@ -8339,7 +14351,7 @@ fm£
 vÆue
 ));
 
-54 
+66 
 Node
 * 
 ô1
@@ -8355,7 +14367,7 @@ NULL
 Next
 )
 
-57 
+69 
 	`¥ötf
 ("%d ",((
 Algebø_Basic_EÀmít
@@ -8367,25 +14379,25 @@ vÆue
 id
 );
 
-59 
+71 
 	`¥ötf
 ("\n");
 
-61 
+73 
 	`‰ì
 (
 ô
 );
 
-62 
+74 
 	`¥ötf
 ("************************************\n");
 
-64 
+76 
 	}
 }
 
-65 
+77 
 	$Tís‹s_Algebø_Sy°em_mpf_öô
 (
 Tís‹s_Algebø_Sy°em
@@ -8395,7 +14407,7 @@ Tís‹s_Algebø_Sy°em
 size
 )
 
-67 
+79 
 	`Tís‹s_Algebø_Sy°em_öô
 (
 ès
@@ -8403,7 +14415,7 @@ size
 size
 );
 
-68 
+80 
 ès
 ->
 mu…
@@ -8411,7 +14423,7 @@ mu…
 Tís‹_mpf_mu…
 ;
 
-69 
+81 
 ès
 ->
 ∂us
@@ -8419,7 +14431,7 @@ Tís‹_mpf_mu…
 Tís‹_mpf_∂us
 ;
 
-71 
+83 
 ès
 ->
 c›y_‰om_doubÀ
@@ -8427,7 +14439,7 @@ c›y_‰om_doubÀ
 Tís‹_doubÀ2_mpf
 ;
 
-72 
+84 
 ès
 ->
 £t_c›y
@@ -8435,7 +14447,7 @@ Tís‹_doubÀ2_mpf
 Tís‹_mpf_£t_c›y
 ;
 
-73 
+85 
 ès
 ->
 ‰ì_d©a
@@ -8443,7 +14455,23 @@ Tís‹_mpf_£t_c›y
 Tís‹_mpf_‰ì
 ;
 
-76 
+86 
+ès
+->
+cmp
+=
+Tís‹_mpf_cmp
+;
+
+87 
+ès
+->
+cmp_d
+=
+Tís‹_mpf_cmp_d
+;
+
+90 
 	}
 }
 
@@ -10052,6 +16080,60 @@ vÆue
 }
 
 73 
+	$Algebø_S∑˚_‰ì
+(
+Algebø_S∑˚
+* 
+as
+)
+
+75 
+RB_Tøv
+* 
+ô
+=
+as
+->
+ñemíts
+->
+	`begö
+(as->elements);
+
+76 ;
+ô
+->ô!=
+NULL
+;ô->
+	`√xt
+(it))
+
+78 
+	`‰ì
+(
+ô
+->
+	`£c⁄d
+(it));
+
+81 
+	`‰ì
+(
+ô
+);
+
+82 
+	`RB_Tªe_‰ì
+(
+as
+->
+ñemíts
+);
+
+84 
+	}
+}
+
+85 
 	$Tís‹_Produ˘_Såu˘_gëid
 (
 Algebø_S∑˚
@@ -10063,7 +16145,7 @@ Tís‹_Produ˘_Såu˘
 çs
 )
 
-75 
+87 
 size
 =
 as
@@ -10079,7 +16161,7 @@ size1
 ñs
 );
 
-77 
+89 
 mpz_t
  
 a
@@ -10089,7 +16171,7 @@ b
 c
 ;
 
-78 
+90 
 	`mpz_öôs
 (
 a
@@ -10101,7 +16183,7 @@ c
 NULL
 );
 
-79 
+91 
 	`mpz_£t_ui
 (
 a
@@ -10109,7 +16191,7 @@ a
 size
 );
 
-81 
+93 
 Node
 * 
 ô
@@ -10123,7 +16205,7 @@ NULL
 Next
 ))
 
-83 
+95 
 Algebø_Basic_EÀmít
 * 
 abe
@@ -10133,7 +16215,7 @@ abe
 vÆue
 );
 
-85 
+97 
 	`mpz_pow_ui
 (
 b
@@ -10143,7 +16225,7 @@ a
 size1
 -1);
 
-87 
+99 
 	`mpz_mul_ui
 (
 b
@@ -10153,7 +16235,7 @@ abe
 id
 );
 
-89 
+101 
 	`mpz_add
 (
 c
@@ -10161,11 +16243,11 @@ c
 b
 );
 
-90 
+102 
 size1
 --;
 
-93 
+105 
 	`mpz_£t
 (
 çs
@@ -10175,7 +16257,7 @@ id
 c
 );
 
-94 
+106 
 	`mpz_˛ór
 (
 a
@@ -10185,7 +16267,7 @@ b
 c
 );
 
-95 
+107 
 	}
 }
 
@@ -10493,7 +16575,7 @@ ba£
 NULL
 ;
 
-7 
+8 
 m£
 ->
 ôîs
@@ -10501,7 +16583,13 @@ m£
 NULL
 ;
 
-8 
+9 
+m£
+->
+‹dî
+=0;
+
+10 
 m£
 ->
 ¥›
@@ -10509,11 +16597,11 @@ m£
 NULL
 ;
 
-9 
+11 
 	}
 }
 
-10 
+12 
 Fõld_Mu…_Såu˘_EÀ
 * 
 	$¸óã_fõld_mu…_°ru˘_ñe
@@ -10529,7 +16617,7 @@ size
 vÆue
 )
 
-12 
+14 
 Fõld_Mu…_Såu˘_EÀ
  *
 m£
@@ -10537,13 +16625,13 @@ m£
 	`mÆloc
 ((Field_Mult_Struct_Ele));
 
-13 
+15 
 	`Fõld_Mu…_Såu˘_EÀ_öô
 (
 m£
 );
 
-14 
+16 
 Tís‹_Produ˘_Såu˘
 * 
 çs
@@ -10551,13 +16639,13 @@ Tís‹_Produ˘_Såu˘
 	`mÆloc
 ((Tensor_Product_Struct));
 
-15 
+17 
 	`Tís‹_Produ˘_Såu˘_öô
 (
 çs
 );
 
-16 
+18 
 Algebø_Basic_EÀmít
 *
 ba£
@@ -10565,13 +16653,13 @@ ba£
 NULL
 ;
 
-17 
+19 
 i
 =0;i<
 size
 ;i++)
 
-19 
+21 
 ba£
 =
 as
@@ -10583,7 +16671,7 @@ ids
 i
 ]);
 
-20 
+22 
 çs
 ->
 ñs
@@ -10593,7 +16681,7 @@ i
 ba£
 );
 
-22 
+24 
 çs
 ->
 ñs
@@ -10601,7 +16689,7 @@ ba£
 	`node_ªvî£
 (tps->els);
 
-23 
+25 
 	`Tís‹_Produ˘_Såu˘_gëid
 (
 as
@@ -10609,7 +16697,7 @@ as
 çs
 );
 
-24 
+26 
 m£
 ->
 ba£
@@ -10617,21 +16705,29 @@ ba£
 çs
 ;
 
-25 
+27 
 m£
 ->
 vÆue
 =value;
 
-26  
+28 
+m£
+->
+‹dî
+=
+size
+;
+
+29  
 m£
 ;
 
-27 
+30 
 	}
 }
 
-30 
+33 
 	$zîo_∂us_°ru˘_ñe
 (
 Plus_Såu˘_EÀ
@@ -10639,7 +16735,7 @@ Plus_Såu˘_EÀ
 q
 )
 
-33 
+36 
 RB_Tøv
  *
 ô
@@ -10651,7 +16747,7 @@ vÆue
 	`begö
 (q->value);
 
-34 
+37 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -10659,7 +16755,7 @@ fm£
 NULL
 ;
 
-35 ;
+38 ;
 ô
 ->ô!=
 NULL
@@ -10667,7 +16763,7 @@ NULL
 	`√xt
 (it))
 
-37 
+40 
 fm£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -10677,7 +16773,7 @@ Fõld_Mu…_Såu˘_EÀ
 	`£c⁄d
 (it);
 
-39 
+42 
 	`‰ì
 (
 fm£
@@ -10685,7 +16781,7 @@ fm£
 vÆue
 );
 
-40 
+43 
 	`Tís‹_Produ˘_Såu˘_‰ì
 (
 fm£
@@ -10693,19 +16789,19 @@ fm£
 ba£
 );
 
-43 
+46 
 	`‰ì
 (
 fm£
 );
 
-46 
+49 
 	`‰ì
 (
 ô
 );
 
-48 
+51 
 	`RB_Tªe_‰ì
 (
 q
@@ -10713,7 +16809,7 @@ q
 vÆue
 );
 
-49 
+52 
 q
 ->
 vÆue
@@ -10723,7 +16819,7 @@ RB_Tªe
 	`mÆloc
 ((RB_Tree));
 
-50 
+53 
 	`RB_Tªe_öô_mpz
 (
 q
@@ -10731,11 +16827,11 @@ q
 vÆue
 );
 
-51 
+54 
 	}
 }
 
-53 
+56 
 	$Tís‹_ö£π_ñe
 (
 Algebø_S∑˚
@@ -10753,7 +16849,7 @@ size
 vÆue
 )
 
-56 
+58 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -10769,7 +16865,7 @@ size
 vÆue
 );
 
-58 
+60 
 RB_mpz
  
 rbm
@@ -10777,13 +16873,13 @@ rbm
 rbm1
 ;
 
-59 
+61 
 	`RB_öô_mpz
 (&
 rbm
 );
 
-60 
+62 
 	`mpz_£t
 (
 rbm
@@ -10797,7 +16893,7 @@ ba£
 id
 );
 
-61 
+63 
 rbm1
 =(
 RB_mpz
@@ -10811,13 +16907,13 @@ vÆue
 rbm
 );
 
-62 if(
+64 if(
 rbm1
 ==
 NULL
 )
 
-64 
+66 
 rbm
 .
 vÆue
@@ -10825,7 +16921,7 @@ vÆue
 fm£
 ;
 
-65 
+67 
 t
 ->
 vÆue
@@ -10835,7 +16931,7 @@ vÆue
 rbm
 );
 
-69 
+71 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£1
@@ -10845,7 +16941,7 @@ rbm1
 vÆue
 );
 
-70 
+72 
 	`‰ì
 (
 fm£1
@@ -10853,7 +16949,7 @@ fm£1
 vÆue
 );
 
-71 
+73 
 	`Tís‹_Produ˘_Såu˘_‰ì
 (
 fm£1
@@ -10861,13 +16957,13 @@ fm£1
 ba£
 );
 
-72 
+74 
 	`‰ì
 (
 fm£1
 );
 
-73 
+75 
 t
 ->
 vÆue
@@ -10877,7 +16973,7 @@ vÆue
 rbm
 );
 
-74 
+76 
 rbm
 .
 vÆue
@@ -10885,7 +16981,7 @@ vÆue
 fm£
 ;
 
-75 
+77 
 t
 ->
 vÆue
@@ -10895,7 +16991,7 @@ vÆue
 rbm
 );
 
-77 
+79 
 	`mpz_˛ór
 (
 rbm
@@ -10903,11 +16999,11 @@ rbm
 key
 );
 
-79 
+81 
 	}
 }
 
-80 * 
+82 * 
 	$Tís‹_gë_vÆue
 (
 Algebø_S∑˚
@@ -10923,7 +17019,7 @@ ids
 size
 )
 
-82 
+84 
 size1
 =
 as
@@ -10933,7 +17029,7 @@ as
 size
 ;
 
-83 
+85 
 mpz_t
  
 a
@@ -10943,7 +17039,7 @@ b
 c
 ;
 
-84 
+86 
 	`mpz_öôs
 (
 a
@@ -10955,7 +17051,7 @@ c
 NULL
 );
 
-85 
+87 
 	`mpz_£t_ui
 (
 a
@@ -10963,13 +17059,13 @@ a
 size1
 );
 
-86 
+88 
 i
 =0;i<
 size
 ;i++)
 
-88 
+90 
 	`mpz_pow_ui
 (
 b
@@ -10981,7 +17077,7 @@ size
 i
 -1);
 
-89 
+91 
 	`mpz_mul_ui
 (
 b
@@ -10991,7 +17087,7 @@ ids
 i
 ]);
 
-90 
+92 
 	`mpz_add
 (
 c
@@ -10999,7 +17095,7 @@ c
 b
 );
 
-93 
+95 
 RB_mpz
  
 rbm
@@ -11007,13 +17103,13 @@ rbm
 rbm1
 ;
 
-94 
+96 
 	`RB_öô_mpz
 (&
 rbm
 );
 
-95 
+97 
 	`mpz_£t
 (
 rbm
@@ -11023,7 +17119,7 @@ key
 c
 );
 
-96 
+98 
 rbm1
 =(
 RB_mpz
@@ -11037,17 +17133,17 @@ vÆue
 rbm
 );
 
-97 if(
+99 if(
 rbm1
 ==
 NULL
 )
 
-98 { 
+100 { 
 NULL
 ;}
 
-101  ((
+103  ((
 Fõld_Mu…_Såu˘_EÀ
 *)(
 rbm1
@@ -11055,7 +17151,7 @@ rbm1
 vÆue
 ))->value;
 
-104 
+106 
 	`mpz_˛ór
 (
 rbm
@@ -11063,7 +17159,7 @@ rbm
 key
 );
 
-105 
+107 
 	`mpz_˛ór
 (
 a
@@ -11073,11 +17169,69 @@ b
 c
 );
 
-106 
+108 
 	}
 }
 
-107 
+109 
+	$the_‹dî_of_ãns‹
+(
+Tís‹
+* 
+t
+)
+
+111 
+RB_Tøv
+*
+ô
+=
+t
+->
+vÆue
+->
+	`begö
+(t->value);
+
+112 if(
+ô
+->ô!=
+NULL
+)
+
+114 
+Fõld_Mu…_Såu˘_EÀ
+*
+fm£
+=(Fõld_Mu…_Såu˘_EÀ*)(
+ô
+->
+	`£c⁄d
+(it));
+
+115 
+	`‰ì
+(
+ô
+);
+
+116  
+fm£
+->
+‹dî
+;
+
+118 
+	`‰ì
+(
+ô
+);
+
+120 
+	}
+}
+
+121 
 	$Plus_Såu˘_EÀ_öô
 (
 Plus_Såu˘_EÀ
@@ -11085,7 +17239,7 @@ Plus_Såu˘_EÀ
 p£
 )
 
-109 
+123 
 p£
 ->
 vÆue
@@ -11095,7 +17249,7 @@ RB_Tªe
 	`mÆloc
 ((RB_Tree));
 
-110 
+124 
 	`RB_Tªe_öô_mpz
 (
 p£
@@ -11103,7 +17257,15 @@ p£
 vÆue
 );
 
-111 
+125 
+p£
+->
+‹dî
+=
+the_‹dî_of_ãns‹
+;
+
+126 
 p£
 ->
 zîo
@@ -11111,7 +17273,7 @@ zîo
 zîo_∂us_°ru˘_ñe
 ;
 
-112 
+127 
 p£
 ->
 ö£π
@@ -11119,7 +17281,7 @@ p£
 Tís‹_ö£π_ñe
 ;
 
-113 
+128 
 p£
 ->
 gë_vÆue
@@ -11127,7 +17289,7 @@ gë_vÆue
 Tís‹_gë_vÆue
 ;
 
-114 
+129 
 p£
 ->
 ¥›
@@ -11135,17 +17297,17 @@ p£
 NULL
 ;
 
-115 
+130 
 	}
 }
 
-118 
+133 
 Tís‹
 * 
 	$Tís‹_¸óã_
 ()
 
-120 
+135 
 Tís‹
  *
 ª
@@ -11153,21 +17315,21 @@ Tís‹
 	`mÆloc
 ((Tensor));
 
-121 
+136 
 	`Plus_Såu˘_EÀ_öô
 (
 ª
 );
 
-122  
+137  
 ª
 ;
 
-124 
+139 
 	}
 }
 
-138 
+153 
 	$Tís‹_‰ì
 (
 Tís‹s_Algebø_Sy°em
@@ -11179,7 +17341,7 @@ Tís‹
 t
 )
 
-140 
+155 
 RB_Tøv
  *
 ô
@@ -11191,7 +17353,7 @@ vÆue
 	`begö
 (t->value);
 
-141 
+156 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -11199,7 +17361,7 @@ fm£
 NULL
 ;
 
-142 ;
+157 ;
 ô
 ->ô!=
 NULL
@@ -11207,7 +17369,7 @@ NULL
 	`√xt
 (it))
 
-144 
+159 
 fm£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -11217,7 +17379,7 @@ Fõld_Mu…_Såu˘_EÀ
 	`£c⁄d
 (it);
 
-145 
+160 
 ès
 ->
 	`‰ì_d©a
@@ -11227,7 +17389,7 @@ fm£
 vÆue
 );
 
-147 
+162 
 	`Tís‹_Produ˘_Såu˘_‰ì
 (
 fm£
@@ -11235,19 +17397,19 @@ fm£
 ba£
 );
 
-148 
+163 
 	`‰ì
 (
 fm£
 );
 
-151 
+166 
 	`‰ì
 (
 ô
 );
 
-153 
+168 
 	`RB_Tªe_‰ì
 (
 t
@@ -11255,17 +17417,17 @@ t
 vÆue
 );
 
-154 
+169 
 	`‰ì
 (
 t
 );
 
-157 
+172 
 	}
 }
 
-158 
+173 
 	$Tís‹s_Algebø_Sy°em_öô
 (
 Tís‹s_Algebø_Sy°em
@@ -11275,7 +17437,7 @@ Tís‹s_Algebø_Sy°em
 size
 )
 
-160 
+175 
 Algebø_S∑˚
 *
 as
@@ -11283,31 +17445,31 @@ as
 	`mÆloc
 ((Algebra_Space));
 
-161 
+176 
 	`Algebø_S∑˚_öô
 (
 as
 );
 
-162 
+177 
 i
 =0;i<
 size
 ;i++)
 
-164 
+179 
 as
 ->
 	`¸óã_ñemít
 (as);
 
-166 
+181 
 ès
 ->
 as
 =as;
 
-167 
+182 
 as
 =(
 Algebø_S∑˚
@@ -11315,25 +17477,25 @@ Algebø_S∑˚
 	`mÆloc
 ((Algebra_Space));
 
-168 
+183 
 	`Algebø_S∑˚_öô
 (
 as
 );
 
-169 
+184 
 i
 =0;i<
 size
 ;i++)
 
-171 
+186 
 as
 ->
 	`¸óã_ñemít
 (as);
 
-173 
+188 
 ès
 ->
 duÆ_as
@@ -11341,7 +17503,7 @@ duÆ_as
 as
 ;
 
-175 
+190 
 ès
 ->
 mu…
@@ -11349,7 +17511,7 @@ mu…
 NULL
 ;
 
-176 
+191 
 ès
 ->
 ∂us
@@ -11357,7 +17519,7 @@ NULL
 NULL
 ;
 
-177 
+192 
 ès
 ->
 c›y_‰om_doubÀ
@@ -11365,7 +17527,7 @@ c›y_‰om_doubÀ
 NULL
 ;
 
-178 
+193 
 ès
 ->
 £t_c›y
@@ -11373,7 +17535,23 @@ NULL
 NULL
 ;
 
-179 
+194 
+ès
+->
+cmp
+=
+NULL
+;
+
+195 
+ès
+->
+cmp_d
+=
+NULL
+;
+
+196 
 ès
 ->
 T_∂us
@@ -11381,7 +17559,7 @@ T_∂us
 ∂us_∂us_°ru˘
 ;
 
-180 
+197 
 ès
 ->
 T_¸óã
@@ -11389,7 +17567,7 @@ T_¸óã
 Tís‹_¸óã_
 ;
 
-181 
+198 
 ès
 ->
 T_‰ì
@@ -11397,7 +17575,7 @@ T_‰ì
 Tís‹_‰ì
 ;
 
-182 
+199 
 ès
 ->
 T_n‹m
@@ -11405,7 +17583,7 @@ T_n‹m
 Tís‹_n‹m
 ;
 
-183 
+200 
 ès
 ->
 T_¥odu˘
@@ -11413,7 +17591,7 @@ T_¥odu˘
 W_Tís‹_Produ˘
 ;
 
-184 
+201 
 ès
 ->
 T_ö√r_¥odu˘
@@ -11421,7 +17599,7 @@ T_ö√r_¥odu˘
 W_Tís‹_I¬î_Produ˘
 ;
 
-185 
+202 
 ès
 ->
 ¥›
@@ -11429,11 +17607,49 @@ W_Tís‹_I¬î_Produ˘
 NULL
 ;
 
-186 
+203 
 	}
 }
 
-187 
+204 
+	$Tís‹s_Algebø_Sy°em_‰ì
+(
+Tís‹s_Algebø_Sy°em
+*
+ès
+)
+
+206 
+	`Algebø_S∑˚_‰ì
+(
+ès
+->
+as
+);
+
+207 
+	`Algebø_S∑˚_‰ì
+(
+ès
+->
+duÆ_as
+);
+
+208 
+	`‰ì
+(
+ès
+->
+as
+);‰ì—as->
+duÆ_as
+);
+
+210 
+	}
+}
+
+211 
 	$∂us_mu…_°ru˘
 (
 Tís‹s_Algebø_Sy°em
@@ -11451,7 +17667,7 @@ m£s
 size
 )
 
-189 
+213 
 RB_mpz
  
 rbm
@@ -11459,19 +17675,19 @@ rbm
 rbm1
 ;
 
-190 
+214 
 	`RB_öô_mpz
 (&
 rbm
 );
 
-191 
+215 
 i
 =0;i<
 size
 ;i++)
 
-193 
+217 
 	`mpz_£t
 (
 rbm
@@ -11487,7 +17703,7 @@ ba£
 id
 );
 
-194 
+218 
 rbm1
 =(
 RB_mpz
@@ -11501,13 +17717,25 @@ vÆue
 rbm
 );
 
-195 if(
+219 if(
+èl
+->
+	`cmp_d
+(
+m£s
+[
+i
+]->
+vÆue
+,0)==0)
+
+225 if(
 rbm1
 ==
 NULL
 )
 
-197 
+227 
 Fõld_Mu…_Såu˘_EÀ
 * 
 ª
@@ -11515,13 +17743,23 @@ Fõld_Mu…_Såu˘_EÀ
 	`mÆloc
 ((Field_Mult_Struct_Ele));
 
-198 
+228 
 	`Fõld_Mu…_Såu˘_EÀ_öô
 (
 ª
 );
 
-199 
+229 
+ª
+->
+‹dî
+=
+m£s
+[
+i
+]->order;
+
+230 
 ª
 ->
 vÆue
@@ -11531,7 +17769,7 @@ vÆue
 	`c›y_‰om_doubÀ
 (1);
 
-200 
+231 
 èl
 ->
 	`£t_c›y
@@ -11545,7 +17783,7 @@ m£s
 i
 ]->value);
 
-202 
+233 
 Tís‹_Produ˘_Såu˘
 * 
 çs
@@ -11553,13 +17791,13 @@ Tís‹_Produ˘_Såu˘
 	`mÆloc
 ((Tensor_Product_Struct));
 
-203 
+234 
 	`Tís‹_Produ˘_Såu˘_öô
 (
 çs
 );
 
-204 
+235 
 çs
 ->
 ñs
@@ -11573,7 +17811,7 @@ i
 ba£
 ->els);
 
-205 
+236 
 	`mpz_£t
 (
 çs
@@ -11587,7 +17825,7 @@ i
 ba£
 ->id);
 
-207 
+238 
 ª
 ->
 ba£
@@ -11595,7 +17833,7 @@ ba£
 çs
 ;
 
-208 
+239 
 rbm
 .
 vÆue
@@ -11603,7 +17841,7 @@ vÆue
 ª
 ;
 
-209 
+240 
 p£
 ->
 vÆue
@@ -11613,23 +17851,51 @@ vÆue
 rbm
 );
 
-213 
-èl
-->
-	`∂us
-(((
+244 
 Fõld_Mu…_Såu˘_EÀ
-*)(
+* 
+ãmp_fm£
+=(Fõld_Mu…_Såu˘_EÀ*)(
 rbm1
 ->
 vÆue
-))->vÆue,
+);
+
+246 
+èl
+->
+	`∂us
+(
+ãmp_fm£
+->
+vÆue
+,
 m£s
 [
 i
 ]->value);
 
-216 
+247 if(
+èl
+->
+	`cmp_d
+(
+ãmp_fm£
+->
+vÆue
+,0)==0)
+
+249 
+p£
+->
+vÆue
+->
+	`îa£
+’£->vÆue,&
+rbm
+);
+
+256 
 	`mpz_˛ór
 (
 rbm
@@ -11637,11 +17903,11 @@ rbm
 key
 );
 
-218 
+258 
 	}
 }
 
-220 
+260 
 	$∂us_∂us_°ru˘
 (
 Tís‹s_Algebø_Sy°em
@@ -11655,7 +17921,7 @@ p£
 p£1
 )
 
-222 
+262 
 RB_Tøv
 *
 ô
@@ -11667,7 +17933,7 @@ vÆue
 	`begö
 (pse1->value);
 
-223 
+263 
 Fõld_Mu…_Såu˘_EÀ
 * 
 m£
@@ -11675,7 +17941,7 @@ m£
 NULL
 ;
 
-224 ;
+264 ;
 ô
 ->ô!=
 NULL
@@ -11683,7 +17949,7 @@ NULL
 	`√xt
 (it))
 
-226 
+266 
 m£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -11693,7 +17959,7 @@ Fõld_Mu…_Såu˘_EÀ
 	`£c⁄d
 (it)) ;
 
-227 
+267 
 	`∂us_mu…_°ru˘
 (
 èl
@@ -11703,17 +17969,17 @@ p£
 m£
 ,1);
 
-229 
+269 
 	`‰ì
 (
 ô
 );
 
-230 
+270 
 	}
 }
 
-231 
+271 
 Tís‹
 * 
 	$W_Tís‹_Produ˘
@@ -11729,7 +17995,7 @@ t1
 t2
 )
 
-233 
+273 
 Tís‹
 *
 ª
@@ -11739,7 +18005,7 @@ Tís‹
 	`T_¸óã
 ();
 
-234 
+274 
 RB_Tøv
  *
 ô1
@@ -11751,7 +18017,7 @@ vÆue
 	`begö
 (t1->value);
 
-235 
+275 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -11761,7 +18027,7 @@ NULL
 fm£1
 =NULL;
 
-236 
+276 
 Fõld_Mu…_Såu˘_EÀ
  *
 m£
@@ -11769,7 +18035,7 @@ m£
 NULL
 ;
 
-237 ;
+277 ;
 ô1
 ->
 ô
@@ -11779,7 +18045,7 @@ NULL
 	`√xt
 (it1))
 
-239 
+279 
 fm£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -11789,7 +18055,7 @@ Fõld_Mu…_Såu˘_EÀ
 	`£c⁄d
 (it1));
 
-240 
+280 
 RB_Tøv
 * 
 ô2
@@ -11801,7 +18067,7 @@ vÆue
 	`begö
 (t2->value);
 
-241 ;
+281 ;
 ô2
 ->
 ô
@@ -11811,7 +18077,7 @@ NULL
 	`√xt
 (it2))
 
-244 
+284 
 fm£1
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -11821,7 +18087,7 @@ Fõld_Mu…_Såu˘_EÀ
 	`£c⁄d
 (it2));
 
-245 *
+285 *
 vÆue
 =
 ès
@@ -11829,7 +18095,7 @@ vÆue
 	`c›y_‰om_doubÀ
 (1);
 
-246 
+286 
 ès
 ->
 	`£t_c›y
@@ -11839,7 +18105,7 @@ vÆue
 fm£
 ->value);
 
-248 
+288 
 ès
 ->
 	`mu…
@@ -11849,7 +18115,7 @@ vÆue
 fm£1
 ->value);
 
-249 
+289 
 m£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -11857,13 +18123,13 @@ Fõld_Mu…_Såu˘_EÀ
 	`mÆloc
 ((Field_Mult_Struct_Ele));
 
-250 
+290 
 	`Fõld_Mu…_Såu˘_EÀ_öô
 (
 m£
 );
 
-251 
+291 
 Tís‹_Produ˘_Såu˘
 * 
 çs
@@ -11871,13 +18137,13 @@ Tís‹_Produ˘_Såu˘
 	`mÆloc
 ((Tensor_Product_Struct));
 
-252 
+292 
 	`Tís‹_Produ˘_Såu˘_öô
 (
 çs
 );
 
-253 
+293 
 m£
 ->
 vÆue
@@ -11887,7 +18153,7 @@ ba£
 çs
 ;
 
-255 
+295 
 çs
 ->
 ñs
@@ -11901,7 +18167,7 @@ ba£
 fm£1
 ->base->els);
 
-256 
+296 
 	`Tís‹_Produ˘_Såu˘_gëid
 (
 ès
@@ -11911,7 +18177,17 @@ as
 çs
 );
 
-257 
+297 
+m£
+->
+‹dî
+=
+fm£
+->‹dî+
+fm£1
+->order;
+
+298 
 	`∂us_mu…_°ru˘
 (
 ès
@@ -11921,27 +18197,45 @@ as
 m£
 ,1);
 
-259 
+299 
+ès
+->
+	`‰ì_d©a
+(
+m£
+->
+vÆue
+);
+
+300 
+	`Tís‹_Produ˘_Såu˘_‰ì
+(
+m£
+->
+ba£
+);
+
+302 
 	`‰ì
 (
 ô2
 );
 
-261 
+304 
 	`‰ì
 (
 ô1
 );
 
-263  
+306  
 ª
 ;
 
-264 
+307 
 	}
 }
 
-266 * 
+309 * 
 	$W_Tís‹_I¬î_Produ˘
 (
 Tís‹s_Algebø_Sy°em
@@ -11955,7 +18249,7 @@ t1
 t2
 )
 
-268 *
+311 *
 vÆue
 =
 ès
@@ -11965,7 +18259,7 @@ vÆue
 vÆue1
 =tas->copy_from_double(1);
 
-269 
+312 
 RB_mpz
  
 rbm
@@ -11975,13 +18269,13 @@ rbm1
 NULL
 ;
 
-270 
+313 
 	`RB_öô_mpz
 (&
 rbm
 );
 
-271 
+314 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -11989,7 +18283,7 @@ fm£
 NULL
 ;
 
-272 
+315 
 RB_Tøv
 * 
 ô
@@ -12001,7 +18295,7 @@ vÆue
 	`begö
 (t1->value);
 
-273 ;
+316 ;
 ô
 ->ô!=
 NULL
@@ -12009,7 +18303,7 @@ NULL
 	`√xt
 (it))
 
-275 
+318 
 fm£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -12019,19 +18313,21 @@ Fõld_Mu…_Såu˘_EÀ
 	`£c⁄d
 (it));
 
-276 
+319 
 	`mpz_£t
 (
 rbm
 .
 key
-,
-fm£
+,(
+__mpz_°ru˘
+*)(
+ô
 ->
-vÆue
-);
+	`fú°
+(it)));
 
-277 
+320 
 ès
 ->
 	`£t_c›y
@@ -12043,7 +18339,7 @@ fm£
 vÆue
 );
 
-278 
+321 
 rbm1
 =(
 RB_mpz
@@ -12057,13 +18353,13 @@ vÆue
 rbm
 );
 
-279 if(
+322 if(
 rbm1
 !=
 NULL
 )
 
-281 
+324 
 fm£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -12073,7 +18369,7 @@ rbm1
 vÆue
 );
 
-282 
+325 
 ès
 ->
 	`mu…
@@ -12085,7 +18381,7 @@ fm£
 vÆue
 );
 
-283 
+326 
 ès
 ->
 	`∂us
@@ -12095,13 +18391,13 @@ vÆue
 vÆue1
 );
 
-288 
+331 
 	`‰ì
 (
 ô
 );
 
-289 
+332 
 	`mpz_˛ór
 (
 rbm
@@ -12109,7 +18405,7 @@ rbm
 key
 );
 
-290 
+333 
 ès
 ->
 	`‰ì_d©a
@@ -12117,15 +18413,15 @@ key
 vÆue1
 );
 
-291  
+334  
 vÆue
 ;
 
-292 
+335 
 	}
 }
 
-294 
+337 
 Node
 * 
 	$C⁄åa˘i⁄_chuli_•licög
@@ -12141,7 +18437,7 @@ zuo1
 zuo2
 )
 
-296 
+339 
 Node
 * 
 ª
@@ -12149,7 +18445,7 @@ Node
 n1
 ;
 
-297 
+340 
 Node
 * 
 nô
@@ -12157,13 +18453,13 @@ nô
 n1
 ;
 
-298 
+341 
 i
 =0;i<
 zuo1
 ;i++)
 
-300 
+343 
 nô
 =(
 Node
@@ -12171,7 +18467,7 @@ Node
 Next
 );
 
-302 
+345 
 Node
 * 
 nô1
@@ -12179,7 +18475,7 @@ nô1
 NULL
 ;
 
-303 if(
+346 if(
 nô
 ->
 Pªv
@@ -12187,7 +18483,7 @@ Pªv
 NULL
 )
 
-305 
+348 
 nô1
 =(
 Node
@@ -12197,7 +18493,7 @@ nô
 Pªv
 );
 
-306 
+349 
 nô1
 ->
 Next
@@ -12205,7 +18501,7 @@ Next
 nô
 ->Next);
 
-311 
+354 
 ª
 =(
 Node
@@ -12215,7 +18511,7 @@ nô
 Next
 );
 
-313 if(
+356 if(
 nô
 ->
 Next
@@ -12223,7 +18519,7 @@ Next
 NULL
 )
 
-315 
+358 
 nô1
 =(
 Node
@@ -12233,7 +18529,7 @@ nô
 Next
 );
 
-316 
+359 
 nô1
 ->
 Pªv
@@ -12241,13 +18537,13 @@ Pªv
 nô
 ->Prev);
 
-318 
+361 
 	`‰ì
 (
 nô
 );
 
-319 
+362 
 Node
 * 
 ª1
@@ -12255,19 +18551,19 @@ Node
 n2
 ;
 
-320 
+363 
 nô
 =
 n2
 ;
 
-321 
+364 
 i
 =0;i<
 zuo2
 ;i++)
 
-323 
+366 
 nô
 =(
 Node
@@ -12275,13 +18571,13 @@ Node
 Next
 );
 
-325 
+368 
 nô1
 =
 NULL
 ;
 
-326 if(
+369 if(
 nô
 ->
 Pªv
@@ -12289,7 +18585,7 @@ Pªv
 NULL
 )
 
-328 
+371 
 nô1
 =(
 Node
@@ -12299,7 +18595,7 @@ nô
 Pªv
 );
 
-329 
+372 
 nô1
 ->
 Next
@@ -12307,7 +18603,7 @@ Next
 nô
 ->Next);
 
-333 
+376 
 ª1
 =(
 Node
@@ -12317,7 +18613,7 @@ nô
 Next
 );
 
-335 if(
+378 if(
 nô
 ->
 Next
@@ -12325,7 +18621,7 @@ Next
 NULL
 )
 
-337 
+380 
 nô1
 =(
 Node
@@ -12335,7 +18631,7 @@ nô
 Next
 );
 
-338 
+381 
 nô1
 ->
 Pªv
@@ -12343,33 +18639,33 @@ Pªv
 nô
 ->Prev);
 
-340 
+383 
 	`‰ì
 (
 nô
 );
 
-342 if(
+385 if(
 ª
 ==
 NULL
 )
 
-343 { 
+386 { 
 ª1
 ;}
 
-344 if(
+387 if(
 ª1
 ==
 NULL
 )
 
-346  
+389  
 ª
 ;
 
-350 
+393 
 Node
 * 
 l3
@@ -12379,7 +18675,7 @@ l3
 ª
 );
 
-351 
+394 
 l3
 ->
 Next
@@ -12387,7 +18683,7 @@ Next
 ª1
 ;
 
-352 
+395 
 ª1
 ->
 Pªv
@@ -12395,19 +18691,19 @@ Pªv
 l3
 ;
 
-353  
+396  
 ª
 ;
 
-355  
+398  
 ª
 ;
 
-356 
+399 
 	}
 }
 
-357 
+400 
 	$fm£s_ãns‹_∂us_node
 (
 Tís‹s_Algebø_Sy°em
@@ -12429,7 +18725,7 @@ zuo1
 zuo2
 )
 
-359 if(
+402 if(
 n1
 ==
 NULL
@@ -12437,7 +18733,7 @@ NULL
 n2
 ==NULL)
 
-363 
+406 
 RB_mpz
  
 rbm
@@ -12445,13 +18741,13 @@ rbm
 rbm1
 ;
 
-364 
+407 
 	`RB_öô_mpz
 (&
 rbm
 );
 
-365 
+408 
 Fõld_Mu…_Såu˘_EÀ
  *
 fm£1
@@ -12461,7 +18757,7 @@ NULL
 fm£2
 =NULL;
 
-367 
+410 
 Node
 *
 nô1
@@ -12473,7 +18769,7 @@ NULL
 Next
 ))
 
-369 
+412 
 fm£1
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -12483,7 +18779,7 @@ nô1
 vÆue
 );
 
-370 
+413 
 Node
 * 
 nô2
@@ -12495,7 +18791,7 @@ NULL
 Next
 ))
 
-372 
+415 
 fm£2
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -12505,7 +18801,7 @@ nô2
 vÆue
 );
 
-373 
+416 
 Tís‹_Produ˘_Såu˘
 * 
 çs
@@ -12513,13 +18809,13 @@ Tís‹_Produ˘_Såu˘
 	`mÆloc
 ((Tensor_Product_Struct));
 
-374 
+417 
 	`Tís‹_Produ˘_Såu˘_öô
 (
 çs
 );
 
-375 
+418 
 çs
 ->
 ñs
@@ -12539,7 +18835,7 @@ zuo1
 zuo2
 );
 
-376 
+419 
 	`Tís‹_Produ˘_Såu˘_gëid
 (
 ès
@@ -12549,7 +18845,7 @@ as
 çs
 );
 
-377 
+420 
 	`mpz_£t
 (
 rbm
@@ -12561,7 +18857,7 @@ key
 id
 );
 
-378 
+421 
 rbm1
 =(
 RB_mpz
@@ -12575,13 +18871,13 @@ vÆue
 rbm
 );
 
-379 if(
+422 if(
 rbm1
 ==
 NULL
 )
 
-381 
+424 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -12589,13 +18885,13 @@ fm£
 	`mÆloc
 ((Field_Mult_Struct_Ele));
 
-382 
+425 
 	`Fõld_Mu…_Såu˘_EÀ_öô
 (
 fm£
 );
 
-383 * 
+426 * 
 vÆue
 =
 ès
@@ -12603,7 +18899,7 @@ vÆue
 	`c›y_‰om_doubÀ
 (1);
 
-384 
+427 
 ès
 ->
 	`£t_c›y
@@ -12613,7 +18909,7 @@ vÆue
 fm£1
 ->value);
 
-386 
+429 
 ès
 ->
 	`mu…
@@ -12623,13 +18919,13 @@ vÆue
 fm£2
 ->value);
 
-388 
+431 
 fm£
 ->
 vÆue
 =value;
 
-390 
+433 
 fm£
 ->
 ba£
@@ -12637,7 +18933,17 @@ ba£
 çs
 ;
 
-391 
+434 
+fm£
+->
+‹dî
+=
+fm£1
+->‹dî+
+fm£2
+->order-2;
+
+435 
 	`mpz_£t
 (
 rbm
@@ -12649,7 +18955,7 @@ key
 id
 );
 
-393 
+437 
 rbm
 .
 vÆue
@@ -12657,7 +18963,7 @@ vÆue
 fm£
 ;
 
-394 
+438 
 fm£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -12667,7 +18973,7 @@ rbm
 vÆue
 );
 
-396 
+440 
 t
 ->
 vÆue
@@ -12677,13 +18983,13 @@ vÆue
 rbm
 );
 
-400 
+444 
 	`Tís‹_Produ˘_Såu˘_‰ì
 (
 çs
 );
 
-401 *
+445 *
 vÆue
 =
 ès
@@ -12691,7 +18997,7 @@ vÆue
 	`c›y_‰om_doubÀ
 (1);
 
-402 
+446 
 ès
 ->
 	`£t_c›y
@@ -12701,7 +19007,7 @@ vÆue
 fm£1
 ->value);
 
-404 
+448 
 ès
 ->
 	`mu…
@@ -12711,7 +19017,7 @@ vÆue
 fm£2
 ->value);
 
-405 
+449 
 ès
 ->
 	`∂us
@@ -12723,7 +19029,7 @@ rbm1
 vÆue
 ))->value,value);
 
-406 
+450 
 ès
 ->
 	`‰ì_d©a
@@ -12731,7 +19037,7 @@ vÆue
 vÆue
 );
 
-411 
+455 
 	`mpz_˛ór
 (
 rbm
@@ -12739,11 +19045,11 @@ rbm
 key
 );
 
-412 
+456 
 	}
 }
 
-413 
+457 
 	$fm£s_˛assi_dim
 (
 Fõld_Mu…_Såu˘_EÀ
@@ -12753,7 +19059,7 @@ fm£
 zuo1
 )
 
-415 
+459 
 Node
 * 
 nô
@@ -12765,13 +19071,13 @@ ba£
 ñs
 ;
 
-416 
+460 
 i
 =0;i<
 zuo1
 ;i++)
 
-418 
+462 
 nô
 =(
 Node
@@ -12779,7 +19085,7 @@ Node
 Next
 );
 
-420  ((
+464  ((
 Algebø_Basic_EÀmít
 *)(
 nô
@@ -12789,11 +19095,11 @@ vÆue
 id
 ;
 
-422 
+466 
 	}
 }
 
-459 
+503 
 Tís‹
 *
 	$W_Tís‹_C⁄åa˘i⁄
@@ -12813,7 +19119,7 @@ zuo1
 zuo2
 )
 
-461 
+505 
 size
 =
 ès
@@ -12823,7 +19129,7 @@ as
 ñemíts
 ->size;
 
-462 
+506 
 Node
 ** 
 n1
@@ -12833,7 +19139,7 @@ n1
 size
 );
 
-463 
+507 
 Node
 ** 
 n2
@@ -12843,7 +19149,7 @@ n2
 size
 );
 
-464 
+508 
 	`mem£t
 (
 n1
@@ -12855,7 +19161,7 @@ size
 n2
 ,0,(Node*)*size);
 
-465 
+509 
 Tís‹
  *
 ª
@@ -12865,7 +19171,7 @@ Tís‹
 	`T_¸óã
 ();
 
-466 
+510 
 mpz_t
  
 mt1
@@ -12883,7 +19189,7 @@ NULL
 i
 =0;
 
-467 
+511 
 	`mpz_£t_ui
 (
 a
@@ -12891,7 +19197,7 @@ a
 size
 );
 
-468 
+512 
 RB_Tøv
  *
 ô1
@@ -12903,7 +19209,7 @@ vÆue
 	`begö
 (t1->value);
 
-469 
+513 
 Fõld_Mu…_Såu˘_EÀ
 * 
 fm£
@@ -12911,7 +19217,7 @@ fm£
 NULL
 ;
 
-470 ;
+514 ;
 ô1
 ->
 ô
@@ -12921,7 +19227,7 @@ NULL
 	`√xt
 (it1))
 
-472 
+516 
 fm£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -12931,7 +19237,7 @@ Fõld_Mu…_Såu˘_EÀ
 	`£c⁄d
 (it1));
 
-473 
+517 
 i
 =
 	`fm£s_˛assi_dim
@@ -12941,7 +19247,7 @@ fm£
 zuo1
 );
 
-479 
+523 
 n1
 [
 i
@@ -12951,13 +19257,13 @@ i
 fm£
 );
 
-481 
+525 
 	`‰ì
 (
 ô1
 );
 
-482 
+526 
 RB_Tøv
  *
 ô2
@@ -12969,7 +19275,7 @@ vÆue
 	`begö
 (t2->value);
 
-483 ;
+527 ;
 ô2
 ->
 ô
@@ -12979,7 +19285,7 @@ NULL
 	`√xt
 (it2))
 
-485 
+529 
 fm£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -12989,7 +19295,7 @@ Fõld_Mu…_Såu˘_EÀ
 	`£c⁄d
 (it2));
 
-486 
+530 
 i
 =
 	`fm£s_˛assi_dim
@@ -12999,7 +19305,7 @@ fm£
 zuo2
 );
 
-488 
+532 
 n2
 [
 i
@@ -13009,19 +19315,19 @@ i
 fm£
 );
 
-490 
+534 
 	`‰ì
 (
 ô2
 );
 
-491 
+535 
 i
 =0;i<
 size
 ;i++)
 
-494 
+538 
 	`fm£s_ãns‹_∂us_node
 (
 ès
@@ -13039,7 +19345,7 @@ zuo1
 zuo2
 );
 
-496 
+540 
 	`mpz_˛ór
 (
 mt1
@@ -13051,15 +19357,15 @@ a
 mt3
 );
 
-500  
+544  
 ª
 ;
 
-501 
+545 
 	}
 }
 
-502 * 
+546 * 
 	$Tís‹_n‹m
 (
 Tís‹s_Algebø_Sy°em
@@ -13071,7 +19377,7 @@ Tís‹
 t
 )
 
-504 * 
+548 * 
 vÆue
 =
 ès
@@ -13079,7 +19385,7 @@ vÆue
 	`c›y_‰om_doubÀ
 (0);
 
-505 * 
+549 * 
 vÆue1
 =
 ès
@@ -13087,7 +19393,7 @@ vÆue1
 	`c›y_‰om_doubÀ
 (1);
 
-506 
+550 
 RB_Tøv
 *
 ô
@@ -13099,7 +19405,7 @@ vÆue
 	`begö
 (t->value);
 
-507 
+551 
 Fõld_Mu…_Såu˘_EÀ
 * 
 m£
@@ -13107,7 +19413,7 @@ m£
 NULL
 ;
 
-508 ;
+552 ;
 ô
 ->ô!=
 NULL
@@ -13115,7 +19421,7 @@ NULL
 	`√xt
 (it))
 
-510 
+554 
 m£
 =(
 Fõld_Mu…_Såu˘_EÀ
@@ -13125,7 +19431,7 @@ Fõld_Mu…_Såu˘_EÀ
 	`£c⁄d
 (it));
 
-511 
+555 
 ès
 ->
 	`£t_c›y
@@ -13137,7 +19443,7 @@ m£
 vÆue
 );
 
-512 
+556 
 ès
 ->
 	`mu…
@@ -13145,7 +19451,7 @@ vÆue
 vÆue1
 ,value1);
 
-514 
+558 
 ès
 ->
 	`∂us
@@ -13155,13 +19461,13 @@ vÆue
 vÆue1
 );
 
-520 
+564 
 	`‰ì
 (
 ô
 );
 
-521 
+565 
 ès
 ->
 	`‰ì_d©a
@@ -13169,11 +19475,11 @@ vÆue1
 vÆue1
 );
 
-522  
+566  
 vÆue
 ;
 
-523 
+567 
 	}
 }
 
@@ -13662,6 +19968,16 @@ fm£1
 ->base->els);
 
 92 
+m£
+->
+‹dî
+=
+fm£
+->‹dî+
+fm£1
+->order;
+
+93 
 çs
 ->
 ñs
@@ -13673,11 +19989,11 @@ nô
 Êag
 );
 
-93 if(
+94 if(
 Êag
 %2==1)
 
-95 * 
+96 * 
 vÆue1
 =
 ès
@@ -13685,7 +20001,7 @@ vÆue1
 	`c›y_‰om_doubÀ
 (-1);
 
-96 
+97 
 ès
 ->
 	`mu…
@@ -13695,7 +20011,7 @@ vÆue
 vÆue1
 );
 
-97 
+98 
 ès
 ->
 	`‰ì_d©a
@@ -13703,13 +20019,13 @@ vÆue1
 vÆue1
 );
 
-99 
+100 
 	`‰ì_node
 (
 nô
 );
 
-100 
+101 
 	`Tís‹_Produ˘_Såu˘_gëid
 (
 ès
@@ -13719,7 +20035,7 @@ as
 çs
 );
 
-102 
+103 
 	`∂us_mu…_°ru˘
 (
 ès
@@ -13729,23 +20045,41 @@ as
 m£
 ,1);
 
+104 
+	`Tís‹_Produ˘_Såu˘_‰ì
+(
+m£
+->
+ba£
+);
+
 105 
+ès
+->
+	`‰ì_d©a
+(
+m£
+->
+vÆue
+);
+
+108 
 	`‰ì
 (
 ô2
 );
 
-107 
+110 
 	`‰ì
 (
 ô1
 );
 
-108  
+111  
 ª
 ;
 
-109 
+112 
 	}
 }
 
@@ -714040,13 +720374,15 @@ __GCC_IEC_559_COMPLEX
 .
 1
 /usr/include
-1057
-41741
+1059
+41857
 Demo/main.cpp
 Demo/test_h/quater_double.h
 Demo/test_h/vector_test.h
 build/CMakeFiles/3.13.4/CompilerIdC/CMakeCCompilerId.c
 build/CMakeFiles/3.13.4/CompilerIdCXX/CMakeCXXCompilerId.cpp
+build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c
+build/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp
 build/CMakeFiles/feature_tests.c
 include/Quaternions/Al_Quaternions.h
 include/Space/Algebra_Fun_.h

@@ -16,7 +16,7 @@ void test_void(void*p1)
 //#include<Quaternions/Al_Quaternions.h>
 void test_gmp()
 {
-    mpf_set_default_prec(64);
+    mpf_set_default_prec(200);
     mpz_t a,b,c,d;
     mpz_inits(a,b,c,d,NULL);
     mpz_set_d(a,2.1);
@@ -43,14 +43,15 @@ void test_gmp()
     mpf_set_str(f,"0.33423534663241215465476987808796754523132435477978089096785",10);
     mpf_set_d(f1,2);
     //mpf_add(f1,f,f);
-    mpf_mul(f1,f,f1);
+    //mpf_mul(f1,f,f1);
+    mpf_div(f1,f,f1);
     //mpf_set_d(f1,4);
     //mpf_sqrt_ui(f1,4);
-    gmp_printf("f1=%.Ff,f=%.Ff\n",f1);
+    gmp_printf("f1=%.Ff,f=%.Ff\n",f1,f);
     mpf_cmp(f,f1);
     //
     //对double比较
-   int re=mpf_cmp_d(f,1);
+   int re=mpf_cmp_d(f1,1);
    printf("lre:%d\n",re);
     //转化为double类型
     //mpf_get_d()
@@ -170,17 +171,55 @@ void test_rb()
    // tree=jsw_rbnew(t_cmp,t_dup,t_rel);
     //jsw_rbinsert();
 }
+void test_inverse()
+{
+
+    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)malloc(sizeof(Tensors_Algebra_System));
+    Tensors_Algebra_System_init(tas,4);
+    tas->mult=Tensor_mpf_mult;
+    tas->plus=Tensor_mpf_plus;
+    tas->div=Tensor_mpf_div;
+ //   tas->copy=Tensor_mpf_copy;
+    tas->copy_from_double=Tensor_double2_mpf;
+    tas->set_copy=Tensor_mpf_set_copy;
+    tas->free_data=Tensor_mpf_free;
+    tas->cmp=Tensor_mpf_cmp;
+    tas->cmp_d=Tensor_mpf_cmp_d;
+    Tensor* t_i=tas->T_create();
+
+    int ids[]={0,0};
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(1));
+    ids[0]=0;ids[1]=2;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(3));
+    ids[0]=1;ids[1]=0;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(1));
+    ids[0]=1;ids[1]=1;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(-5));
+    ids[0]=1;ids[1]=2;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(6));
+    ids[0]=2;ids[1]=0;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(11));
+    ids[0]=2;ids[1]=2;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(9));
+    ids[0]=3;ids[1]=3;
+    t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(1));
+    tensor_mpf_print_self(t_i);
+    Tensor* t=Tensor_inverse(tas,t_i);
+    tensor_mpf_print_self(t); 
+
+}
 int main(int argc,char **argv)
 {
     char s='0';
     printf("s:%c\n",s+3);
   //  test_rb1();
-  //  test_gmp();
+    //test_gmp();
     //int re[4];
-    test_vector();
+   // test_vector();
     //test_rb();
         //mpf_out
     //mpf_set_
+    test_inverse();
     return 0;
 }
 

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/libo/Documents/c++/Algebras/src/Tensors/Al_Tensors.c" "/home/libo/Documents/c++/Algebras/build/src/Tensors/CMakeFiles/algebra_tensors.dir/Al_Tensors.c.o"
   "/home/libo/Documents/c++/Algebras/src/Tensors/Antisymmetric_Tensor.c" "/home/libo/Documents/c++/Algebras/build/src/Tensors/CMakeFiles/algebra_tensors.dir/Antisymmetric_Tensor.c.o"
+  "/home/libo/Documents/c++/Algebras/src/Tensors/Tensors_Operation.c" "/home/libo/Documents/c++/Algebras/build/src/Tensors/CMakeFiles/algebra_tensors.dir/Tensors_Operation.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

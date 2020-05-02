@@ -34,6 +34,10 @@ Space/Algebra_Fun_.h
 Tensors/Al_Tensors.h
 -
 
+../include/Tensors/Tensors_Operation.h
+Antisymmetric_Tensor.h
+../include/Tensors/Antisymmetric_Tensor.h
+
 ../thirdpart/cstructures/include/tools_node.h
 stdlib.h
 -
@@ -66,5 +70,7 @@ test_h/vector_test.h
 Tensors/Al_Tensors.h
 -
 Tensors/Antisymmetric_Tensor.h
+-
+Tensors/Tensors_Operation.h
 -
 
