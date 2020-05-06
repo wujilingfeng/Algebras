@@ -74,6 +74,9 @@ Tensor*W_Tensor_Contraction(struct Tensors_Algebra_System*,Tensor*,Tensor*,int z
 
 //返回张量模长的平方
 void* Tensor_norm(struct Tensors_Algebra_System*,Tensor*);
+
+void Tensor_mult_field_(Tensors_Algebra_System*,Tensor* ,void* );
+void Tensor_div_field_(Tensors_Algebra_System*, Tensor* ,void* );
 /*
 typedef struct Vectors_Algebra_System
 {

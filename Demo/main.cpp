@@ -219,7 +219,30 @@ int main(int argc,char **argv)
     //test_rb();
         //mpf_out
     //mpf_set_
-    test_inverse();
+    //test_inverse();
+    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)malloc(sizeof(Tensors_Algebra_System));
+    Tensors_Algebra_System_init(tas,2);
+    tas->mult=Tensor_mpf_mult;
+    tas->plus=Tensor_mpf_plus;
+    tas->div=Tensor_mpf_div;
+ //   tas->copy=Tensor_mpf_copy;
+    tas->copy_from_double=Tensor_double2_mpf;
+    tas->set_copy=Tensor_mpf_set_copy;
+    tas->free_data=Tensor_mpf_free;
+    tas->cmp=Tensor_mpf_cmp;
+    tas->cmp_d=Tensor_mpf_cmp_d;
+    Tensor* t_i=tas->T_create();
+    int ids[2];
+    ids[0]=0;ids[1]=1;
+    t_i->insert(tas->as,t_i,ids,1,tas->copy_from_double(1));
+    ids[0]=1;ids[1]=2;
+    t_i->insert(tas->as,t_i,ids,1,tas->copy_from_double(1));
+    //ids[0]=1;ids[1]=2;
+    //t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(1));
+    tensor_mpf_print_self(t_i);
+    Tensor* t=Hodge_Anti_tensor_(tas,t_i);
+    tensor_mpf_print_self(t);
+    //t_i
     return 0;
 }
 

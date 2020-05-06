@@ -575,6 +575,28 @@ RB_Trav*it=t->value->begin(t->value);
 	tas->free_data(value1);
 	return value;
 }
+void Tensor_mult_field_(Tensors_Algebra_System* tas,Tensor*t,void* value)
+{
+	Field_Mult_Struct_Ele* fmse=NULL;
+	RB_Trav* it=t->value->begin(t->value);
+	for(;it->it!=NULL;it->next(it))
+	{
+		fmse=(Field_Mult_Struct_Ele*)(it->second(it));
+		tas->mult(fmse->value,value);
+	}
+	free(it);	
+}
+void Tensor_div_field_(Tensors_Algebra_System*tas, Tensor* t,void* value)
+{
+	Field_Mult_Struct_Ele* fmse=NULL;
+	RB_Trav* it=t->value->begin(t->value);
+	for(;it->it!=NULL;it->next(it))
+	{
+		fmse=(Field_Mult_Struct_Ele*)(it->second(it));
+		tas->div(fmse->value,value);	
+	}
+	free(it);	
+}
 /*
 static void vector_mult(struct Vectors_Algebra_System*vas,void* re,Vector* q1,Vector*q2)
 {

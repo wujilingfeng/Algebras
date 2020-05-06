@@ -110,4 +110,56 @@ Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 	free(it1);    
     return re;
 }
+//只对反对称张量有效的算法
+Tensor* Hodge_Anti_tensor_(Tensors_Algebra_System*tas,Tensor* t)
+{
+    RB_Trav* it=t->value->begin(t->value);
+    Field_Mult_Struct_Ele* fmse1=NULL;
+    Node* node=NULL;
+    Tensor* re=tas->T_create();
+    int i=0;
+    RB_mpz rbm;
+    RB_init_mpz(&rbm);
+    for(;it->it!=NULL;it->next(it))
+    {
+        node=NULL;
+        RB_Trav* it1=tas->as->elements->begin(tas->as->elements);
+        for(;it1->it!=NULL;it1->next(it1))
+        {
+            node=node_pushback(node,it1->second(it1)); 
+        } 
+        free(it1);
+        node=node_reverse(node);
+        Field_Mult_Struct_Ele* fmse=(Field_Mult_Struct_Ele*)(it->second(it));
+        i=0;
+        int temp_flag=0;
+        for(Node* nit=fmse->base->els;nit!=NULL;nit=(Node*)(nit->Next))
+        {
+            node=node_delete_value(node,nit->value);
+            temp_flag+=(((Algebra_Basic_Element*)(nit->value))->id-i);
+            i++;
+        }
+        fmse1=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
+        Field_Mult_Struct_Ele_init(fmse1);
+        Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+        Tensor_Product_Struct_init(tps);
+        fmse1->base=tps;
+        if(temp_flag%2==0)
+        {
+            fmse1->value=tas->copy_from_double(1);
+        }
+        else
+        {
+            fmse1->value=tas->copy_from_double(-1);
+        }
+        tas->mult(fmse1->value,fmse->value);
+        tps->els=node;
+        Tensor_Product_Struct_getid(tas->as,tps);
+        mpz_set(rbm.key,tps->id);
+        rbm.value=fmse1;
+        re->value->insert(re->value,&rbm);
 
+    }
+    free(it); 
+    return re;
+}

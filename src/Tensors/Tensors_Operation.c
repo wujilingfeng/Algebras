@@ -141,6 +141,7 @@ void Tensor_tensors_plus_div(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l
 	free(it);
 
 }
+/*
 //k l1
 void Tensor_tensors_mult(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l1,void* value)
 {
@@ -163,11 +164,12 @@ void Tensor_tensors_div(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l1,voi
 		tas->div(fmse->value,value);
 	}
 	free(it);	
-}
+}*/
 Tensor* Tensor_inverse(Tensors_Algebra_System*tas,Tensor*t)
 {
     if(t->order(t)!=2)
     {
+    	printf("order is not 2\n");
         return NULL;
     }
 
@@ -226,8 +228,10 @@ Tensor* Tensor_inverse(Tensors_Algebra_System*tas,Tensor*t)
         }
       
         tas->set_copy(value1,value);
-        Tensor_tensors_div(tas,ts,0,i,value1);
-        Tensor_tensors_div(tas,re,0,i,value1);
+        Tensor_div_field_(tas,ts[i],value1);
+        Tensor_div_field_(tas,re[i],value1);
+        //Tensor_tensors_div(tas,ts,0,i,value1);
+        //Tensor_tensors_div(tas,re,0,i,value1);
         for(j=0;j<size;j++)
         {
             if(j==i)

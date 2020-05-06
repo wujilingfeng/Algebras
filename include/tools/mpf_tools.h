@@ -1,5 +1,6 @@
 #include<Tensors/Antisymmetric_Tensor.h>
 #include<Tensors/Al_Tensors.h>
+
 static void Tensor_mpf_mult(void* p1,void *p2)
 {
     __mpf_struct*q1=(__mpf_struct*)p1;
@@ -28,6 +29,8 @@ static int Tensor_mpf_cmp(void*p1,void*p2)
 static int Tensor_mpf_cmp_d(void*p1,double d)
 {
     __mpf_struct*q1=(__mpf_struct*)p1;
+    mpf_t q2;
+    //mpf_inits();
     return mpf_cmp_d(q1,d);
 
 }

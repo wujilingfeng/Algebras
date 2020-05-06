@@ -111,8 +111,8 @@ void Tensor_Node_plus(Tensors_Algebra_System*tas,Tensor*t,Node**n,int zuo,int l1
 
 }*/
 //k l1
-void Tensor_tensors_mult(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l1,void* value);
-void Tensor_tensors_div(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l1,void*value);
+//void Tensor_tensors_mult(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l1,void* value);
+//void Tensor_tensors_div(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l1,void*value);
 
 /*
 void Tensor_Cholesky(Tensors_Algebra_System*tas,Tensor*t,Tensor*L,Tensor*D)
