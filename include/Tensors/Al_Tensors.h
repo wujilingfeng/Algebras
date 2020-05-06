@@ -56,6 +56,8 @@ typedef struct Tensors_Algebra_System
 	void* (*T_norm)(struct Tensors_Algebra_System*,Tensor*);
 	Tensor* (*T_product)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
 	void* (*T_inner_product)(struct Tensors_Algebra_System*,Tensor*,Tensor*);
+	void (*T_mult_field)(struct Tensors_Algebra_System*,Tensor*,void*);
+	void (*T_div_field)(struct Tensors_Algebra_System*,Tensor*,void*);
 	void* prop;
 }Tensors_Algebra_System;
 void Tensors_Algebra_System_init(Tensors_Algebra_System*,int);

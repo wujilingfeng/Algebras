@@ -46,11 +46,18 @@ static void iter_init_mpz(RB_Trav*trav)
     trav->second=get_value_mpz;
 
 }
+static void RB_mpz_del(void*p)
+{
+	RB_mpz* q=(RB_mpz*)p;
+	mpz_clear(q->key);
+	free(q);
+}
 void RB_Tree_init_mpz(RB_Tree*tree)
 {
     RB_Tree_init(tree);
     tree->copy=RB_copy_mpz;
     tree->cmp=RB_cmp_mpz;
+    tree->del=RB_mpz_del;
     tree->iterator_init=iter_init_mpz;
 }
 

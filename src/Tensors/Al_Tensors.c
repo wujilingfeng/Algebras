@@ -205,6 +205,8 @@ void Tensors_Algebra_System_init(Tensors_Algebra_System*tas,int size)
 	tas->T_norm=Tensor_norm;
 	tas->T_product=W_Tensor_Product;
 	tas->T_inner_product=W_Tensor_Inner_Product;
+	tas->T_mult_field=Tensor_mult_field_;
+	tas->T_div_field=Tensor_div_field_;
 	tas->prop=NULL;
 }
 void Tensors_Algebra_System_free(Tensors_Algebra_System*tas)
