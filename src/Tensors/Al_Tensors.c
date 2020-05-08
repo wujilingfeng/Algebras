@@ -72,6 +72,7 @@ static void Tensor_insert_ele(Algebra_Space*as,struct Tensor*t,int* ids,int size
 	}
 	else
 	{
+		//如果重复存在内存泄漏，fmse1->value无法释放内存
 		Field_Mult_Struct_Ele* fmse1=(Field_Mult_Struct_Ele*)(rbm1->value);
 		free(fmse1->value);
 		Tensor_Product_Struct_free(fmse1->base);
@@ -169,7 +170,6 @@ static void Tensor_free(struct Tensors_Algebra_System*tas ,Tensor*t)
 	}
 
 	free(it);
-
 	RB_Tree_free(t->value);
 	free(t);
 	
@@ -550,6 +550,12 @@ Tensor*W_Tensor_Contraction(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t
 		fmses_tensor_plus_node(tas,re,n1[i],n2[i],zuo1,zuo2);
 	}
 	//mpz_clear(mt1);mpz_clear(mt2);mpz_clear(a);mpz_clear(mt3);
+	for(int i=0;i<size;i++)
+	{
+		free_node(n1[i]);
+		free_node(n2[i]);
+	}
+	
 	free(n1);free(n2);	
 
 	

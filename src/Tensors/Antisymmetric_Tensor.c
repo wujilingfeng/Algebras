@@ -117,6 +117,8 @@ Tensor* Hodge_Anti_tensor_(Tensors_Algebra_System*tas,Tensor* t)
     Field_Mult_Struct_Ele* fmse1=NULL;
     Node* node=NULL;
     Tensor* re=tas->T_create();
+    int size=tas->as->elements->size; 
+    int order=t->order(t);
     int i=0;
     RB_mpz rbm;
     RB_init_mpz(&rbm);
@@ -141,6 +143,7 @@ Tensor* Hodge_Anti_tensor_(Tensors_Algebra_System*tas,Tensor* t)
         }
         fmse1=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
         Field_Mult_Struct_Ele_init(fmse1);
+        fmse1->order=size-order;
         Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
         Tensor_Product_Struct_init(tps);
         fmse1->base=tps;
@@ -160,6 +163,7 @@ Tensor* Hodge_Anti_tensor_(Tensors_Algebra_System*tas,Tensor* t)
         re->value->insert(re->value,&rbm);
 
     }
-    free(it); 
+    free(it);
+    mpz_clear(rbm.key); 
     return re;
 }
