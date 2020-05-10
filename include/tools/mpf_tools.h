@@ -79,7 +79,10 @@ void tensor_mpf_print_self(Tensor* t)
         }
         printf("\n");
     }
+    ///******??新/
     free(it);
+    //*****/
+ 
     printf("************************************\n");
     
 }

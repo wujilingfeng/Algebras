@@ -5,6 +5,8 @@
 //#include "tools_rbtree.h"
 #include<Space/Algebra_Fun_.h>
 #include "test_h/vector_test.h"
+int memery_leak_from_RB_Tree_compute;
+int memery_leak_from_RB_Tree_compute_f;
 void test_void(void*p1)
 {
     __mpz_struct* q=(__mpz_struct*)p1;
@@ -70,7 +72,7 @@ void *data;
 }rb_t;
 static void*t_copy(void* p)
 {
-    void* dup_p=malloc(sizeof(rb_t));
+    void* dup_p=LB_malloc(sizeof(rb_t));
     memmove(dup_p,p,sizeof(rb_t));
     return dup_p;
 }
@@ -89,7 +91,7 @@ static int t_cmp(const void* p1,const void* p2)
 }
 void test_rb1()
 {
-    RB_Tree* tree=(RB_Tree*)malloc(sizeof(RB_Tree));
+    RB_Tree* tree=(RB_Tree*)LB_malloc(sizeof(RB_Tree));
     RB_Tree_init_mpz(tree);
     RB_mpz rbm;
     RB_init_mpz(&rbm);
@@ -116,28 +118,28 @@ void test_rb1()
 }
 void test_rb()
 {
-    RB_Tree* tree=(RB_Tree*)malloc(sizeof(RB_Tree));
+    RB_Tree* tree=(RB_Tree*)LB_malloc(sizeof(RB_Tree));
     RB_Tree_init(tree);
-    printf("size:%ld\n",tree->size);
+    printf("size:%d\n",tree->size);
     tree->cmp=t_cmp;
     tree->copy=t_copy;
     rb_t t1;
     t1.key=1;
     tree->insert(tree,&t1);
-    printf("size:%ld\n",tree->size);
+    printf("size:%d\n",tree->size);
 
     t1.key=9;
     tree->insert(tree,&t1);
-    printf("size:%ld\n",tree->size);
+    printf("size:%d\n",tree->size);
 
     t1.key=5;
     tree->insert(tree,&t1);
     t1.key=100;
     tree->insert(tree,&t1);
-    printf("size:%ld\n",tree->size);
+    printf("size:%d\n",tree->size);
     t1.key=5;
     tree->erase(tree,&t1);
-    printf("size:%ld\n",tree->size);
+    printf("size:%d\n",tree->size);
 
     for(auto iter=tree->begin(tree);iter->it!=NULL;iter->next(iter))
     {
@@ -174,7 +176,7 @@ void test_rb()
 void test_inverse()
 {
 
-    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)malloc(sizeof(Tensors_Algebra_System));
+    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)LB_malloc(sizeof(Tensors_Algebra_System));
     Tensors_Algebra_System_init(tas,4);
     tas->mult=Tensor_mpf_mult;
     tas->plus=Tensor_mpf_plus;
@@ -203,14 +205,17 @@ void test_inverse()
     t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(9));
     ids[0]=3;ids[1]=3;
     t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(1));
-    tensor_mpf_print_self(t_i);
+    //tensor_mpf_print_self(t_i);
     Tensor* t=Tensor_inverse(tas,t_i);
-    tensor_mpf_print_self(t); 
+    //tensor_mpf_print_self(t); 
+    tas->T_free(tas,t_i);
+    tas->T_free(tas,t);
+    Tensors_Algebra_System_free(tas);
 
 }
 void test_hodge()
 {
-    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)malloc(sizeof(Tensors_Algebra_System));
+    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)LB_malloc(sizeof(Tensors_Algebra_System));
     Tensors_Algebra_System_init(tas,3);
     tas->mult=Tensor_mpf_mult;
     tas->plus=Tensor_mpf_plus;
@@ -228,14 +233,139 @@ void test_hodge()
     {
         t->insert(tas->as,t,&i,1,tas->copy_from_double(p[i]));
     }   
-    tensor_mpf_print_self(t);
+    //tensor_mpf_print_self(t);
     Tensor*t1=Hodge_Anti_tensor_(tas,t);
    ///c tensor_mpf_print_self(t1);
     Tensor* t2=Hodge_Anti_tensor_(tas,t1);
-    tensor_mpf_print_self(t2);
+   //tensor_mpf_print_self(t2);
+    tas->T_free(tas,t);
+    tas->T_free(tas,t1);
+    tas->T_free(tas,t2);
+    Tensors_Algebra_System_free(tas);
+
+}
+Tensor* Anti_tensor_mpf_from_point(Tensors_Algebra_System*tas,double**M,int rows,int cols)
+{
+
+    printf("leak m:%d  leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
+    Tensor* re=tas->T_create();
+    printf("hereleak m:%d  leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
+    for(int j=0;j<cols;j++)
+    {
+        if((M[1][j]-M[0][j])==0)
+        {
+            continue;
+        }
+        //printf("d:%lf\n",M[1][j]-M[0][j]);
+        re->insert(tas->as,re,&j,1,tas->copy_from_double(M[1][j]-M[0][j]));
+        printf("hereleak m:%d  leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
+    }
+    for(int i=2;i<rows;i++)
+    {   
+
+        Tensor *t=tas->T_create();
+
+        printf("leak m:%d  leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
+        for(int j=0;j<cols;j++)
+        {
+
+            if((M[i][j]-M[0][j])==0)
+            {
+                continue;
+            }
+            //printf("d:%lf\n",M[i][j]-M[0][j]);
+            t->insert(tas->as,t,&j,1,tas->copy_from_double(M[i][j]-M[0][j]));
+
+            //printf("llib eak m:%d  leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
+        }
+
+        printf("begin leak m:%d  leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
+        Tensor*t1=Tensor_Wedge_(tas,re,t);
+
+        tas->T_free(tas,t);
+
+        tas->T_free(tas,re);
+        printf("begin leak m:%d  leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
+        re=t1;
+    
+    }
+
+    return re;
+}
+void test_wedge()
+{
+    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)LB_malloc(sizeof(Tensors_Algebra_System));
+    Tensors_Algebra_System_init(tas,4);
+    tas->mult=Tensor_mpf_mult;
+    tas->plus=Tensor_mpf_plus;
+    tas->div=Tensor_mpf_div;
+ //   tas->copy=Tensor_mpf_copy;
+    tas->copy_from_double=Tensor_double2_mpf;
+    tas->set_copy=Tensor_mpf_set_copy;
+    tas->free_data=Tensor_mpf_free;
+    tas->cmp=Tensor_mpf_cmp;
+    tas->cmp_d=Tensor_mpf_cmp_d;
+    //Tensor* t_i=tas->T_create();
+
+    double **M=(double **)malloc(sizeof(double*)*4);
+    for(int i=0;i<4;i++)
+    {
+        M[i]=(double*)malloc(sizeof(double)*4);
+    }
+    M[0][0]=0.2;M[0][1]=-23.0;M[0][2]=3.23;M[0][3]=-23.002;
+    M[1][0]=0.922;M[1][1]=3.0;M[1][2]=0.3;M[1][3]=-3.02;
+    M[2][0]=-0.212;M[2][1]=-2.01;M[2][2]=32.23;M[2][3]=13.9;
+    M[2][0]=-1.0;M[2][1]=3.01;M[2][2]=7.01;M[2][3]=5.45;
+    
+
+    printf("leak m:%d  leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
+    Tensor* t=Anti_tensor_mpf_from_point(tas,M,4,4); 
+    Tensor* t1=Anti_tensor_mpf_from_point(tas,M,4,4);
+    __mpf_struct* re=(__mpf_struct*)tas->T_inner_product(tas,t,t1);
+    mpf_clear(re);
+    LB_free(re);
+    for(int i=0;i<4;i++)
+    {
+        free(M[i]);
+    }
+    free(M);
+    tas->T_free(tas,t);
+    tas->T_free(tas,t1);
+    Tensors_Algebra_System_free(tas);
+
+}
+void my_wedge_()
+{
+    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)LB_malloc(sizeof(Tensors_Algebra_System));
+    Tensors_Algebra_System_init(tas,4);
+    tas->mult=Tensor_mpf_mult;
+    tas->plus=Tensor_mpf_plus;
+    tas->div=Tensor_mpf_div;
+ //   tas->copy=Tensor_mpf_copy;
+    tas->copy_from_double=Tensor_double2_mpf;
+    tas->set_copy=Tensor_mpf_set_copy;
+    tas->free_data=Tensor_mpf_free;
+    tas->cmp=Tensor_mpf_cmp;
+    tas->cmp_d=Tensor_mpf_cmp_d;
+}
+void test_inner_product()
+{
+    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)LB_malloc(sizeof(Tensors_Algebra_System));
+    Tensors_Algebra_System_init(tas,4);
+    tas->mult=Tensor_mpf_mult;
+    tas->plus=Tensor_mpf_plus;
+    tas->div=Tensor_mpf_div;
+ //   tas->copy=Tensor_mpf_copy;
+    tas->copy_from_double=Tensor_double2_mpf;
+    tas->set_copy=Tensor_mpf_set_copy;
+    tas->free_data=Tensor_mpf_free;
+    tas->cmp=Tensor_mpf_cmp;
+    tas->cmp_d=Tensor_mpf_cmp_d; 
 }
 int main(int argc,char **argv)
 {
+    memery_leak_from_RB_Tree_compute=0;
+    memery_leak_from_RB_Tree_compute_f=0;
     char s='0';
     printf("s:%c\n",s+3);
   //  test_rb1();
@@ -246,12 +376,11 @@ int main(int argc,char **argv)
         //mpf_out
     //mpf_set_
     //test_inverse();
-    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)malloc(sizeof(Tensors_Algebra_System));
-    Tensors_Algebra_System_init(tas,2);
-    tas->mult=Tensor_mpf_mult;
+/*    Tensors_Algebra_System* tas=(Tensors_Algebra_System*)LB_malloc(sizeof(Tensors_Algebra_System));
+   Tensors_Algebra_System_init(tas,2);
+   tas->mult=Tensor_mpf_mult;
     tas->plus=Tensor_mpf_plus;
     tas->div=Tensor_mpf_div;
- //   tas->copy=Tensor_mpf_copy;
     tas->copy_from_double=Tensor_double2_mpf;
     tas->set_copy=Tensor_mpf_set_copy;
     tas->free_data=Tensor_mpf_free;
@@ -263,13 +392,17 @@ int main(int argc,char **argv)
     t_i->insert(tas->as,t_i,ids,1,tas->copy_from_double(1));
     ids[0]=1;ids[1]=2;
     t_i->insert(tas->as,t_i,ids,1,tas->copy_from_double(1));
-    //ids[0]=1;ids[1]=2;
-    //t_i->insert(tas->as,t_i,ids,2,tas->copy_from_double(1));
-    tensor_mpf_print_self(t_i);
+   
+//    tensor_mpf_print_self(t_i);
     Tensor* t=Hodge_Anti_tensor_(tas,t_i);
-    tensor_mpf_print_self(t);
+    tas->T_free(tas,t_i);
+    tas->T_free(tas,t);
+    Tensors_Algebra_System_free(tas);*/
+    test_inverse();
     test_hodge();
-    printf("end\n");
+    test_wedge();
+    printf("end\nleak m :%d,leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
+    //printf("end\n");
     //t_i
     return 0;
 }

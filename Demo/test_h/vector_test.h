@@ -14,7 +14,7 @@ void double_plus(void*p1,void*p2)
 }
 void *double_copy(void*tar)
 {
-    void* re=malloc(sizeof(double));
+    void* re=LB_malloc(sizeof(double));
     memmove(re,tar,sizeof(double));
     return re;
 
@@ -41,7 +41,7 @@ void Tensor_mpf_div(void* p1,void*p2)
 void* Tensor_mpf_copy(void*p)
 { 
     __mpf_struct*q=(__mpf_struct*)p;
-    __mpf_struct*re=(__mpf_struct*)malloc(sizeof(__mpf_struct));
+    __mpf_struct*re=(__mpf_struct*)LB_malloc(sizeof(__mpf_struct));
     mpf_inits(re,NULL);
     mpf_set(re,q);
     return (void*)(re);
@@ -50,7 +50,7 @@ void Tensor_mpf_free(void*p)
 {
     __mpf_struct* q=(__mpf_struct*)p;
     mpf_clear(q);
-    free(q);
+    LB_free(q);
 }
 static void Tensor_mpf_set_copy(void *p1,void*p2)
 {
@@ -72,7 +72,7 @@ static int Tensor_mpf_cmp_d(void*p1,double d)
 }
 void* Tensor_double2_mpf(double d)
 {    
-    __mpf_struct*re=(__mpf_struct*)malloc(sizeof(__mpf_struct));
+    __mpf_struct*re=(__mpf_struct*)LB_malloc(sizeof(__mpf_struct));
     mpf_inits(re,NULL);
     mpf_set_d(re,d);
     return (void*)re;
@@ -93,6 +93,7 @@ void tensor_double_print_self(Tensor*t)
         }
         printf("\n");
     }
+    LB_free(it);
 }
 void tensor_mpf_print_self(Tensor* t)
 {
@@ -111,14 +112,14 @@ void tensor_mpf_print_self(Tensor* t)
         }
         printf("\n");
     }
-    free(it);
+    LB_free(it);
     printf("************************************\n");
     
 }
 
 void test_vector()
 {
-	Tensors_Algebra_System* tas=(Tensors_Algebra_System*)malloc(sizeof(Tensors_Algebra_System));
+	Tensors_Algebra_System* tas=(Tensors_Algebra_System*)LB_malloc(sizeof(Tensors_Algebra_System));
     Tensors_Algebra_System_init(tas,7);
     tas->mult=Tensor_mpf_mult;
     tas->plus=Tensor_mpf_plus;

@@ -13,13 +13,11 @@ gmp.h
 -
 
 ../thirdpart/cstructures/include/tools_rbtree.h
-cstddef
+stdio.h
 -
 stdlib.h
 -
 string.h
--
-stddef.h
 -
 
 /home/libo/Documents/c++/Algebras/src/Space/structures.c

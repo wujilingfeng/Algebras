@@ -19,7 +19,7 @@ static Node* Tensor_wedge_chuli_(Node*n,int *nixu)
     if(size==0)
     {return NULL;}
     Algebra_Basic_Element* abe=NULL,*abe1=NULL;
-    void** re1=(void**)malloc(sizeof(void*)*size);
+    void** re1=(void**)LB_malloc(sizeof(void*)*size);
     Node* it=n;
     for(int i=0;i<size;i++)
     {
@@ -60,7 +60,7 @@ static Node* Tensor_wedge_chuli_(Node*n,int *nixu)
         n1=node_pushback(n1,re1[i]);
     }
 
-    free(re1);
+    LB_free(re1);
     return node_reverse(n1);
 
 }
@@ -83,9 +83,9 @@ Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 			tas->set_copy(value,fmse->value);
 			//void* value=tas->copy(fmse->value);
 			tas->mult(value,fmse1->value);
-			mse=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
+			mse=(Field_Mult_Struct_Ele*)LB_malloc(sizeof(Field_Mult_Struct_Ele));
     		Field_Mult_Struct_Ele_init(mse);
-			Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+			Tensor_Product_Struct* tps=(Tensor_Product_Struct*)LB_malloc(sizeof(Tensor_Product_Struct));
 			Tensor_Product_Struct_init(tps);
 			mse->value=value;mse->base=tps;
             int flag;Node* nit=node_splicing(fmse->base->els,fmse1->base->els);
@@ -102,12 +102,14 @@ Tensor* Tensor_Wedge_(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 
 			plus_mult_struct(tas,re,&mse,1);
             Tensor_Product_Struct_free(mse->base);
-            tas->free_data(mse->value);		
-
+            tas->free_data(mse->value);
+            //*****新?/
+            LB_free(mse);		
+            //*******/
 		}  
-		free(it2);
+		LB_free(it2);
 	}
-	free(it1);    
+	LB_free(it1);    
     return re;
 }
 //只对反对称张量有效的算法
@@ -130,7 +132,7 @@ Tensor* Hodge_Anti_tensor_(Tensors_Algebra_System*tas,Tensor* t)
         {
             node=node_pushback(node,it1->second(it1)); 
         } 
-        free(it1);
+        LB_free(it1);
         node=node_reverse(node);
         Field_Mult_Struct_Ele* fmse=(Field_Mult_Struct_Ele*)(it->second(it));
         i=0;
@@ -141,10 +143,10 @@ Tensor* Hodge_Anti_tensor_(Tensors_Algebra_System*tas,Tensor* t)
             temp_flag+=(((Algebra_Basic_Element*)(nit->value))->id-i);
             i++;
         }
-        fmse1=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
+        fmse1=(Field_Mult_Struct_Ele*)LB_malloc(sizeof(Field_Mult_Struct_Ele));
         Field_Mult_Struct_Ele_init(fmse1);
         fmse1->order=size-order;
-        Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+        Tensor_Product_Struct* tps=(Tensor_Product_Struct*)LB_malloc(sizeof(Tensor_Product_Struct));
         Tensor_Product_Struct_init(tps);
         fmse1->base=tps;
         if(temp_flag%2==0)
@@ -163,7 +165,7 @@ Tensor* Hodge_Anti_tensor_(Tensors_Algebra_System*tas,Tensor* t)
         re->value->insert(re->value,&rbm);
 
     }
-    free(it);
+    LB_free(it);
     mpz_clear(rbm.key); 
     return re;
 }

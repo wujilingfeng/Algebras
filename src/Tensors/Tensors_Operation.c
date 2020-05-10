@@ -22,7 +22,7 @@ void Tensor_tensors_exchange(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l
 		rbm.value=fmse;
 		t1->value->insert(t1->value,&rbm);
 	}
-	free(it);
+	LB_free(it);
 	it=ts[l2]->value->begin(ts[l2]->value);
 	for(;it->it!=NULL;it->next(it))
 	{
@@ -39,11 +39,11 @@ void Tensor_tensors_exchange(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l
 		rbm.value=fmse;
 		t2->value->insert(t2->value,&rbm);
 	}
-	free(it);	
+	LB_free(it);	
 	RB_Tree_free(ts[l1]->value);
-	free(ts[l1]);
+	LB_free(ts[l1]);
 	RB_Tree_free(ts[l2]->value);
-	free(ts[l2]);
+	LB_free(ts[l2]);
 	ts[l1]=t2;
 	ts[l2]=t1;
 }
@@ -54,7 +54,7 @@ void Tensor_tensors_plus_mult(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int 
 	RB_Trav *it=ts[l2]->value->begin(ts[l2]->value);
 	void* value1=tas->copy_from_double(1);
 	//int size=tas->as->elements->size;
-	//int *ids=(int*)malloc(sizeof(int)*size);
+	//int *ids=(int*)LB_LB_malloc(sizeof(int)*size);
 	for(;it->it!=NULL;it->next(it))
 	{
 		fmse=(Field_Mult_Struct_Ele*)(it->second(it));
@@ -72,10 +72,10 @@ void Tensor_tensors_plus_mult(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int 
 			i++;
 		}
 
-		fmse1=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
+		fmse1=(Field_Mult_Struct_Ele*)LB_malloc(sizeof(Field_Mult_Struct_Ele));
 		Field_Mult_Struct_Ele_init(fmse1);
 
-		Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+		Tensor_Product_Struct* tps=(Tensor_Product_Struct*)LB_malloc(sizeof(Tensor_Product_Struct));
 		Tensor_Product_Struct_init(tps);
 		//fmse1=create_field_mult_struct_ele(tas->as,value1);	
 		fmse1->base=tps;
@@ -87,12 +87,12 @@ void Tensor_tensors_plus_mult(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int 
 		plus_mult_struct(tas,ts[l1],&fmse1,1);
 		Tensor_Product_Struct_free(tps);
 
-		free(fmse1);
+		LB_free(fmse1);
 
 
 	}
 	tas->free_data(value1);
-	free(it);
+	LB_free(it);
 
 }
 //l2行除以value加到l1行
@@ -103,7 +103,7 @@ void Tensor_tensors_plus_div(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l
 	RB_Trav *it=ts[l2]->value->begin(ts[l2]->value);
 	void* value1=tas->copy_from_double(1);
 	//int size=tas->as->elements->size;
-	//int *ids=(int*)malloc(sizeof(int)*size);
+	//int *ids=(int*)LB_malloc(sizeof(int)*size);
 	for(;it->it!=NULL;it->next(it))
 	{
 		fmse=(Field_Mult_Struct_Ele*)(it->second(it));
@@ -121,10 +121,10 @@ void Tensor_tensors_plus_div(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l
 			i++;
 		}
 
-		fmse1=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
+		fmse1=(Field_Mult_Struct_Ele*)LB_malloc(sizeof(Field_Mult_Struct_Ele));
 		Field_Mult_Struct_Ele_init(fmse1);
 
-		Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+		Tensor_Product_Struct* tps=(Tensor_Product_Struct*)LB_malloc(sizeof(Tensor_Product_Struct));
 		Tensor_Product_Struct_init(tps);
 		//fmse1=create_field_mult_struct_ele(tas->as,value1);	
 		fmse1->base=tps;
@@ -135,10 +135,10 @@ void Tensor_tensors_plus_div(Tensors_Algebra_System*tas,Tensor**ts,int zuo,int l
 		Tensor_Product_Struct_getid(tas->as,tps);
 		plus_mult_struct(tas,ts[l1],&fmse1,1);
 		Tensor_Product_Struct_free(tps);
-		free(fmse1);
+		LB_free(fmse1);
 	}
 	tas->free_data(value1);
-	free(it);
+	LB_free(it);
 
 }
 /*
@@ -174,7 +174,7 @@ Tensor* Tensor_inverse(Tensors_Algebra_System*tas,Tensor*t)
     }
 
     int size=tas->as->elements->size;
-    Tensor **re=(Tensor**)malloc(sizeof(Tensor*)*size);
+    Tensor **re=(Tensor**)LB_malloc(sizeof(Tensor*)*size);
     int ids[2];
     for(int i=0;i<size;i++)
     {
@@ -182,7 +182,7 @@ Tensor* Tensor_inverse(Tensors_Algebra_System*tas,Tensor*t)
         re[i]=tas->T_create();
         re[i]->insert(tas->as,re[i],ids,2,tas->copy_from_double(1));
     }
-    Tensor** ts=(Tensor**)malloc(sizeof(Tensor*)*size);
+    Tensor** ts=(Tensor**)LB_malloc(sizeof(Tensor*)*size);
 
 
     int i=0;
@@ -199,7 +199,7 @@ Tensor* Tensor_inverse(Tensors_Algebra_System*tas,Tensor*t)
         i=fmses_classi_dim(fmse,0);
         plus_mult_struct(tas,ts[i],&fmse,1);
     }
-    free(it1);
+    LB_free(it1);
 
     void *value=NULL,*value1=tas->copy_from_double(1),*value2=tas->copy_from_double(-1);
     for(i=0;i<size;i++)
@@ -261,6 +261,6 @@ Tensor* Tensor_inverse(Tensors_Algebra_System*tas,Tensor*t)
         tas->T_free(tas,re[i]);
 
     }
-    free(re);free(ts);
+    LB_free(re);LB_free(ts);
     return re1;
 }

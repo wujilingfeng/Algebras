@@ -15,7 +15,7 @@ void Tensor_Product_Struct_free(Tensor_Product_Struct*tps)
 {
 	mpz_clear(tps->id);
 	free_node(tps->els);
-	free(tps);
+	LB_free(tps);
 }
 int Tensor_Product_Struct_Rank(Tensor_Product_Struct*tps)
 {
@@ -44,7 +44,7 @@ static int Algebra_is_exist(struct Algebra_Space*as,Algebra_Basic_Element*abe)
 }
 void Algebra_Space_init(Algebra_Space* as)
 {
-    as->elements=(RB_Tree*)malloc(sizeof(RB_Tree));
+    as->elements=(RB_Tree*)LB_malloc(sizeof(RB_Tree));
     RB_Tree_init_int(as->elements);
     as->create_element=Algebra_Space_Create_Element;
 as->get_kv=Algebra_Space_get_kv;
@@ -54,7 +54,7 @@ as->get_kv=Algebra_Space_get_kv;
 }
 Algebra_Basic_Element* Algebra_Space_Create_Element(Algebra_Space*as)
 {
-    Algebra_Basic_Element* ae=(Algebra_Basic_Element*)malloc(sizeof(Algebra_Basic_Element));
+    Algebra_Basic_Element* ae=(Algebra_Basic_Element*)LB_malloc(sizeof(Algebra_Basic_Element));
     Algebra_Basic_Element_init(ae);
     ae->id=as->elements->size;
     RB_int rbt;
@@ -72,13 +72,17 @@ Algebra_Basic_Element* Algebra_Space_get_kv(struct Algebra_Space* as,int id)
 }
 void Algebra_Space_free(Algebra_Space* as)
 {
+	if(as->elements==NULL)
+	{
+		return ;
+	}
 	RB_Trav* it=as->elements->begin(as->elements);
 	for(;it->it!=NULL;it->next(it))
 	{
-		free(it->second(it));
+		LB_free(it->second(it));
 		
 	}
-	free(it);
+	LB_free(it);
 	RB_Tree_free(as->elements);
 
 }

@@ -6,7 +6,8 @@
 #include "tools_node.h"
 #include "structures.h"
 #include<gmp.h>
-
+#define LB_malloc malloc
+#define LB_free free
 #ifdef __cplusplus
 extern "C"{
 #endif

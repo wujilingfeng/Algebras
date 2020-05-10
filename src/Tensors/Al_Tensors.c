@@ -11,9 +11,9 @@ void Field_Mult_Struct_Ele_init(Field_Mult_Struct_Ele*mse)
 }
 Field_Mult_Struct_Ele* create_field_mult_struct_ele(Algebra_Space* as,int* ids,int size,void* value)
 {
-    Field_Mult_Struct_Ele *mse=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
+    Field_Mult_Struct_Ele *mse=(Field_Mult_Struct_Ele*)LB_malloc(sizeof(Field_Mult_Struct_Ele));
     Field_Mult_Struct_Ele_init(mse);
-	Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+	Tensor_Product_Struct* tps=(Tensor_Product_Struct*)LB_malloc(sizeof(Tensor_Product_Struct));
 	Tensor_Product_Struct_init(tps);
 	Algebra_Basic_Element*base=NULL;
 	for(int i=0;i<size;i++)
@@ -43,17 +43,17 @@ void zero_plus_struct_ele(struct Plus_Struct_Ele*q)
     {
         fmse=(Field_Mult_Struct_Ele*)it->second(it);
 //fmse->value有内存泄漏
-        free(fmse->value);
+        LB_free(fmse->value);
 	Tensor_Product_Struct_free(fmse->base);
 	//mpz_clear(fmse->base->id);
 	//free_node(fmse->base->els);
-        free(fmse);    
+        LB_free(fmse);    
     }
 
-    free(it);
+    LB_free(it);
 
     RB_Tree_free(q->value);
-	q->value=(RB_Tree*)malloc(sizeof(RB_Tree));
+	q->value=(RB_Tree*)LB_malloc(sizeof(RB_Tree));
 	RB_Tree_init_mpz(q->value);
 }
 
@@ -74,9 +74,9 @@ static void Tensor_insert_ele(Algebra_Space*as,struct Tensor*t,int* ids,int size
 	{
 		//如果重复存在内存泄漏，fmse1->value无法释放内存
 		Field_Mult_Struct_Ele* fmse1=(Field_Mult_Struct_Ele*)(rbm1->value);
-		free(fmse1->value);
+		LB_free(fmse1->value);
 		Tensor_Product_Struct_free(fmse1->base);
-		free(fmse1);
+		LB_free(fmse1);
 		t->value->erase(t->value,&rbm);		
 		rbm.value=fmse;
 		t->value->insert(t->value,&rbm);
@@ -118,15 +118,15 @@ static int the_order_of_tensor(struct Tensor* t)
 	if(it->it!=NULL)
 	{
 		Field_Mult_Struct_Ele*fmse=(Field_Mult_Struct_Ele*)(it->second(it));
-		free(it);
+		LB_free(it);
 		return fmse->order;
 	}
-	free(it);
+	LB_free(it);
 	return 0;
 }
 void Plus_Struct_Ele_init(Plus_Struct_Ele*pse)
 {
-    pse->value=(RB_Tree*)malloc(sizeof(RB_Tree));
+    pse->value=(RB_Tree*)LB_malloc(sizeof(RB_Tree));
     RB_Tree_init_mpz(pse->value);
     pse->order=the_order_of_tensor;
 	pse->zero=zero_plus_struct_ele;
@@ -138,7 +138,7 @@ void Plus_Struct_Ele_init(Plus_Struct_Ele*pse)
 //
 static Tensor* Tensor_create_()
 {
-    Tensor *re=(Tensor*)malloc(sizeof(Tensor));
+    Tensor *re=(Tensor*)LB_malloc(sizeof(Tensor));
     Plus_Struct_Ele_init(re);
     return re;
 
@@ -166,25 +166,25 @@ static void Tensor_free(struct Tensors_Algebra_System*tas ,Tensor*t)
 		tas->free_data(fmse->value);
        
 		Tensor_Product_Struct_free(fmse->base);
-		free(fmse);    
+		LB_free(fmse);    
 	}
 
-	free(it);
+	LB_free(it);
 	RB_Tree_free(t->value);
-	free(t);
+	LB_free(t);
 	
 
 }
 void Tensors_Algebra_System_init(Tensors_Algebra_System*tas,int size)
 {
-	Algebra_Space*as=(Algebra_Space*)malloc(sizeof(Algebra_Space));
+	Algebra_Space*as=(Algebra_Space*)LB_malloc(sizeof(Algebra_Space));
 	Algebra_Space_init(as);
 	for(int i=0;i<size;i++)
 	{ 
 		as->create_element(as);
 	}
 	tas->as=as;
-	as=(Algebra_Space*)malloc(sizeof(Algebra_Space));
+	as=(Algebra_Space*)LB_malloc(sizeof(Algebra_Space));
 	Algebra_Space_init(as);
 	for(int i=0;i<size;i++)
 	{ 
@@ -213,8 +213,10 @@ void Tensors_Algebra_System_free(Tensors_Algebra_System*tas)
 {
 	Algebra_Space_free(tas->as);
 	Algebra_Space_free(tas->dual_as);
-	free(tas->as);free(tas->dual_as);
-	
+	LB_free(tas->as);LB_free(tas->dual_as);
+	//****新//
+	LB_free(tas);
+	//*****//
 }
 void plus_mult_struct(Tensors_Algebra_System* tal,Plus_Struct_Ele*pse,Field_Mult_Struct_Ele**mses,int size)
 {
@@ -232,13 +234,13 @@ void plus_mult_struct(Tensors_Algebra_System* tal,Plus_Struct_Ele*pse,Field_Mult
 		{
 			if(rbm1==NULL)
 			{
-            			Field_Mult_Struct_Ele* re=malloc(sizeof(Field_Mult_Struct_Ele));
+            			Field_Mult_Struct_Ele* re=LB_malloc(sizeof(Field_Mult_Struct_Ele));
 				Field_Mult_Struct_Ele_init(re);
 				re->order=mses[i]->order;
 				re->value=tal->copy_from_double(1);
 				tal->set_copy(re->value,mses[i]->value);
             			//re->value=tal->copy(mses[i]->value);
-				Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+				Tensor_Product_Struct* tps=(Tensor_Product_Struct*)LB_malloc(sizeof(Tensor_Product_Struct));
 				Tensor_Product_Struct_init(tps);
 				tps->els=node_copy(mses[i]->base->els);
 				mpz_set(tps->id,mses[i]->base->id);
@@ -256,7 +258,7 @@ void plus_mult_struct(Tensors_Algebra_System* tal,Plus_Struct_Ele*pse,Field_Mult
             			{
             				tal->free_data(temp_fmse->value);
             				Tensor_Product_Struct_free(temp_fmse->base);
-            				free(temp_fmse);
+            				LB_free(temp_fmse);
             				pse->value->erase(pse->value,&rbm);
             			}
 			}
@@ -276,7 +278,7 @@ void plus_plus_struct(Tensors_Algebra_System*tal,Plus_Struct_Ele*pse,Plus_Struct
         mse=(Field_Mult_Struct_Ele*)(it->second(it)) ;
         plus_mult_struct(tal,pse,&mse,1); 
     }
-    free(it);
+    LB_free(it);
 }
 Tensor* W_Tensor_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 {
@@ -296,9 +298,9 @@ Tensor* W_Tensor_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 			tas->set_copy(value,fmse->value);
 			//void* value=tas->copy(fmse->value);
 			tas->mult(value,fmse1->value);
-			mse=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
+			mse=(Field_Mult_Struct_Ele*)LB_malloc(sizeof(Field_Mult_Struct_Ele));
     			Field_Mult_Struct_Ele_init(mse);
-			Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+			Tensor_Product_Struct* tps=(Tensor_Product_Struct*)LB_malloc(sizeof(Tensor_Product_Struct));
 			Tensor_Product_Struct_init(tps);
 			mse->value=value;mse->base=tps;
 
@@ -309,9 +311,9 @@ Tensor* W_Tensor_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2)
 			tas->free_data(mse->value);
 			Tensor_Product_Struct_free(mse->base);		
 		}  
-		free(it2);
+		LB_free(it2);
 	}
-	free(it1);
+	LB_free(it1);
 
 	return re;
 }
@@ -338,7 +340,7 @@ void* W_Tensor_Inner_Product(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*
 		}  
 		//rbm1=t2->find(t2,);
 	}    
-	free(it);
+	LB_free(it);
 	mpz_clear(rbm.key);
 	tas->free_data(value1);	
 	return value;
@@ -368,7 +370,7 @@ static Node* Contraction_chuli_splicing(Node*n1,Node* n2,int zuo1,int zuo2)
 		nit1=(Node*)(nit->Next);
 		nit1->Prev=(void*)(nit->Prev);
 	}
-	free(nit);
+	LB_free(nit);
 	Node* re1=n2;
 	nit=n2;
 	for(int i=0;i<zuo2;i++)
@@ -390,7 +392,7 @@ static Node* Contraction_chuli_splicing(Node*n1,Node* n2,int zuo1,int zuo2)
 		nit1=(Node*)(nit->Next);
 		nit1->Prev=(void*)(nit->Prev);
 	}
-	free(nit);
+	LB_free(nit);
 	
 	if(re==NULL)
 	{return re1;}
@@ -423,7 +425,7 @@ static void fmses_tensor_plus_node(struct Tensors_Algebra_System*tas,Tensor* t,N
 		for(Node* nit2=n2;nit2!=NULL;nit2=(Node*)(nit2->Next))
 		{
 			fmse2=(Field_Mult_Struct_Ele*)(nit2->value);
-			Tensor_Product_Struct* tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+			Tensor_Product_Struct* tps=(Tensor_Product_Struct*)LB_malloc(sizeof(Tensor_Product_Struct));
 			Tensor_Product_Struct_init(tps);
 			tps->els=Contraction_chuli_splicing(node_copy(fmse1->base->els),node_copy(fmse2->base->els),zuo1,zuo2);
 			Tensor_Product_Struct_getid(tas->as,tps);
@@ -431,7 +433,7 @@ static void fmses_tensor_plus_node(struct Tensors_Algebra_System*tas,Tensor* t,N
 			rbm1=(RB_mpz*)t->value->find(t->value,&rbm);
 			if(rbm1==NULL)
 			{
-				Field_Mult_Struct_Ele* fmse=malloc(sizeof(Field_Mult_Struct_Ele));
+				Field_Mult_Struct_Ele* fmse=LB_malloc(sizeof(Field_Mult_Struct_Ele));
 				Field_Mult_Struct_Ele_init(fmse);
 				void* value=tas->copy_from_double(1);
 				tas->set_copy(value,fmse1->value);
@@ -477,10 +479,10 @@ int fmses_classi_dim(Field_Mult_Struct_Ele*fmse,int zuo1)
 /*
 static Field_Mult_Struct_Ele*fmses_sub_dim(Tensors_Algebra_System*tas,Field_Mult_Struct_Ele*fmse,int zuo1,int *i)
 {
-	Field_Mult_Struct_Ele*re=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
+	Field_Mult_Struct_Ele*re=(Field_Mult_Struct_Ele*)LB_malloc(sizeof(Field_Mult_Struct_Ele));
 	Field_Mult_Struct_Ele_init(re);
 	re->value=tas->copy(fmse->value);
-	Tensor_Product_Struct*tps=(Tensor_Product_Struct*)malloc(sizeof(Tensor_Product_Struct));
+	Tensor_Product_Struct*tps=(Tensor_Product_Struct*)LB_malloc(sizeof(Tensor_Product_Struct));
 	Tensor_Product_Struct_init(tps);
 	tps->els=node_copy(fmse->base->els);
 	re->base=tps;
@@ -513,8 +515,8 @@ static Field_Mult_Struct_Ele*fmses_sub_dim(Tensors_Algebra_System*tas,Field_Mult
 Tensor*W_Tensor_Contraction(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t2,int zuo1,int zuo2)
 {
 	int size=tas->as->elements->size;
-	Node** n1=(Node**)malloc(sizeof(Node*)*size);
-	Node** n2=(Node**)malloc(sizeof(Node*)*size);
+	Node** n1=(Node**)LB_malloc(sizeof(Node*)*size);
+	Node** n2=(Node**)LB_malloc(sizeof(Node*)*size);
 	memset(n1,0,sizeof(Node*)*size);memset(n2,0,sizeof(Node*)*size);
 	Tensor *re=tas->T_create();
 	//mpz_t mt1,mt2,mt3,a;mpz_inits(mt1,mt2,mt3,a,NULL);
@@ -533,7 +535,7 @@ Tensor*W_Tensor_Contraction(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t
 		printf("id:%d\n",i);*/
 		n1[i]=node_overlying(n1[i],fmse);
 	}
-	free(it1);
+	LB_free(it1);
 	RB_Trav *it2=t2->value->begin(t2->value);
 	for(;it2->it!=NULL;it2->next(it2))
 	{
@@ -542,7 +544,7 @@ Tensor*W_Tensor_Contraction(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t
 
 		n2[i]=node_overlying(n2[i],fmse);
 	}
-	free(it2);
+	LB_free(it2);
 
 	for(i=0;i<size;i++)
 	{
@@ -556,7 +558,7 @@ Tensor*W_Tensor_Contraction(struct Tensors_Algebra_System*tas,Tensor*t1,Tensor*t
 		free_node(n2[i]);
 	}
 	
-	free(n1);free(n2);	
+	LB_free(n1);LB_free(n2);	
 
 	
 	return re;
@@ -579,7 +581,7 @@ RB_Trav*it=t->value->begin(t->value);
 	//mpf_add(value,value,value1);
 
     }
-    free(it);
+    LB_free(it);
 	tas->free_data(value1);
 	return value;
 }
@@ -592,10 +594,15 @@ void Tensor_mult_field_(Tensors_Algebra_System* tas,Tensor*t,void* value)
 		fmse=(Field_Mult_Struct_Ele*)(it->second(it));
 		tas->mult(fmse->value,value);
 	}
-	free(it);	
+	LB_free(it);	
 }
 void Tensor_div_field_(Tensors_Algebra_System*tas, Tensor* t,void* value)
 {
+	int re=tas->cmp_d(value,0);
+	if(re==0)
+	{
+		return;
+	}
 	Field_Mult_Struct_Ele* fmse=NULL;
 	RB_Trav* it=t->value->begin(t->value);
 	for(;it->it!=NULL;it->next(it))
@@ -603,7 +610,7 @@ void Tensor_div_field_(Tensors_Algebra_System*tas, Tensor* t,void* value)
 		fmse=(Field_Mult_Struct_Ele*)(it->second(it));
 		tas->div(fmse->value,value);	
 	}
-	free(it);	
+	LB_free(it);	
 }
 /*
 static void vector_mult(struct Vectors_Algebra_System*vas,void* re,Vector* q1,Vector*q2)
@@ -681,21 +688,21 @@ static void* Vector_get_kv(Vector*v,int id)
 void Vectors_Algebra_System_init(Vectors_Algebra_System*qas,int size)
 {
 	qas->is_dual=Vector_is_dual;
-	Algebra_Space*as=(Algebra_Space*)malloc(sizeof(Algebra_Space));
+	Algebra_Space*as=(Algebra_Space*)LB_malloc(sizeof(Algebra_Space));
 	Algebra_Space_init(as);
     for(int i=0;i<size;i++)
     { 
        as->create_element(as);
     }
 	qas->as=as;
-	as=(Algebra_Space*)malloc(sizeof(Algebra_Space));
+	as=(Algebra_Space*)LB_malloc(sizeof(Algebra_Space));
 	Algebra_Space_init(as);
     for(int i=0;i<size;i++)
     { 
         as->create_element(as);
     }
 	qas->dual_as=as;
-    qas->el_op=(Algebra_Operation*)malloc(sizeof(Algebra_Operation));
+    qas->el_op=(Algebra_Operation*)LB_malloc(sizeof(Algebra_Operation));
 	Algebra_Operation_init(qas->el_op);
     qas->v_mult=vector_mult;
     qas->v_plus=plus_plus_struct;
