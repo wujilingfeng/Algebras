@@ -122,13 +122,27 @@ src/CMakeFiles/algebras.dir/Tensors/Tensors_Operation.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/algebras.dir/Tensors/Tensors_Operation.c.s"
 	cd /home/libo/Documents/c++/Algebras/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/libo/Documents/c++/Algebras/src/Tensors/Tensors_Operation.c -o CMakeFiles/algebras.dir/Tensors/Tensors_Operation.c.s
 
+src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.o: src/CMakeFiles/algebras.dir/flags.make
+src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.o: ../src/Quaternions/Al_Quaternions.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.o"
+	cd /home/libo/Documents/c++/Algebras/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.o   -c /home/libo/Documents/c++/Algebras/src/Quaternions/Al_Quaternions.c
+
+src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.i"
+	cd /home/libo/Documents/c++/Algebras/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/libo/Documents/c++/Algebras/src/Quaternions/Al_Quaternions.c > CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.i
+
+src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.s"
+	cd /home/libo/Documents/c++/Algebras/build/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/libo/Documents/c++/Algebras/src/Quaternions/Al_Quaternions.c -o CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.s
+
 # Object files for target algebras
 algebras_OBJECTS = \
 "CMakeFiles/algebras.dir/Space/Algebra_Fun_.c.o" \
 "CMakeFiles/algebras.dir/Space/structures.c.o" \
 "CMakeFiles/algebras.dir/Tensors/Al_Tensors.c.o" \
 "CMakeFiles/algebras.dir/Tensors/Antisymmetric_Tensor.c.o" \
-"CMakeFiles/algebras.dir/Tensors/Tensors_Operation.c.o"
+"CMakeFiles/algebras.dir/Tensors/Tensors_Operation.c.o" \
+"CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.o"
 
 # External object files for target algebras
 algebras_EXTERNAL_OBJECTS =
@@ -138,9 +152,10 @@ algebras_EXTERNAL_OBJECTS =
 ../temp_libs/libalgebras.a: src/CMakeFiles/algebras.dir/Tensors/Al_Tensors.c.o
 ../temp_libs/libalgebras.a: src/CMakeFiles/algebras.dir/Tensors/Antisymmetric_Tensor.c.o
 ../temp_libs/libalgebras.a: src/CMakeFiles/algebras.dir/Tensors/Tensors_Operation.c.o
+../temp_libs/libalgebras.a: src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.o
 ../temp_libs/libalgebras.a: src/CMakeFiles/algebras.dir/build.make
 ../temp_libs/libalgebras.a: src/CMakeFiles/algebras.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C static library ../../temp_libs/libalgebras.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C static library ../../temp_libs/libalgebras.a"
 	cd /home/libo/Documents/c++/Algebras/build/src && $(CMAKE_COMMAND) -P CMakeFiles/algebras.dir/cmake_clean_target.cmake
 	cd /home/libo/Documents/c++/Algebras/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/algebras.dir/link.txt --verbose=$(VERBOSE)
 

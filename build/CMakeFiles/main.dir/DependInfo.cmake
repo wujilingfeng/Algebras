@@ -16,8 +16,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/libo/Documents/c++/Algebras/build/src/Tensors/CMakeFiles/algebra_tensors.dir/DependInfo.cmake"
-  "/home/libo/Documents/c++/Algebras/build/src/Space/CMakeFiles/algebra_fun_.dir/DependInfo.cmake"
+  "/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

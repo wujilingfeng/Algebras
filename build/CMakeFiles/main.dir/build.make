@@ -79,8 +79,7 @@ main_EXTERNAL_OBJECTS =
 
 ../bin/main: CMakeFiles/main.dir/Demo/main.cpp.o
 ../bin/main: CMakeFiles/main.dir/build.make
-../bin/main: ../temp_libs/libalgebra_tensors.a
-../bin/main: ../temp_libs/libalgebra_fun_.a
+../bin/main: ../temp_libs/libalgebras.a
 ../bin/main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "../../temp_libs/libalgebras.a"
   "../../temp_libs/libalgebras.pdb"
+  "CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.o"
   "CMakeFiles/algebras.dir/Space/Algebra_Fun_.c.o"
   "CMakeFiles/algebras.dir/Space/structures.c.o"
   "CMakeFiles/algebras.dir/Tensors/Al_Tensors.c.o"

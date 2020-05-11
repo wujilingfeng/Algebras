@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/libo/Documents/c++/Algebras/src/Quaternions/Al_Quaternions.c" "/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.o"
   "/home/libo/Documents/c++/Algebras/src/Space/Algebra_Fun_.c" "/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir/Space/Algebra_Fun_.c.o"
   "/home/libo/Documents/c++/Algebras/src/Space/structures.c" "/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir/Space/structures.c.o"
   "/home/libo/Documents/c++/Algebras/src/Tensors/Al_Tensors.c" "/home/libo/Documents/c++/Algebras/build/src/CMakeFiles/algebras.dir/Tensors/Al_Tensors.c.o"

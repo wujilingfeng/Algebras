@@ -132,11 +132,10 @@ src/Tensors/clean: src/Tensors/CMakeFiles/algebra_tensors.dir/clean
 # Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all: src/Space/CMakeFiles/algebra_fun_.dir/all
-CMakeFiles/main.dir/all: src/Tensors/CMakeFiles/algebra_tensors.dir/all
+CMakeFiles/main.dir/all: src/CMakeFiles/algebras.dir/all
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=14,15 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=15,16 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -163,12 +162,12 @@ CMakeFiles/main.dir/clean:
 src/CMakeFiles/algebras.dir/all:
 	$(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/depend
 	$(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=8,9,10,11,12,13 "Built target algebras"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/libo/Documents/c++/Algebras/build/CMakeFiles --progress-num=8,9,10,11,12,13,14 "Built target algebras"
 .PHONY : src/CMakeFiles/algebras.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/algebras.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/libo/Documents/c++/Algebras/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/libo/Documents/c++/Algebras/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/algebras.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/libo/Documents/c++/Algebras/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/algebras.dir/rule

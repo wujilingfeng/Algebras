@@ -5,6 +5,8 @@
 //#include "tools_rbtree.h"
 #include<Space/Algebra_Fun_.h>
 #include "test_h/vector_test.h"
+#include <tools/double_tools.h>
+#include<Quaternions/Al_Quaternions.h>
 int memery_leak_from_RB_Tree_compute;
 int memery_leak_from_RB_Tree_compute_f;
 void test_void(void*p1)
@@ -177,7 +179,8 @@ void test_inverse()
 {
 
     Tensors_Algebra_System* tas=(Tensors_Algebra_System*)LB_malloc(sizeof(Tensors_Algebra_System));
-    Tensors_Algebra_System_init(tas,4);
+    Tensors_Algebra_System_double_init(tas,4);
+   /* Tensors_Algebra_System_init(tas,4);
     tas->mult=Tensor_mpf_mult;
     tas->plus=Tensor_mpf_plus;
     tas->div=Tensor_mpf_div;
@@ -186,7 +189,7 @@ void test_inverse()
     tas->set_copy=Tensor_mpf_set_copy;
     tas->free_data=Tensor_mpf_free;
     tas->cmp=Tensor_mpf_cmp;
-    tas->cmp_d=Tensor_mpf_cmp_d;
+    tas->cmp_d=Tensor_mpf_cmp_d;*/
     Tensor* t_i=tas->T_create();
 
     int ids[]={0,0};
@@ -362,6 +365,17 @@ void test_inner_product()
     tas->cmp=Tensor_mpf_cmp;
     tas->cmp_d=Tensor_mpf_cmp_d; 
 }
+void test_quaternion()
+{
+
+    Quaternion_Algebra_System* qas=(Quaternion_Algebra_System*)malloc(sizeof(Quaternion_Algebra_System));
+    Quaternion_Algebra_System_init(qas);
+    Quaternion*q=qas->Q_create(qas,(char*)"1+2.9i");
+    Quaternion*q2=qas->Q_create(qas,(char*)"1.1j");
+    Quaternion* q1=qas->Q_mult(qas,q,q2);
+    tensor_double_print_self(q1);
+
+}
 int main(int argc,char **argv)
 {
     memery_leak_from_RB_Tree_compute=0;
@@ -398,9 +412,10 @@ int main(int argc,char **argv)
     tas->T_free(tas,t_i);
     tas->T_free(tas,t);
     Tensors_Algebra_System_free(tas);*/
-    test_inverse();
-    test_hodge();
-    test_wedge();
+    //test_inverse();
+    //test_hodge();
+    //test_wedge();
+    test_quaternion();
     printf("end\nleak m :%d,leak f:%d\n",memery_leak_from_RB_Tree_compute,memery_leak_from_RB_Tree_compute_f);
     //printf("end\n");
     //t_i

@@ -220,6 +220,7 @@ void Tensors_Algebra_System_free(Tensors_Algebra_System*tas)
 }
 void plus_mult_struct(Tensors_Algebra_System* tal,Plus_Struct_Ele*pse,Field_Mult_Struct_Ele**mses,int size)
 {
+	Field_Mult_Struct_Ele*re=NULL;
 	RB_mpz rbm,*rbm1;
 	RB_init_mpz(&rbm);
 	for(int i=0;i<size;i++)
@@ -234,7 +235,7 @@ void plus_mult_struct(Tensors_Algebra_System* tal,Plus_Struct_Ele*pse,Field_Mult
 		{
 			if(rbm1==NULL)
 			{
-            			Field_Mult_Struct_Ele* re=LB_malloc(sizeof(Field_Mult_Struct_Ele));
+           		re=LB_malloc(sizeof(Field_Mult_Struct_Ele));
 				Field_Mult_Struct_Ele_init(re);
 				re->order=mses[i]->order;
 				re->value=tal->copy_from_double(1);

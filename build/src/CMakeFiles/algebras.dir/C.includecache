@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../include/Quaternions/Al_Quaternions.h
+Tensors/Al_Tensors.h
+-
+
 ../include/Space/Algebra_Fun_.h
 stdio.h
 -
@@ -30,6 +34,16 @@ gmp.h
 Space/Algebra_Fun_.h
 -
 
+../include/Tensors/Antisymmetric_Tensor.h
+Tensors/Al_Tensors.h
+-
+
+../include/tools/double_tools.h
+Tensors/Antisymmetric_Tensor.h
+-
+Tensors/Al_Tensors.h
+-
+
 ../thirdpart/cstructures/include/tools_node.h
 stdlib.h
 -
@@ -42,11 +56,9 @@ stdlib.h
 string.h
 -
 
-/home/libo/Documents/c++/Algebras/src/Space/structures.c
-Space/structures.h
+/home/libo/Documents/c++/Algebras/src/Quaternions/Al_Quaternions.c
+Quaternions/Al_Quaternions.h
 -
-
-/home/libo/Documents/c++/Algebras/src/Tensors/Al_Tensors.c
-Tensors/Al_Tensors.h
+tools/double_tools.h
 -
 

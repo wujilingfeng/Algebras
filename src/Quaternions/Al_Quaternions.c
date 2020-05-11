@@ -1,13 +1,15 @@
 #include<Quaternions/Al_Quaternions.h>
+
+#include <tools/double_tools.h>
 #define Quaternion Plus_Struct_Ele
 
 
 static Quaternion*create_quaternion(Quaternion_Algebra_System*qas,char* s)
-{
+{   
+    Tensors_Algebra_System*tas=qas->tas;
 	Quaternion* q=(Quaternion*)malloc(sizeof(Quaternion));
 	Plus_Struct_Ele_init(q);
     double re=0,flag=0,is_fu=1;
-    Field_Mult_Struct_Ele*fmse=NULL;
     int i=0,j=0,wei=0;
     while(s[i]!='\0')
     {
@@ -56,10 +58,11 @@ static Quaternion*create_quaternion(Quaternion_Algebra_System*qas,char* s)
       
         
         re=re*is_fu;
-        fmse=create_field_mult_struct_ele(qas->as,wei,&re);
+        //fmse=create_field_mult_struct_ele(tas->as,&wei,1,tas->copy_from_double(re));
+        q->insert(tas->as,q,&wei,1,tas->copy_from_double(re)); 
         
-        plus_mult_struct(q,&fmse,1,qas);
-        free(fmse);
+        //plus_mult_struct(q,&fmse,1,qas);
+        //free(fmse);
         if(s[j]=='\0')
         {
             break;
@@ -78,7 +81,8 @@ static Quaternion*create_quaternion(Quaternion_Algebra_System*qas,char* s)
     }	
     return q;
 }
-static void qua_mult_(Quaternion* q1,Quaternion*q2,Quaternion_Algebra_System*qas)
+
+static Quaternion* qua_mult_(Quaternion_Algebra_System*qas,Quaternion* q1,Quaternion*q2)
 {
    	Field_Mult_Struct_Ele*fmse=NULL;
     Quaternion* re=(Quaternion*)malloc(sizeof(Quaternion));
@@ -87,35 +91,94 @@ static void qua_mult_(Quaternion* q1,Quaternion*q2,Quaternion_Algebra_System*qas
     int i=0,j=0;
     for(;it1->it!=NULL;it1->next(it1))
     {
-        i=*((int*)(it1->first(it1)));
+        
+        i=mpz_get_ui((__mpz_struct*)(it1->first(it1)));
         RB_Trav* it2=q2->value->begin(q2->value);
         for(;it2->it!=NULL;it2->next(it2))
         {
-            j=*((int*)(it2->first(it2)));
-            fmse=(Field_Mult_Struct_Ele*)malloc(sizeof(Field_Mult_Struct_Ele));
-            memmove(fmse,qas->el_op->op_map[i][j],sizeof(Field_Mult_Struct_Ele));
-            fmse->value=qas->copy(fmse->value);
-            qas->mult(fmse->value,((Field_Mult_Struct_Ele*)(it1->second(it1)))->value);
-            qas->mult(fmse->value,((Field_Mult_Struct_Ele*)(it2->second(it2)))->value);
-            plus_mult_struct(re,&fmse,1,qas);
-            free(fmse->value);
-            free(fmse); 
+            j=mpz_get_ui((__mpz_struct*)(it2->first(it2)));
+    
+            fmse=(Field_Mult_Struct_Ele*)qas->el_op->op_map[i][j];
+            void* temp_value=fmse->value;
+            void*value=qas->tas->copy_from_double(1);
+            qas->tas->mult(value,temp_value);
+            qas->tas->mult(value,((Field_Mult_Struct_Ele*)(it1->second(it1)))->value);
+            qas->tas->mult(value,((Field_Mult_Struct_Ele*)(it2->second(it2)))->value);
+            fmse->value=value;
+            plus_mult_struct(qas->tas,re,&fmse,1);
+            fmse->value=temp_value;
+            qas->tas->free_data(value);
         }
         free(it2);
     }
     free(it1);
-    zero_Quaternions(q1);
-    free(q1->value);
-    q1->value=NULL;
-    memmove(q1,re,sizeof(Quaternion));
+    return re;
 }
 
-static void* nei_copy(double src)
+/*static void* nei_copy(double src)
 {
     double* re=(double*)malloc(sizeof(double));
     *re=src;
     return re;
+}*/
+void  Quaternion_Algebra_System_init(Quaternion_Algebra_System*qas)
+{
+
+    qas->tas=(Tensors_Algebra_System*)malloc(sizeof(Tensors_Algebra_System));
+    Tensors_Algebra_System_double_init(qas->tas,4);
+    Tensors_Algebra_System*tas=qas->tas;
+    Algebra_Space*as=qas->tas->as;
+    qas->el_op=(Algebra_Operation*)malloc(sizeof(Algebra_Operation));
+    Algebra_Operation_init(qas->el_op);
+    void*** a_map=(void***)malloc(sizeof(void**)*4);
+    for(int i=0;i<4;i++)
+    {
+        a_map[i]=(void**)malloc(sizeof(void*)*4);
+    }
+    qas->el_op->op_map=a_map;
+    int ids=0;
+    Field_Mult_Struct_Ele*fmse=NULL;
+    //默认域是double类型
+    ids=0;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[0][0]=(void*)fmse;
+    ids=1;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[0][1]=(void*)fmse;
+    ids=2;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[0][2]=(void*)fmse;
+    ids=3;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[0][3]=(void*)fmse;
+//
+    ids=1;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[1][0]=(void*)fmse;
+    ids=0;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(-1));
+    a_map[1][1]=(void*)fmse;
+    ids=3;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[1][2]=(void*)fmse;
+    ids=2;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(-1));
+    a_map[1][3]=(void*)fmse;
+//
+    ids=2;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[2][0]=(void*)fmse;
+    ids=3;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(-1));
+    a_map[2][1]=(void*)fmse;
+    ids=0;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(-1));
+    a_map[2][2]=(void*)fmse;
+    ids=1;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[2][3]=(void*)fmse;
+//
+    ids=3;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[3][0]=(void*)fmse;
+    ids=2;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(1));
+    a_map[3][1]=(void*)fmse;
+    ids=1;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(-1));
+    a_map[3][2]=(void*)fmse;
+    ids=0;fmse=create_field_mult_struct_ele(as,&ids,1,tas->copy_from_double(-1));
+    a_map[3][3]=(void*)fmse;
+    qas->Q_create=create_quaternion;
+    qas->Q_mult=qua_mult_;
+
 }
+/*
 void Quaternion_Algebra_System_init(Quaternion_Algebra_System*qas)
 {
 	Field_Mult_Struct_Ele*fmse=NULL;
@@ -172,17 +235,6 @@ void Quaternion_Algebra_System_init(Quaternion_Algebra_System*qas)
     a_map[3][3]=(void*)fmse;
 //以上默认域是double类型.你在初始化一个四元代数后，要手动把value值换成你需要的结构类型。
 ////比如GMP的结构类型
-    /*for(int i=0;i<4;i++)
-    {
-        for(int j=0;j<4;j++)
-        {
-            fmse=(Field_Mult_Struct_Ele*)a_map[i][j];
-            printf("id:%d value:%lf   ",fmse->base->id,*((double*)(fmse->value))); 
-        }
-        printf("\n");
-        
-    }*/
-    
 	qas->mult=NULL;
 	qas->plus=NULL;
     qas->copy=NULL;
@@ -192,53 +244,8 @@ void Quaternion_Algebra_System_init(Quaternion_Algebra_System*qas)
     
 	qas->prop=NULL;
 
-}
+}*/
 
-void plus_mult_struct(Plus_Struct_Ele*pse,Field_Mult_Struct_Ele**mses,int size,Quaternion_Algebra_System* qal)
-{
-	RB_int rbt,*rbt1;
-	for(int i=0;i<size;i++)
-	{
-		rbt.key=mses[i]->base->id;
-		rbt1=(RB_int*)pse->value->find(pse->value,&rbt);
-		if(rbt1==NULL)
-		{
-            void* re=malloc(sizeof(Field_Mult_Struct_Ele));
-            memmove(re,mses[i],sizeof(Field_Mult_Struct_Ele));
-            ((Field_Mult_Struct_Ele*)re)->value=qal->copy(mses[i]->value);
-	        rbt.value=re;
-		    pse->value->insert(pse->value,&rbt);
-
-		}
-		else
-		{
-            qal->plus(((Field_Mult_Struct_Ele*)(rbt1->value))->value,mses[i]->value);
-		}
-	}
-
-}
-void plus_plus_struct(Plus_Struct_Ele*pse,Plus_Struct_Ele* pse1,Quaternion_Algebra_System*qal)
-{
-    RB_Trav*it=pse1->value->begin(pse1->value);
-    Field_Mult_Struct_Ele* mse=NULL;
-    for(;it->it!=NULL;it->next(it))
-    {
-        mse=(Field_Mult_Struct_Ele*)(it->second(it)) ;
-        plus_mult_struct(pse,&mse,1,qal); 
-    }
-    free(it);
-}
-void field_mult_quaternion(Plus_Struct_Ele* pse,void*value,Quaternion_Algebra_System*qal)
-{
-    RB_Trav*it=pse->value->begin(pse->value);
-    Field_Mult_Struct_Ele* mse=NULL;
-    for(;it->it!=NULL;it->next(it))
-    {
-        mse=(Field_Mult_Struct_Ele*)(it->second(it)) ;
-        qal->mult(mse->value,value);
-    }
-    free(it);
-}
 /*
 static Quaternion* create_one_quaternion(Algebra_Space*as,int id)
 {

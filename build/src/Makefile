@@ -171,6 +171,33 @@ algebras/fast:
 	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/build
 .PHONY : algebras/fast
 
+Quaternions/Al_Quaternions.o: Quaternions/Al_Quaternions.c.o
+
+.PHONY : Quaternions/Al_Quaternions.o
+
+# target to build an object file
+Quaternions/Al_Quaternions.c.o:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.o
+.PHONY : Quaternions/Al_Quaternions.c.o
+
+Quaternions/Al_Quaternions.i: Quaternions/Al_Quaternions.c.i
+
+.PHONY : Quaternions/Al_Quaternions.i
+
+# target to preprocess a source file
+Quaternions/Al_Quaternions.c.i:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.i
+.PHONY : Quaternions/Al_Quaternions.c.i
+
+Quaternions/Al_Quaternions.s: Quaternions/Al_Quaternions.c.s
+
+.PHONY : Quaternions/Al_Quaternions.s
+
+# target to generate assembly for a file
+Quaternions/Al_Quaternions.c.s:
+	cd /home/libo/Documents/c++/Algebras/build && $(MAKE) -f src/CMakeFiles/algebras.dir/build.make src/CMakeFiles/algebras.dir/Quaternions/Al_Quaternions.c.s
+.PHONY : Quaternions/Al_Quaternions.c.s
+
 Space/Algebra_Fun_.o: Space/Algebra_Fun_.c.o
 
 .PHONY : Space/Algebra_Fun_.o
@@ -319,6 +346,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... algebras"
+	@echo "... Quaternions/Al_Quaternions.o"
+	@echo "... Quaternions/Al_Quaternions.i"
+	@echo "... Quaternions/Al_Quaternions.s"
 	@echo "... Space/Algebra_Fun_.o"
 	@echo "... Space/Algebra_Fun_.i"
 	@echo "... Space/Algebra_Fun_.s"
