@@ -215,12 +215,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Value Computed by CMake
-Project_BINARY_DIR:STATIC=/home/libo/Documents/c++/Algebras/build
-
-//Value Computed by CMake
-Project_SOURCE_DIR:STATIC=/home/libo/Documents/c++/Algebras
-
 
 ########################
 # INTERNAL cache entries

@@ -160,18 +160,25 @@ static void Tensor_free(struct Tensors_Algebra_System*tas ,Tensor*t)
 {
 	 RB_Trav *it=t->value->begin(t->value);
 	Field_Mult_Struct_Ele* fmse=NULL;
+	//printf("beginfree\n");
+	int i=0;
 	for(;it->it!=NULL;it->next(it))
 	{
+	//	printf("i:%d ",i);
 		fmse=(Field_Mult_Struct_Ele*)it->second(it);
 		tas->free_data(fmse->value);
        
 		Tensor_Product_Struct_free(fmse->base);
-		LB_free(fmse);    
+		LB_free(fmse);
+		i++;    
 	}
 
 	LB_free(it);
+	//	printf("endfree:t->value->size:%d\n",t->value->size);
 	RB_Tree_free(t->value);
+	//	printf("endfree\n");
 	LB_free(t);
+	//printf("endfree\n");
 	
 
 }

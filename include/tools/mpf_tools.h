@@ -1,3 +1,5 @@
+#ifndef ALGEBRAS_MPF_TOOLS_H
+#define ALGEBRAS_MPF_TOOLS_H
 #include<Tensors/Antisymmetric_Tensor.h>
 #include<Tensors/Al_Tensors.h>
 
@@ -101,3 +103,4 @@ void Tensors_Algebra_System_mpf_init(Tensors_Algebra_System*tas,int size)
 
 
 }
+#endif

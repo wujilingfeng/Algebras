@@ -38,6 +38,10 @@ Space/Algebra_Fun_.h
 Tensors/Al_Tensors.h
 -
 
+../include/Tensors/Tensors_Operation.h
+Antisymmetric_Tensor.h
+../include/Tensors/Antisymmetric_Tensor.h
+
 ../include/tools/double_tools.h
 Tensors/Antisymmetric_Tensor.h
 -
@@ -60,5 +64,25 @@ string.h
 Quaternions/Al_Quaternions.h
 -
 tools/double_tools.h
+-
+
+/home/libo/Documents/c++/Algebras/src/Space/Algebra_Fun_.c
+Space/Algebra_Fun_.h
+-
+
+/home/libo/Documents/c++/Algebras/src/Space/structures.c
+Space/structures.h
+-
+
+/home/libo/Documents/c++/Algebras/src/Tensors/Al_Tensors.c
+Tensors/Al_Tensors.h
+-
+
+/home/libo/Documents/c++/Algebras/src/Tensors/Antisymmetric_Tensor.c
+Tensors/Antisymmetric_Tensor.h
+-
+
+/home/libo/Documents/c++/Algebras/src/Tensors/Tensors_Operation.c
+Tensors/Tensors_Operation.h
 -
 

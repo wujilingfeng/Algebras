@@ -6,10 +6,28 @@
 
 #IncludeRegexTransform: 
 
+../include/Space/Algebra_Fun_.h
+stdio.h
+-
+stdlib.h
+-
+tools_rbtree.h
+../include/Space/tools_rbtree.h
+tools_node.h
+../include/Space/tools_node.h
+structures.h
+../include/Space/structures.h
+gmp.h
+-
+
 ../include/Space/structures.h
 tools_rbtree.h
 ../include/Space/tools_rbtree.h
 gmp.h
+-
+
+../thirdpart/cstructures/include/tools_node.h
+stdlib.h
 -
 
 ../thirdpart/cstructures/include/tools_rbtree.h
@@ -18,6 +36,10 @@ stdio.h
 stdlib.h
 -
 string.h
+-
+
+/home/libo/Documents/c++/Algebras/src/Space/Algebra_Fun_.c
+Space/Algebra_Fun_.h
 -
 
 /home/libo/Documents/c++/Algebras/src/Space/structures.c
